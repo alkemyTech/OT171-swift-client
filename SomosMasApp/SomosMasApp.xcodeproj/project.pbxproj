@@ -56,7 +56,6 @@
 		A1FB4EC927E2130600B6258A /* SomosMasApp */ = {
 			isa = PBXGroup;
 			children = (
-				A1FB4EE527E2259400B6258A /* App */,
 				A1FB4ECA27E2130600B6258A /* AppDelegate.swift */,
 				A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */,
 				A1FB4ECE27E2130600B6258A /* ViewController.swift */,
@@ -66,37 +65,6 @@
 				A1FB4ED827E2130B00B6258A /* Info.plist */,
 			);
 			path = SomosMasApp;
-			sourceTree = "<group>";
-		};
-		A1FB4EE527E2259400B6258A /* App */ = {
-			isa = PBXGroup;
-			children = (
-				A1FB4EE627E2259900B6258A /* Modules */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		A1FB4EE627E2259900B6258A /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				A1FB4EE827E225B400B6258A /* SignUp */,
-				A1FB4EE727E2259F00B6258A /* SignIn */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		A1FB4EE727E2259F00B6258A /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignIn;
-			sourceTree = "<group>";
-		};
-		A1FB4EE827E225B400B6258A /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
