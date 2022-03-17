@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A18662FF27E3A034007575CE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18662FD27E3A034007575CE /* SignUpViewController.swift */; };
+		A186630027E3A034007575CE /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18662FE27E3A034007575CE /* SignUpViewController.xib */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECE27E2130600B6258A /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A18662FD27E3A034007575CE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A18662FE27E3A034007575CE /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A18662F927E39FE9007575CE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A18662FA27E39FF0007575CE /* SignUp */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A18662FA27E39FF0007575CE /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A18662FB27E39FF7007575CE /* View */,
+				A18662FC27E39FFD007575CE /* Controller */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A18662FB27E39FF7007575CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A18662FE27E3A034007575CE /* SignUpViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A18662FC27E39FFD007575CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A18662FD27E3A034007575CE /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A1FB4EBE27E2130500B6258A = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +93,7 @@
 		A1FB4EC927E2130600B6258A /* SomosMasApp */ = {
 			isa = PBXGroup;
 			children = (
+				A18662F927E39FE9007575CE /* Modules */,
 				A1FB4ECA27E2130600B6258A /* AppDelegate.swift */,
 				A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */,
 				A1FB4ECE27E2130600B6258A /* ViewController.swift */,
@@ -127,6 +165,7 @@
 			files = (
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
+				A186630027E3A034007575CE /* SignUpViewController.xib in Resources */,
 				A1FB4ED227E2130600B6258A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +179,7 @@
 			files = (
 				A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
+				A18662FF27E3A034007575CE /* SignUpViewController.swift in Sources */,
 				A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
