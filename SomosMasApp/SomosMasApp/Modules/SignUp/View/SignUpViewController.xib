@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
+                <outlet property="signUpConfirmPassLabel" destination="ckp-bW-dSi" id="9de-vK-6UE"/>
+                <outlet property="signUpMailLabel" destination="P0p-nO-OOs" id="52y-WN-hI8"/>
+                <outlet property="signUpPassLabel" destination="lhk-MR-8JU" id="gP9-wS-TQN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -69,7 +72,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Sign Up">
                         <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
                 </button>
             </subviews>
