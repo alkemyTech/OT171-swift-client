@@ -4,11 +4,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
+                <outlet property="passwordError" destination="WO1-Xm-KWG" id="3fh-Z6-RrC"/>
+                <outlet property="registerButton" destination="Frh-iR-38L" id="SBF-yt-ggD"/>
                 <outlet property="signUpConfirmPassLabel" destination="ZrQ-pI-4sg" id="dSm-nq-7Sb"/>
                 <outlet property="signUpMailLabel" destination="CDO-Yb-WNH" id="Tsw-Sb-cp3"/>
                 <outlet property="signUpPassLabel" destination="f1U-4N-Xk4" id="MMN-LD-xz6"/>
@@ -76,11 +79,18 @@
                         <constraint firstAttribute="height" constant="200" id="hQ0-jL-s1M"/>
                     </constraints>
                 </imageView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords are not the same" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WO1-Xm-KWG">
+                    <rect key="frame" x="20" y="559" width="374" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f1U-4N-Xk4" secondAttribute="trailing" constant="20" id="16m-se-OCm"/>
+                <constraint firstItem="WO1-Xm-KWG" firstAttribute="top" secondItem="ZrQ-pI-4sg" secondAttribute="bottom" constant="26" id="1Uv-9Q-JwH"/>
                 <constraint firstItem="bdR-AE-VVv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="46z-uz-8sL"/>
                 <constraint firstItem="CDO-Yb-WNH" firstAttribute="top" secondItem="bdR-AE-VVv" secondAttribute="bottom" constant="10" id="4gV-ym-8Bb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Ae-9K-nCs" secondAttribute="trailing" constant="20" id="6yX-Ss-Tvu"/>
@@ -92,7 +102,9 @@
                 <constraint firstItem="Frh-iR-38L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Lpe-Vf-g1K"/>
                 <constraint firstItem="f1U-4N-Xk4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="MA5-K0-gB0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Frh-iR-38L" secondAttribute="trailing" constant="50" id="OBD-Vh-e5T"/>
+                <constraint firstItem="WO1-Xm-KWG" firstAttribute="leading" secondItem="ZrQ-pI-4sg" secondAttribute="leading" id="R7L-ya-YCd"/>
                 <constraint firstItem="f1U-4N-Xk4" firstAttribute="top" secondItem="3Ae-9K-nCs" secondAttribute="bottom" constant="10" id="UMD-fT-irq"/>
+                <constraint firstItem="WO1-Xm-KWG" firstAttribute="trailing" secondItem="ZrQ-pI-4sg" secondAttribute="trailing" id="UTN-iH-DJh"/>
                 <constraint firstItem="3Ae-9K-nCs" firstAttribute="top" secondItem="CDO-Yb-WNH" secondAttribute="bottom" constant="20" id="UfU-h4-CFv"/>
                 <constraint firstItem="2WI-8v-fvy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="XcR-pJ-Mjp"/>
                 <constraint firstItem="Av1-gm-0g8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Xlv-gj-m49"/>
@@ -105,10 +117,13 @@
                 <constraint firstItem="bdR-AE-VVv" firstAttribute="top" secondItem="2WI-8v-fvy" secondAttribute="bottom" constant="20" id="teE-u0-DVk"/>
                 <constraint firstItem="ZrQ-pI-4sg" firstAttribute="top" secondItem="Av1-gm-0g8" secondAttribute="bottom" constant="20" id="ydJ-tg-VYg"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="64"/>
+            <point key="canvasLocation" x="131.8840579710145" y="63.616071428571423"/>
         </view>
     </objects>
     <resources>
         <image name="LOGO-SOMOS MAS" width="100" height="100"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
