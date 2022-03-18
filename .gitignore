@@ -1,1 +1,7 @@
+*.plist
 *fran.xcuserdatad/
+xcuserdata/
+.DS_Store
+*.xcworkspace
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj

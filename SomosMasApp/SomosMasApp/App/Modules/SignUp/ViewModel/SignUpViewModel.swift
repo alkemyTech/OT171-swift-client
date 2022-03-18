@@ -22,7 +22,7 @@ class SignUpViewModel {
     func validateAccount(email: String, password: String, confirmPassword: String) {
         isValidEmail = email.isValidEmail ? true : false
         isValidPassword = password.isValidPassword ? true : false
-        isValidConfirmPassword = confirmPassword.isValidConfirmPassword ? true : false
+        isValidConfirmPassword = confirmPassword.isValidPassword ? true : false
         isMatchPassword = (password == confirmPassword) ? true : false
     }
     
