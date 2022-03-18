@@ -6,5 +6,7 @@ target 'SomosMasApp' do
   use_frameworks!
 
   # Pods for SomosMasApp
+  
+  pod 'Alamofire', '5.4'
 
 end
