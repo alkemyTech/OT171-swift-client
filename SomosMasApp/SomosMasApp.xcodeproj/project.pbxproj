@@ -41,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A17FF66127E4F4EA00E3DFEC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A18662F927E39FE9007575CE /* Modules */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		A18662F927E39FE9007575CE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +101,7 @@
 		A1FB4EC927E2130600B6258A /* SomosMasApp */ = {
 			isa = PBXGroup;
 			children = (
-				A18662F927E39FE9007575CE /* Modules */,
+				A17FF66127E4F4EA00E3DFEC /* App */,
 				A1FB4ECA27E2130600B6258A /* AppDelegate.swift */,
 				A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */,
 				A1FB4ECE27E2130600B6258A /* ViewController.swift */,

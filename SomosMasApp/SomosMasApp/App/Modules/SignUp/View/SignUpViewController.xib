@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
+                <outlet property="registerButton" destination="EWH-Xc-sQh" id="tv5-oy-x7T"/>
                 <outlet property="signUpConfirmPassLabel" destination="ckp-bW-dSi" id="9de-vK-6UE"/>
                 <outlet property="signUpMailLabel" destination="P0p-nO-OOs" id="52y-WN-hI8"/>
                 <outlet property="signUpPassLabel" destination="lhk-MR-8JU" id="gP9-wS-TQN"/>

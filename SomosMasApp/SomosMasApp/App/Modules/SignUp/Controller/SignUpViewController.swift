@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpMailLabel: UITextField!
     @IBOutlet weak var signUpPassLabel: UITextField!
     @IBOutlet weak var signUpConfirmPassLabel: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()        
