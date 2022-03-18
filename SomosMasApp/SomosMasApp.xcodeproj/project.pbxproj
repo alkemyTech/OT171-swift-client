@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99F563DB27E442920055A2CF /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F563D927E442920055A2CF /* logInViewController.swift */; };
+		99F563DC27E442920055A2CF /* logInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F563DA27E442920055A2CF /* logInView.xib */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECE27E2130600B6258A /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99F563D927E442920055A2CF /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
+		99F563DA27E442920055A2CF /* logInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = logInView.xib; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				A1FB4ED327E2130B00B6258A /* Assets.xcassets */,
 				A1FB4ED527E2130B00B6258A /* LaunchScreen.storyboard */,
 				A1FB4ED827E2130B00B6258A /* Info.plist */,
+				99F563DA27E442920055A2CF /* logInView.xib */,
+				99F563D927E442920055A2CF /* logInViewController.swift */,
 			);
 			path = SomosMasApp;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F563DC27E442920055A2CF /* logInView.xib in Resources */,
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
 				A1FB4ED227E2130600B6258A /* Main.storyboard in Resources */,
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F563DB27E442920055A2CF /* logInViewController.swift in Sources */,
 				A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
 				A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */,
