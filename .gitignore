@@ -1,4 +1,5 @@
 *.plist
+fran.xcuserdatad/
 *fran.xcuserdatad/
 xcuserdata/
 .DS_Store
