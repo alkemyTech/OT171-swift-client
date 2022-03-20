@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
+                <outlet property="passwordError" destination="fw9-Ky-P0b" id="jk4-Tc-NbM"/>
                 <outlet property="registerButton" destination="EWH-Xc-sQh" id="tv5-oy-x7T"/>
                 <outlet property="signUpConfirmPassLabel" destination="ckp-bW-dSi" id="9de-vK-6UE"/>
                 <outlet property="signUpMailLabel" destination="P0p-nO-OOs" id="52y-WN-hI8"/>
@@ -75,7 +76,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWH-Xc-sQh">
-                                            <rect key="frame" x="80" y="578" width="254" height="38"/>
+                                            <rect key="frame" x="80" y="606.5" width="254" height="38"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Sign Up" cornerStyle="capsule">
                                                 <backgroundConfiguration key="background">
@@ -104,13 +105,18 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords are not the same" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fw9-Ky-P0b">
+                                            <rect key="frame" x="94.5" y="562" width="225.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" systemColor="systemRedColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="WtH-bo-p54" firstAttribute="centerX" secondItem="hj7-7r-Hye" secondAttribute="centerX" id="0kI-aI-rjM"/>
                                         <constraint firstItem="P0p-nO-OOs" firstAttribute="top" secondItem="pBe-pB-nh6" secondAttribute="bottom" constant="10" id="CKI-mL-ScV"/>
                                         <constraint firstItem="lhk-MR-8JU" firstAttribute="top" secondItem="7S2-jQ-DWm" secondAttribute="bottom" constant="10" id="Gyd-vV-PZZ"/>
-                                        <constraint firstItem="EWH-Xc-sQh" firstAttribute="top" secondItem="lhk-MR-8JU" secondAttribute="bottom" constant="30" id="IZ3-Yb-Qpl"/>
                                         <constraint firstItem="ckp-bW-dSi" firstAttribute="top" secondItem="5Bw-tf-LKx" secondAttribute="bottom" constant="10" id="IfN-Nw-aUH"/>
                                         <constraint firstItem="YQB-GU-xI2" firstAttribute="leading" secondItem="hj7-7r-Hye" secondAttribute="leading" constant="50" id="KIp-cN-3J9"/>
                                         <constraint firstItem="7S2-jQ-DWm" firstAttribute="top" secondItem="ckp-bW-dSi" secondAttribute="bottom" constant="20" id="KmD-Lz-3FH"/>
@@ -118,6 +124,7 @@
                                         <constraint firstAttribute="trailing" secondItem="7S2-jQ-DWm" secondAttribute="trailing" constant="50" id="M60-Wl-AY3"/>
                                         <constraint firstItem="ckp-bW-dSi" firstAttribute="leading" secondItem="hj7-7r-Hye" secondAttribute="leading" constant="50" id="NgX-iz-SfC"/>
                                         <constraint firstItem="YQB-GU-xI2" firstAttribute="top" secondItem="JBO-Nd-pNW" secondAttribute="bottom" constant="10" id="OBZ-EM-GrU"/>
+                                        <constraint firstItem="fw9-Ky-P0b" firstAttribute="top" secondItem="lhk-MR-8JU" secondAttribute="bottom" constant="14" id="PNc-c2-gjt"/>
                                         <constraint firstItem="5Bw-tf-LKx" firstAttribute="top" secondItem="P0p-nO-OOs" secondAttribute="bottom" constant="20" id="PU3-9X-B4q"/>
                                         <constraint firstAttribute="trailing" secondItem="YQB-GU-xI2" secondAttribute="trailing" constant="50" id="Qo6-pA-Z1c"/>
                                         <constraint firstAttribute="height" constant="720" id="Rvp-It-H11"/>
@@ -128,12 +135,14 @@
                                         <constraint firstItem="lhk-MR-8JU" firstAttribute="leading" secondItem="hj7-7r-Hye" secondAttribute="leading" constant="50" id="XrM-xx-JaR"/>
                                         <constraint firstAttribute="trailing" secondItem="pBe-pB-nh6" secondAttribute="trailing" constant="50" id="cAY-mQ-8Im"/>
                                         <constraint firstItem="pBe-pB-nh6" firstAttribute="top" secondItem="YQB-GU-xI2" secondAttribute="bottom" constant="20" id="d6H-6j-za7"/>
+                                        <constraint firstItem="EWH-Xc-sQh" firstAttribute="top" secondItem="fw9-Ky-P0b" secondAttribute="bottom" constant="23" id="dLa-Tf-H2N"/>
                                         <constraint firstItem="3BZ-gW-Mdn" firstAttribute="centerX" secondItem="hj7-7r-Hye" secondAttribute="centerX" id="fnI-fP-XhQ"/>
                                         <constraint firstAttribute="trailing" secondItem="lhk-MR-8JU" secondAttribute="trailing" constant="50" id="gf2-6t-Kuw"/>
                                         <constraint firstItem="WtH-bo-p54" firstAttribute="top" secondItem="hj7-7r-Hye" secondAttribute="top" id="ha5-g6-fGe"/>
                                         <constraint firstItem="EWH-Xc-sQh" firstAttribute="leading" secondItem="hj7-7r-Hye" secondAttribute="leading" constant="80" id="ivG-7B-O6g"/>
                                         <constraint firstItem="pBe-pB-nh6" firstAttribute="leading" secondItem="hj7-7r-Hye" secondAttribute="leading" constant="50" id="kUA-zy-e2W"/>
                                         <constraint firstItem="P0p-nO-OOs" firstAttribute="leading" secondItem="hj7-7r-Hye" secondAttribute="leading" constant="50" id="lox-WB-YXL"/>
+                                        <constraint firstItem="fw9-Ky-P0b" firstAttribute="centerX" secondItem="hj7-7r-Hye" secondAttribute="centerX" id="mQN-LC-V6C"/>
                                         <constraint firstItem="7S2-jQ-DWm" firstAttribute="leading" secondItem="hj7-7r-Hye" secondAttribute="leading" constant="50" id="oPO-KD-9xf"/>
                                         <constraint firstAttribute="trailing" secondItem="P0p-nO-OOs" secondAttribute="trailing" constant="50" id="pKY-8m-xgm"/>
                                         <constraint firstAttribute="trailing" secondItem="JBO-Nd-pNW" secondAttribute="trailing" constant="50" id="qiB-uW-Emi"/>
@@ -163,13 +172,16 @@
                 <constraint firstItem="ZKV-oQ-Qd5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="n4O-Sc-4QN"/>
                 <constraint firstAttribute="bottom" secondItem="ZKV-oQ-Qd5" secondAttribute="bottom" id="xnv-dW-e87"/>
             </constraints>
-            <point key="canvasLocation" x="130.40000000000001" y="63.546798029556655"/>
+            <point key="canvasLocation" x="128.98550724637681" y="62.946428571428569"/>
         </view>
     </objects>
     <resources>
         <image name="LOGO-SOMOS MAS" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
