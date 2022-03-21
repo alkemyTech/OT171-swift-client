@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class ApiManager {
+struct ApiManager {
     
     func get(url: String, completion: @escaping (Result<Data?, AFError>) -> Void) {
         AF.request(url).response { response in

@@ -23,7 +23,5 @@
 	</dict>
 	<key>WEBSERVICE_URL</key>
 	<string>$(WEBSERVICE_URL)</string>
-	<key>CFBundleIdentifier</key>
-	<string>Enviroment</string>
 </dict>
 </plist>
