@@ -1,7 +1,4 @@
 *.plist
 fran.xcuserdatad/
 .DS_Store
-<<<<<<< HEAD
-=======
 SomosMasApp/SomosMasApp.xcworkspace/xcuserdata/
->>>>>>> 8392c37da10f63a26c07db2993a1a6beebd3d02d
