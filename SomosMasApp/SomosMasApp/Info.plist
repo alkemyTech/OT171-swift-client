@@ -19,5 +19,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>WEBSERVICE_URL</key>
+	<string>$(WEBSERVICE_URL)</string>
 </dict>
 </plist>
