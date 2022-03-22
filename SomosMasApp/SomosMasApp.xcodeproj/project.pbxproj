@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87AF789C27E94C900004AEB3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AF789327E94C900004AEB3 /* Extensions.swift */; };
+		87AF789D27E94C900004AEB3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AF789427E94C900004AEB3 /* Observable.swift */; };
+		87AF789E27E94C900004AEB3 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AF789827E94C900004AEB3 /* SignUpViewModel.swift */; };
+		87AF789F27E94C900004AEB3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AF789A27E94C900004AEB3 /* SignUpViewController.swift */; };
+		87AF78A027E94C900004AEB3 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87AF789B27E94C900004AEB3 /* SignUpViewController.xib */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECE27E2130600B6258A /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87AF789327E94C900004AEB3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		87AF789427E94C900004AEB3 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		87AF789827E94C900004AEB3 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		87AF789A27E94C900004AEB3 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		87AF789B27E94C900004AEB3 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +47,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87AF789127E94C900004AEB3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				87AF789227E94C900004AEB3 /* Extensions */,
+				87AF789527E94C900004AEB3 /* Modules */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		87AF789227E94C900004AEB3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				87AF789327E94C900004AEB3 /* Extensions.swift */,
+				87AF789427E94C900004AEB3 /* Observable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		87AF789527E94C900004AEB3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				87AF789627E94C900004AEB3 /* SignUp */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		87AF789627E94C900004AEB3 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				87AF789727E94C900004AEB3 /* ViewModel */,
+				87AF789927E94C900004AEB3 /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		87AF789727E94C900004AEB3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				87AF789827E94C900004AEB3 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		87AF789927E94C900004AEB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87AF789A27E94C900004AEB3 /* SignUpViewController.swift */,
+				87AF789B27E94C900004AEB3 /* SignUpViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A1FB4EBE27E2130500B6258A = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +118,7 @@
 		A1FB4EC927E2130600B6258A /* SomosMasApp */ = {
 			isa = PBXGroup;
 			children = (
+				87AF789127E94C900004AEB3 /* App */,
 				A1FB4ECA27E2130600B6258A /* AppDelegate.swift */,
 				A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */,
 				A1FB4ECE27E2130600B6258A /* ViewController.swift */,
@@ -127,6 +190,7 @@
 			files = (
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
+				87AF78A027E94C900004AEB3 /* SignUpViewController.xib in Resources */,
 				A1FB4ED227E2130600B6258A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +203,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */,
+				87AF789F27E94C900004AEB3 /* SignUpViewController.swift in Sources */,
+				87AF789D27E94C900004AEB3 /* Observable.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
 				A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */,
+				87AF789E27E94C900004AEB3 /* SignUpViewModel.swift in Sources */,
+				87AF789C27E94C900004AEB3 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +359,6 @@
 				INFOPLIST_FILE = SomosMasApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +385,6 @@
 				INFOPLIST_FILE = SomosMasApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
