@@ -12,6 +12,8 @@
 		87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB1D27E974A900C13180 /* SignUpViewController.swift */; };
 		87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CBCB1F27E974A900C13180 /* SignUpViewController.xib */; };
 		87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */; };
+		A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC72B027EA260B00D9D16C /* logInViewController.swift */; };
+		A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DC72B227EA260B00D9D16C /* logInView.xib */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECE27E2130600B6258A /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		87CBCB1D27E974A900C13180 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87CBCB1F27E974A900C13180 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A1DC72B027EA260B00D9D16C /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
+		A1DC72B227EA260B00D9D16C /* logInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logInView.xib; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		87CBCB1A27E974A900C13180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A1DC72AE27EA260B00D9D16C /* LogIn */,
 				87CBCB1B27E974A900C13180 /* SignUp */,
 			);
 			path = Modules;
@@ -101,6 +106,31 @@
 				87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A1DC72AE27EA260B00D9D16C /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				A1DC72AF27EA260B00D9D16C /* Controller */,
+				A1DC72B127EA260B00D9D16C /* View */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		A1DC72AF27EA260B00D9D16C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A1DC72B027EA260B00D9D16C /* logInViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A1DC72B127EA260B00D9D16C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1DC72B227EA260B00D9D16C /* logInView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A1FB4EBE27E2130500B6258A = {
@@ -240,6 +270,7 @@
 			files = (
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
+				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */,
+				A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
 				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
