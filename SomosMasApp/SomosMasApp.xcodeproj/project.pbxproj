@@ -32,6 +32,9 @@
 		87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A1DC72B027EA260B00D9D16C /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		A1DC72B227EA260B00D9D16C /* logInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logInView.xib; sourceTree = "<group>"; };
+		A1DC72B827EA2AE400D9D16C /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A1DC72BA27EA2AE400D9D16C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A1DC72BB27EA2AE400D9D16C /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +136,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A1DC72B527EA2AE400D9D16C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A1DC72B627EA2AE400D9D16C /* SignUp */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A1DC72B627EA2AE400D9D16C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A1DC72B727EA2AE400D9D16C /* ViewModel */,
+				A1DC72B927EA2AE400D9D16C /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A1DC72B727EA2AE400D9D16C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1DC72B827EA2AE400D9D16C /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A1DC72B927EA2AE400D9D16C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1DC72BA27EA2AE400D9D16C /* SignUpViewController.swift */,
+				A1DC72BB27EA2AE400D9D16C /* SignUpViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A1FB4EBE27E2130500B6258A = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +222,7 @@
 		FB0F37B627E28DBB004D3DB5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A1DC72B527EA2AE400D9D16C /* Modules */,
 				87CBCB0B27E9741F00C13180 /* Extensions */,
 				FB0F37B727E28DCF004D3DB5 /* Shared */,
 			);
