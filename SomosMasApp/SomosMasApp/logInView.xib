@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="logInViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="yVV-bo-Kcf" id="JLS-Uf-8vs"/>
+                <outlet property="passwordTextField" destination="Khg-bh-Cfx" id="pbV-lJ-qe9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,7 +40,11 @@
                             <buttonConfiguration key="configuration" style="filled" title="LOGIN">
                                 <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="baseBackgroundColor" red="0.85882352939999995" green="0.3411764706" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="logInButtonPressed:" destination="-1" eventType="touchUpInside" id="Hb3-Ag-hTx"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>
@@ -56,7 +62,6 @@
                 <constraint firstItem="aSr-JU-DQg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="026-Ta-VsR"/>
                 <constraint firstItem="JTe-qE-Mfa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BfC-UK-Y61"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aSr-JU-DQg" secondAttribute="trailing" constant="20" id="CA8-nP-WCw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6sa-uT-caq" secondAttribute="bottom" constant="303" id="KfV-zj-fsj"/>
                 <constraint firstItem="Khg-bh-Cfx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R6k-cG-5We"/>
                 <constraint firstItem="JTe-qE-Mfa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="eJr-KM-syx"/>
                 <constraint firstItem="yVV-bo-Kcf" firstAttribute="top" secondItem="JTe-qE-Mfa" secondAttribute="bottom" constant="93.000000000000057" id="eol-ae-3ns"/>

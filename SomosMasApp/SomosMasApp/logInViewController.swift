@@ -23,9 +23,7 @@ class logInViewController: UIViewController {
         
     }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        
-    }
+    
     /*
     // MARK: - Navigation
 
