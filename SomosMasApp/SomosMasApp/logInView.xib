@@ -65,6 +65,6 @@
         </view>
     </objects>
     <resources>
-        <image name="logoCircular" width="500" height="500"/>
+        <image name="logoCircular" width="250" height="250"/>
     </resources>
 </document>
