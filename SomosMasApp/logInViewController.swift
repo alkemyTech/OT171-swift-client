@@ -8,22 +8,55 @@
 import UIKit
 
 class logInViewController: UIViewController {
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var warningLabel: UILabel!
+    
+    private let viewModel = ViewModel()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        warningLabel.isHidden = true
+    }
+    
+    
+    @IBAction func signUpButtonPressed(_ sender: UIButton) {
+         let signUpController = SignUpViewController()
+         self.navigationController?.pushViewController(signUpController, animated: true)
+     }
+    
+    
+    @IBAction func logInButtonPressed(_ sender: Any) {
+        
+        viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
+            if !confirmAccess {
+                self.warningLabel.text = errorMessage!
+                self.warningLabel.isHidden = false
+            } else {
+                self.warningLabel.isHidden = true
+            }
+        }
     }
 
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - UITextFieldDelegate
+
+extension logInViewController: UITextFieldDelegate {
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        warningLabel.isHidden = true
     }
-    */
 
 }
