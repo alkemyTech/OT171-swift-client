@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0C27E9741F00C13180 /* Extensions.swift */; };
 		87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0D27E9741F00C13180 /* Observable.swift */; };
-		87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB1D27E974A900C13180 /* SignUpViewController.swift */; };
-		87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CBCB1F27E974A900C13180 /* SignUpViewController.xib */; };
-		87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECE27E2130600B6258A /* ViewController.swift */; };
 		A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED327E2130B00B6258A /* Assets.xcassets */; };
 		A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED527E2130B00B6258A /* LaunchScreen.storyboard */; };
 		DDF5BD5ADB8EBD72D0E74F23 /* Pods_SomosMasApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */; };
+		FB6B5F8527EB461500D281E7 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B5F7B27EB461500D281E7 /* SignUpViewModel.swift */; };
+		FB6B5F8627EB461500D281E7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B5F7D27EB461500D281E7 /* SignUpViewController.swift */; };
+		FB6B5F8727EB461500D281E7 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B5F7F27EB461500D281E7 /* SignUpViewController.xib */; };
+		FB6B5F8827EB461500D281E7 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B5F8227EB461500D281E7 /* logInViewController.swift */; };
+		FB6B5F8927EB461500D281E7 /* logInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B5F8427EB461500D281E7 /* logInView.xib */; };
 		FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,9 +27,6 @@
 		068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomosMasApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CBCB0C27E9741F00C13180 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87CBCB0D27E9741F00C13180 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		87CBCB1D27E974A900C13180 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		87CBCB1F27E974A900C13180 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
-		87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +36,11 @@
 		A1FB4ED827E2130B00B6258A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9E3374CE651B6E05431D41C /* Pods-SomosMasApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomosMasApp.debug.xcconfig"; path = "Target Support Files/Pods-SomosMasApp/Pods-SomosMasApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B9F4BCA7CE019643862D60A3 /* Pods-SomosMasApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomosMasApp.release.xcconfig"; path = "Target Support Files/Pods-SomosMasApp/Pods-SomosMasApp.release.xcconfig"; sourceTree = "<group>"; };
+		FB6B5F7B27EB461500D281E7 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		FB6B5F7D27EB461500D281E7 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FB6B5F7F27EB461500D281E7 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		FB6B5F8227EB461500D281E7 /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
+		FB6B5F8427EB461500D281E7 /* logInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logInView.xib; sourceTree = "<group>"; };
 		FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,48 +63,6 @@
 				87CBCB0D27E9741F00C13180 /* Observable.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		87CBCB1A27E974A900C13180 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				87CBCB1B27E974A900C13180 /* SignUp */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		87CBCB1B27E974A900C13180 /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				87CBCB2227E9751500C13180 /* ViewModel */,
-				87CBCB1C27E974A900C13180 /* Controller */,
-				87CBCB1E27E974A900C13180 /* View */,
-			);
-			path = SignUp;
-			sourceTree = "<group>";
-		};
-		87CBCB1C27E974A900C13180 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				87CBCB1D27E974A900C13180 /* SignUpViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		87CBCB1E27E974A900C13180 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				87CBCB1F27E974A900C13180 /* SignUpViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		87CBCB2227E9751500C13180 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A1FB4EBE27E2130500B6258A = {
@@ -164,7 +126,7 @@
 		FB0F37B727E28DCF004D3DB5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				87CBCB1A27E974A900C13180 /* Modules */,
+				FB6B5F7827EB461500D281E7 /* Modules */,
 				FB0F37BA27E28DF1004D3DB5 /* Networking */,
 			);
 			path = Shared;
@@ -176,6 +138,74 @@
 				FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		FB6B5F7827EB461500D281E7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B5F7927EB461500D281E7 /* SignUp */,
+				FB6B5F8027EB461500D281E7 /* LogIn */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FB6B5F7927EB461500D281E7 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B5F7A27EB461500D281E7 /* ViewModel */,
+				FB6B5F7C27EB461500D281E7 /* Controller */,
+				FB6B5F7E27EB461500D281E7 /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		FB6B5F7A27EB461500D281E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B5F7B27EB461500D281E7 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FB6B5F7C27EB461500D281E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B5F7D27EB461500D281E7 /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB6B5F7E27EB461500D281E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B5F7F27EB461500D281E7 /* SignUpViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB6B5F8027EB461500D281E7 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B5F8127EB461500D281E7 /* Controller */,
+				FB6B5F8327EB461500D281E7 /* View */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		FB6B5F8127EB461500D281E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B5F8227EB461500D281E7 /* logInViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB6B5F8327EB461500D281E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B5F8427EB461500D281E7 /* logInView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
+				FB6B5F8727EB461500D281E7 /* SignUpViewController.xib in Resources */,
+				FB6B5F8927EB461500D281E7 /* logInView.xib in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
-				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,13 +325,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */,
+				FB6B5F8827EB461500D281E7 /* logInViewController.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
-				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
-				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
+				FB6B5F8627EB461500D281E7 /* SignUpViewController.swift in Sources */,
 				A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
 				A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */,
+				FB6B5F8527EB461500D281E7 /* SignUpViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
