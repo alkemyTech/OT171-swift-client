@@ -55,16 +55,30 @@
                         <constraint firstAttribute="width" constant="210" id="kOz-Sj-qIW"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irZ-qx-jCw">
+                    <rect key="frame" x="20" y="609" width="388" height="32"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="OR REGISTER YOUR ACCOUNT">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="signUpButtonPressed:" destination="-1" eventType="touchUpInside" id="j1b-bR-d25"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.60392156860000001" green="0.78823529410000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="aSr-JU-DQg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="026-Ta-VsR"/>
+                <constraint firstItem="irZ-qx-jCw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1if-ur-IL3"/>
                 <constraint firstItem="JTe-qE-Mfa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BfC-UK-Y61"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aSr-JU-DQg" secondAttribute="trailing" constant="20" id="CA8-nP-WCw"/>
                 <constraint firstItem="Khg-bh-Cfx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R6k-cG-5We"/>
                 <constraint firstItem="JTe-qE-Mfa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="eJr-KM-syx"/>
                 <constraint firstItem="yVV-bo-Kcf" firstAttribute="top" secondItem="JTe-qE-Mfa" secondAttribute="bottom" constant="93.000000000000057" id="eol-ae-3ns"/>
+                <constraint firstItem="irZ-qx-jCw" firstAttribute="top" secondItem="aSr-JU-DQg" secondAttribute="bottom" constant="20" id="ikJ-0N-an3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="irZ-qx-jCw" secondAttribute="trailing" constant="20" id="mCa-it-XQH"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
         </view>
