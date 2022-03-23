@@ -106,7 +106,9 @@ extension SignUpViewController: RegisterUserDelegate {
     func userRegistered() {
         let alert = UIAlertController(title: "User was succesfully register", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {(action: UIAlertAction!) in
-            print("Handle Ok logic here")}))
+            let logInViewController = logInViewController()
+            self.navigationController?.pushViewController(logInViewController, animated: true)
+        }))
         self.present(alert, animated: true, completion: nil)
     }
     
