@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class logInViewController: UIViewController {
 
@@ -31,11 +32,6 @@ class logInViewController: UIViewController {
     
 
     @IBAction func logInButtonPressed(_ sender: UIButton) {
-        // API validation
-        viewModel.loginUser { loginStatus in
-            loginStatus ? print("go home view") : print("show modal")
-        }
-        // text validation
         viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
             if !confirmAccess {
                 self.warningLabel.text = errorMessage!
@@ -43,6 +39,25 @@ class logInViewController: UIViewController {
             } else {
                 self.warningLabel.isHidden = true
             }
+        }
+        // [OT171-25] Function for API Validation:
+        userValidation()
+    }
+    
+    func userValidation() {
+        let user = Credentials(email: emailTextField?.text, password: passwordTextField?.text)
+        loginStatus(user: user)
+        // text validation
+    }
+    
+    func loginStatus(user: Credentials) {
+        LoginService().login(user: user) { token in
+            // Token Saved
+            print("Token has been saved: \(token)")
+            // Navigation to Home View here
+        } errorHandler: { errorMessage in
+            print("Authentication Error. Wrong username and password.")
+            // Modal for Error here..
         }
     }
     

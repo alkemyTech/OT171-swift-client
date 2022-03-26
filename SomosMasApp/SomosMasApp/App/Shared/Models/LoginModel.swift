@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Credentials {
-    var email: String = ""
-    var password: String = ""
+struct Credentials: Encodable {
+    var email: String?
+    var password: String?
 }

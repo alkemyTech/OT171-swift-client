@@ -22,9 +22,8 @@ struct LoginUserResponse: Codable {
 
 // Data Response
 struct LoginDataResponse: Codable {
-    
     let user: UserLogin
-    let token: String
+    let token: String?
     
     enum CodingKeys: String, CodingKey {
         case user
@@ -32,6 +31,7 @@ struct LoginDataResponse: Codable {
     }
 }
 
+// User Login
 struct UserLogin: Codable {
     let id: Int
     let name: String
@@ -42,5 +42,4 @@ struct UserLogin: Codable {
         case name
         case email
     }
-    
 }
