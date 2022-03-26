@@ -24,4 +24,23 @@ struct ApiManager {
         }
     }
     
+    // LOGIN USER POST
+    func loginUser(email: String, password: String,  sucess: @escaping (_ loginDataResponse: LoginUserResponse) -> (), failure: @escaping ( _ error: Error?) -> () ) {
+            
+        let params: [String: String] = ["email": email, "password": password]
+        let serverUrl = Bundle.main.object(forInfoDictionaryKey: "WEBSERVICE_URL") as! String
+        let finalUrl = serverUrl + "login"
+        
+        AF.request(finalUrl, method: .post, parameters: params,  encoder: JSONParameterEncoder.default).validate(statusCode: 200...299).responseDecodable(of: LoginUserResponse.self) {
+            response in
+            if let userResponse = response.value {
+                sucess(userResponse)
+                print("success")
+            } else {
+                failure(response.error)
+                print("error")
+            }
+        }
+    }
+    
 }

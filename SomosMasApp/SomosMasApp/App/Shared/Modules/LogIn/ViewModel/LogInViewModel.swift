@@ -6,9 +6,19 @@
 //
 
 import Foundation
-
+import Alamofire
 
 class LogInViewModel {
+    
+    private var credentials = Credentials() {
+        didSet {
+            email = credentials.email
+            password = credentials.password
+        }
+    }
+    
+    private var email = ""
+    private var password = ""
     
     func validateAccess(email: String?, password: String?, completionHandler: @escaping (Bool, String?) -> Void) {
         
@@ -52,6 +62,18 @@ class LogInViewModel {
         */
 
         return (result,resultMessage)
+    }
+    
+    // LOGIN API VALIDATION
+    func loginUser(completion: @escaping (Bool) -> Void) {
+        ApiManager.shared.loginUser(email: email, password: password) { loginDataResponse in
+            completion(true)
+            print("valid")
+        } failure: { error in
+            completion(false)
+            print("invalid")
+        }
+
     }
     
 }

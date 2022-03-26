@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF327EE999B004FAE80 /* LogInResponse.swift */; };
+		8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF627EE9A9E004FAE80 /* LoginModel.swift */; };
 		87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0C27E9741F00C13180 /* Extensions.swift */; };
 		87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0D27E9741F00C13180 /* Observable.swift */; };
 		87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB1D27E974A900C13180 /* SignUpViewController.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomosMasApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8727FAF327EE999B004FAE80 /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
+		8727FAF627EE9A9E004FAE80 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		87CBCB0C27E9741F00C13180 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87CBCB0D27E9741F00C13180 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		87CBCB1D27E974A900C13180 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8727FAF227EE9976004FAE80 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8727FAF327EE999B004FAE80 /* LogInResponse.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8727FAF527EE9A93004FAE80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8727FAF627EE9A9E004FAE80 /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		87CBCB0B27E9741F00C13180 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +140,8 @@
 		A1DC72AE27EA260B00D9D16C /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				8727FAF527EE9A93004FAE80 /* Model */,
+				8727FAF227EE9976004FAE80 /* Service */,
 				A8C466F227EAD39F00A2DDBE /* ViewModel */,
 				A1DC72AF27EA260B00D9D16C /* Controller */,
 				A1DC72B127EA260B00D9D16C /* View */,
@@ -360,6 +382,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */,
+				8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */,
 				FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */,
 				A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,

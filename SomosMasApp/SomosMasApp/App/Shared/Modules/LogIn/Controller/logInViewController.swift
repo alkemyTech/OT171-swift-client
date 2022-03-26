@@ -31,7 +31,11 @@ class logInViewController: UIViewController {
     
 
     @IBAction func logInButtonPressed(_ sender: UIButton) {
-        
+        // API validation
+        viewModel.loginUser { loginStatus in
+            loginStatus ? print("go home view") : print("show modal")
+        }
+        // text validation
         viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
             if !confirmAccess {
                 self.warningLabel.text = errorMessage!
