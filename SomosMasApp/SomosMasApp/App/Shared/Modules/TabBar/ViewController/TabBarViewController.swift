@@ -16,8 +16,8 @@ class TabBarViewController: UITabBarController {
             let TabBarAppearace = UITabBar.appearance()
         
             TabBarAppearace.backgroundColor = UIColor(hexString: "#9AC9FB")
-            TabBarAppearace.tintColor = .black
-            TabBarAppearace.unselectedItemTintColor = .systemGray
+            TabBarAppearace.tintColor = .systemBlue
+            TabBarAppearace.unselectedItemTintColor = .darkGray
 
         
             // These two lines are used in line 34
