@@ -11,15 +11,12 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
             super.viewDidLoad()
-        
-            // This line change the color of the Tab Bar
+
+            // Those lines changes the color of the Tab Bar
             let TabBarAppearace = UITabBar.appearance()
-        
             TabBarAppearace.backgroundColor = UIColor(hexString: "#9AC9FB")
             TabBarAppearace.tintColor = .systemBlue
-            TabBarAppearace.unselectedItemTintColor = .darkGray
 
-        
             // These two lines are used in line 34
             let firstTabTitle = "Home"
             let firstTabImage = UIImage(systemName: "house")
@@ -30,32 +27,13 @@ class TabBarViewController: UITabBarController {
             
             // this line set the navigation bar with the tab bar
             let firstTabNavigationController = UINavigationController(rootViewController: firstTabViewController)
-        
-            // this line changes the color of the navigation bar
-            firstTabNavigationController.navigationBar.backgroundColor = UIColor(hexString: "#9AC9FB")
-            firstTabNavigationController.navigationBar.isTranslucent = false
-            
+
             //This line set details of the first tab, like the title or the icon.
             firstTabNavigationController.tabBarItem = UITabBarItem(title: firstTabTitle, image: firstTabImage, selectedImage: nil)
             
            // every tab of the app has to be in this array, so if you are adding a tab bar, you have to add the tab bar here, for example [firstTabNavigationController, secondTabNavigationController]
             viewControllers = [firstTabNavigationController]
-        
         }
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension UIColor {
@@ -76,4 +54,6 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
-}
+    }
+
+

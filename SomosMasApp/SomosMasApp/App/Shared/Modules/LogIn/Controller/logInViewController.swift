@@ -40,14 +40,18 @@ class logInViewController: UIViewController {
                 self.warningLabel.isHidden = true
             }
         }*/
-        let tabBarController = TabBarViewController()
-               tabBarController.modalPresentationStyle = .overFullScreen
-               self.present(tabBarController, animated: true)
+        presentTabBar()
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         let signUpController = SignUpViewController()
         self.navigationController?.pushViewController(signUpController, animated: true)
+    }
+    
+    func presentTabBar(){
+        let tabBarController = TabBarViewController()
+               tabBarController.modalPresentationStyle = .overFullScreen
+               self.present(tabBarController, animated: true)
     }
     
 }
