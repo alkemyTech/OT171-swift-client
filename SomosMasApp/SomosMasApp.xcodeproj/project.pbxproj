@@ -12,6 +12,11 @@
 		87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB1D27E974A900C13180 /* SignUpViewController.swift */; };
 		87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CBCB1F27E974A900C13180 /* SignUpViewController.xib */; };
 		87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */; };
+		994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F9B9427F2166E00C2E2FF /* SecondScreenViewController.swift */; };
+		994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994F9B9527F2166E00C2E2FF /* SecondScreenViewController.xib */; };
+		995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995E4C5E27F1F7D100632693 /* HomeViewController.swift */; };
+		995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995E4C5F27F1F7D100632693 /* HomeViewController.xib */; };
+		9993882727F0D190009B596B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993882627F0D190009B596B /* TabBarViewController.swift */; };
 		A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC72B027EA260B00D9D16C /* logInViewController.swift */; };
 		A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DC72B227EA260B00D9D16C /* logInView.xib */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
@@ -34,6 +39,11 @@
 		87CBCB1D27E974A900C13180 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87CBCB1F27E974A900C13180 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		994F9B9427F2166E00C2E2FF /* SecondScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenViewController.swift; sourceTree = "<group>"; };
+		994F9B9527F2166E00C2E2FF /* SecondScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondScreenViewController.xib; sourceTree = "<group>"; };
+		995E4C5E27F1F7D100632693 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		995E4C5F27F1F7D100632693 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9993882627F0D190009B596B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A1DC72B027EA260B00D9D16C /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		A1DC72B227EA260B00D9D16C /* logInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logInView.xib; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +86,9 @@
 		87CBCB1A27E974A900C13180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				994F9B9127F214C400C2E2FF /* SecondTab */,
+				9993882827F0D1C4009B596B /* TabBar */,
+				9993881B27F0D086009B596B /* Home */,
 				A1DC72AE27EA260B00D9D16C /* LogIn */,
 				87CBCB1B27E974A900C13180 /* SignUp */,
 			);
@@ -115,6 +128,72 @@
 				87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		994F9B9127F214C400C2E2FF /* SecondTab */ = {
+			isa = PBXGroup;
+			children = (
+				994F9B9327F215D200C2E2FF /* ViewController */,
+				994F9B9227F215C500C2E2FF /* View */,
+			);
+			path = SecondTab;
+			sourceTree = "<group>";
+		};
+		994F9B9227F215C500C2E2FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				994F9B9527F2166E00C2E2FF /* SecondScreenViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		994F9B9327F215D200C2E2FF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				994F9B9427F2166E00C2E2FF /* SecondScreenViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9993881B27F0D086009B596B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9993881E27F0D0B7009B596B /* Controller */,
+				9993881C27F0D09B009B596B /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9993881C27F0D09B009B596B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				995E4C5F27F1F7D100632693 /* HomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9993881E27F0D0B7009B596B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				995E4C5E27F1F7D100632693 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9993882827F0D1C4009B596B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9993882927F0D1CC009B596B /* ViewController */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		9993882927F0D1CC009B596B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9993882627F0D190009B596B /* TabBarViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		A1DC72AE27EA260B00D9D16C /* LogIn */ = {
@@ -306,7 +385,9 @@
 			files = (
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
+				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
+				994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,13 +446,16 @@
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
 				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
 				FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */,
+				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
 				A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */,
 				A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				FB46181527EB528E00DBE262 /* NewUser.swift in Sources */,
+				994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
+				9993882727F0D190009B596B /* TabBarViewController.swift in Sources */,
 				A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
