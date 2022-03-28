@@ -2,15 +2,13 @@
 //  HomeViewController.swift
 //  SomosMasApp
 //
-//  Created by Maximiliano Ituarte on 25/03/2022.
+//  Created by Maximiliano Ituarte on 28/03/2022.
 //
 
 import UIKit
 
-class HomeViewController: ViewController {
+class HomeViewController: UIViewController {
 
-    @IBOutlet var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
