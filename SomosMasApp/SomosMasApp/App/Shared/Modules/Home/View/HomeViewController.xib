@@ -28,8 +28,8 @@
             <color key="backgroundColor" red="0.60392156860000001" green="0.78823529410000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="kWz-7w-Umy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2gk-Ox-UTb"/>
-                <constraint firstItem="kWz-7w-Umy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Cn5-8F-bAm"/>
-                <constraint firstItem="kWz-7w-Umy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vxN-Rn-qcD"/>
+                <constraint firstItem="kWz-7w-Umy" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="Cn5-8F-bAm"/>
+                <constraint firstItem="kWz-7w-Umy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vxN-Rn-qcD"/>
                 <constraint firstItem="kWz-7w-Umy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x9m-ag-BjR"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
