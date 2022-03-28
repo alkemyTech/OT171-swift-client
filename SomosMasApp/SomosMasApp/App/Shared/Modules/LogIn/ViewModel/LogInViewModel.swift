@@ -10,6 +10,8 @@ import Alamofire
 
 class LogInViewModel {
     
+    var newUserSession = {(_ userSession: UserSession) -> Void in }
+    
     func validateAccess(email: String?, password: String?, completionHandler: @escaping (Bool, String?) -> Void) {
         
         let errorMessage = "Please, type something."
@@ -54,4 +56,45 @@ class LogInViewModel {
         return (result,resultMessage)
     }
     
+    // [OT171-25] Save Token with UserDefaults:
+    func sessionIsSaved(user: Credentials) {
+        LoginService().login(user: user) { token in
+            // Token Saved
+            let session = UserSession.buildWithToken(token)
+            self.newUserSession(session)
+            // Navigation to Home View here
+        } errorHandler: { errorMessage in
+            // Modal for Error could be here.
+        }
+    }
+}
+
+struct UserSession {
+    
+    static var tokenIsSaved: UserSession? {
+        let userDefaults = UserDefaults.standard
+        guard let token = userDefaults.object(forKey: "token") as? String else {
+            // In case of have no token saved:
+            return nil
+        }
+        return UserSession(token: token)
+    }
+    
+    var token: String {
+        let userDefaults = UserDefaults.standard
+        let token = userDefaults.object(forKey: "token") as? String
+        return token ?? ""
+    }
+
+    init(token: String) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(token, forKey: "token")
+    }
+}
+
+extension UserSession {
+    static func buildWithToken(_ token: String) -> UserSession {
+        let session = UserSession(token: token)
+        return session
+    }
 }

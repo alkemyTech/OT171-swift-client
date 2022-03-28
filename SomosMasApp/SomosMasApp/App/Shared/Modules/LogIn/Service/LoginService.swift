@@ -10,20 +10,18 @@ import Alamofire
 
 struct LoginService {
 
-    static let shared = LoginService()
-    let baseURL = "https://ongapi.alkemy.org/api/login"
+    let webserviceURL = Bundle.main.object(forInfoDictionaryKey: "WEBSERVICE_URL") as! String
     let token = ""
 
     func login(user: Credentials, completionHandler: @escaping ResultLoginHandler, errorHandler: @escaping ErrorHandler) {
 
         let Encoder = JSONParameterEncoder.default
-        AF.request(baseURL, method: .post, parameters: user, encoder: Encoder).responseDecodable(of: LoginUserResponse.self, decoder: JSONDecoder()){ response in
+        AF.request("\(webserviceURL)api/login", method: .post, parameters: user, encoder: Encoder).responseDecodable(of: LoginUserResponse.self, decoder: JSONDecoder()){ response in
 
             switch response.result {
             case .success(let data):
                 guard let token = data.data.token else {
                     errorHandler(data.message)
-                    print(token)
                     return
                 }
                 completionHandler(token)
