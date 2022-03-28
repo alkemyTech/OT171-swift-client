@@ -128,7 +128,6 @@
 		9993881B27F0D086009B596B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9993881F27F0D0C3009B596B /* ViewModel */,
 				9993881E27F0D0B7009B596B /* Controller */,
 				9993881C27F0D09B009B596B /* View */,
 			);
@@ -149,13 +148,6 @@
 				995E4C5E27F1F7D100632693 /* HomeViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		9993881F27F0D0C3009B596B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9993882827F0D1C4009B596B /* TabBar */ = {
