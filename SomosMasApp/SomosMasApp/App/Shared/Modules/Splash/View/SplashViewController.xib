@@ -26,15 +26,20 @@
                         <constraint firstAttribute="width" constant="250" id="qMg-nW-oh2"/>
                     </constraints>
                 </imageView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="K9G-b3-c3P">
-                    <rect key="frame" x="197" y="663" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="K9G-b3-c3P">
+                    <rect key="frame" x="187" y="638" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="HgK-zl-pJv"/>
+                        <constraint firstAttribute="height" constant="40" id="tno-bF-EXj"/>
+                    </constraints>
                 </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="K9G-b3-c3P" firstAttribute="top" secondItem="lgp-T7-ba2" secondAttribute="bottom" constant="50" id="3q8-4a-JZt"/>
                 <constraint firstItem="lgp-T7-ba2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Xo-pW-uGJ"/>
+                <constraint firstItem="K9G-b3-c3P" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Fjh-MP-zIg"/>
                 <constraint firstItem="lgp-T7-ba2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vNr-63-DL6"/>
             </constraints>
             <point key="canvasLocation" x="249" y="84"/>
