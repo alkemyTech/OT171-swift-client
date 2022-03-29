@@ -56,45 +56,17 @@ class LogInViewModel {
         return (result,resultMessage)
     }
     
-    // [OT171-25] Save Token with UserDefaults:
-    func sessionIsSaved(user: Credentials) {
+    // [OT171-25] Save Token:
+    func startSession(user: Credentials) {
         LoginService().login(user: user) { token in
             // Token Saved
-            let session = UserSession.buildWithToken(token)
+            let session = UserSession(token: token)
             self.newUserSession(session)
+            print("Token saved: \(token)")
             // Navigation to Home View here
         } errorHandler: { errorMessage in
             // Modal for Error could be here.
+            print("failed to save token")
         }
-    }
-}
-
-struct UserSession {
-    
-    static var tokenIsSaved: UserSession? {
-        let userDefaults = UserDefaults.standard
-        guard let token = userDefaults.object(forKey: "token") as? String else {
-            // In case of have no token saved:
-            return nil
-        }
-        return UserSession(token: token)
-    }
-    
-    var token: String {
-        let userDefaults = UserDefaults.standard
-        let token = userDefaults.object(forKey: "token") as? String
-        return token ?? ""
-    }
-
-    init(token: String) {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(token, forKey: "token")
-    }
-}
-
-extension UserSession {
-    static func buildWithToken(_ token: String) -> UserSession {
-        let session = UserSession(token: token)
-        return session
     }
 }

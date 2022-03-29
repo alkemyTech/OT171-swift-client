@@ -46,7 +46,7 @@ class logInViewController: UIViewController {
     
     func userValidation() {
         let user = Credentials(email: emailTextField?.text, password: passwordTextField?.text)
-        viewModel.sessionIsSaved(user: user)
+        viewModel.startSession(user: user)
         // text validation
     }
     
