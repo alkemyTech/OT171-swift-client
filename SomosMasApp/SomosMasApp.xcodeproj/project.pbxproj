@@ -192,6 +192,7 @@
 		A8760C2027F299F900E1AD4F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A8760C2227F29B7B00E1AD4F /* SplashViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +200,7 @@
 		A8760C2127F29A0000E1AD4F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A8760C2427F29B8200E1AD4F /* SplashViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,8 +233,6 @@
 		FB0F37B627E28DBB004D3DB5 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				A8760C2427F29B8200E1AD4F /* SplashViewController.swift */,
-				A8760C2227F29B7B00E1AD4F /* SplashViewController.xib */,
 				87CBCB0B27E9741F00C13180 /* Extensions */,
 				FB0F37B727E28DCF004D3DB5 /* Shared */,
 			);
