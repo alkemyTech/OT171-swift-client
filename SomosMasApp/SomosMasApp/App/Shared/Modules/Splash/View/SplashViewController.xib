@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="SomosMasApp" customModuleProvider="target">
+            <connections>
+                <outlet property="loader" destination="ZAv-XQ-lxe" id="rTc-qj-PJy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO-SOMOS MAS" translatesAutoresizingMaskIntoConstraints="NO" id="eED-bO-5Bd">
+                    <rect key="frame" x="82" y="308" width="250" height="280"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="280" id="fqH-1S-7nJ"/>
+                        <constraint firstAttribute="width" constant="250" id="rBA-MZ-Ug2"/>
+                    </constraints>
+                </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZAv-XQ-lxe">
+                    <rect key="frame" x="187" y="638" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="c4M-Nj-yht"/>
+                        <constraint firstAttribute="height" constant="40" id="ot9-uC-NQF"/>
+                    </constraints>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ZAv-XQ-lxe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nHI-aH-Vya"/>
+                <constraint firstItem="eED-bO-5Bd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ojG-NI-jcE"/>
+                <constraint firstItem="eED-bO-5Bd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xux-nu-E1z"/>
+                <constraint firstItem="ZAv-XQ-lxe" firstAttribute="top" secondItem="eED-bO-5Bd" secondAttribute="bottom" constant="50" id="zvy-V7-0Le"/>
+            </constraints>
+            <point key="canvasLocation" x="762" y="246"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LOGO-SOMOS MAS" width="66.5" height="66.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
