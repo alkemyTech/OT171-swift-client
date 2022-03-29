@@ -19,6 +19,8 @@
 		A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECE27E2130600B6258A /* ViewController.swift */; };
 		A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED327E2130B00B6258A /* Assets.xcassets */; };
 		A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED527E2130B00B6258A /* LaunchScreen.storyboard */; };
+		A8760C2327F29B7B00E1AD4F /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8760C2227F29B7B00E1AD4F /* SplashViewController.xib */; };
+		A8760C2527F29B8200E1AD4F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8760C2427F29B8200E1AD4F /* SplashViewController.swift */; };
 		A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C466F327EAD3AF00A2DDBE /* LogInViewModel.swift */; };
 		DDF5BD5ADB8EBD72D0E74F23 /* Pods_SomosMasApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */; };
 		FB46181527EB528E00DBE262 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181427EB528E00DBE262 /* NewUser.swift */; };
@@ -43,6 +45,8 @@
 		A1FB4ED327E2130B00B6258A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1FB4ED627E2130B00B6258A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1FB4ED827E2130B00B6258A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8760C2227F29B7B00E1AD4F /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		A8760C2427F29B8200E1AD4F /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A8C466F327EAD3AF00A2DDBE /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		B9E3374CE651B6E05431D41C /* Pods-SomosMasApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomosMasApp.debug.xcconfig"; path = "Target Support Files/Pods-SomosMasApp/Pods-SomosMasApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B9F4BCA7CE019643862D60A3 /* Pods-SomosMasApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomosMasApp.release.xcconfig"; path = "Target Support Files/Pods-SomosMasApp/Pods-SomosMasApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		87CBCB1A27E974A900C13180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A8760C1F27F299EF00E1AD4F /* Splash */,
 				A1DC72AE27EA260B00D9D16C /* LogIn */,
 				87CBCB1B27E974A900C13180 /* SignUp */,
 			);
@@ -175,6 +180,29 @@
 			path = SomosMasApp;
 			sourceTree = "<group>";
 		};
+		A8760C1F27F299EF00E1AD4F /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A8760C2127F29A0000E1AD4F /* Controller */,
+				A8760C2027F299F900E1AD4F /* View */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		A8760C2027F299F900E1AD4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8760C2127F29A0000E1AD4F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A8C466F227EAD39F00A2DDBE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +231,8 @@
 		FB0F37B627E28DBB004D3DB5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A8760C2427F29B8200E1AD4F /* SplashViewController.swift */,
+				A8760C2227F29B7B00E1AD4F /* SplashViewController.xib */,
 				87CBCB0B27E9741F00C13180 /* Extensions */,
 				FB0F37B727E28DCF004D3DB5 /* Shared */,
 			);
@@ -307,6 +337,7 @@
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
+				A8760C2327F29B7B00E1AD4F /* SplashViewController.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +396,7 @@
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
 				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
 				FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */,
+				A8760C2527F29B8200E1AD4F /* SplashViewController.swift in Sources */,
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
 				A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */,
