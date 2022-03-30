@@ -28,17 +28,19 @@ struct LoginService {
                             let response = try decoder.decode(LoginUserResponse.self, from: data)
                             completionHandler(response.data.token ?? "")
                         } else {
-                            errorHandler("unespected error")
+                            errorHandler(genericError)
                         }
                     } catch {
-                        errorHandler("unespected error")
+                        errorHandler(genericError)
                     }
                 case .failure(let error):
-                errorHandler(error.errorDescription ?? "unespected error")
+                errorHandler(error.errorDescription ?? genericError)
             }
         })
     }
 }
+
+let genericError = "Unexpected error"
 
 typealias ResultLoginHandler = (_ token : String) -> Void
 typealias ErrorHandler = (_ errorMessage: String) -> Void
