@@ -24,6 +24,8 @@
 		A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECE27E2130600B6258A /* ViewController.swift */; };
 		A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED327E2130B00B6258A /* Assets.xcassets */; };
 		A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED527E2130B00B6258A /* LaunchScreen.storyboard */; };
+		A88F1AFE27F396860062608D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F1AFC27F396860062608D /* SplashViewController.swift */; };
+		A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88F1AFD27F396860062608D /* SplashViewController.xib */; };
 		A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C466F327EAD3AF00A2DDBE /* LogInViewModel.swift */; };
 		DDF5BD5ADB8EBD72D0E74F23 /* Pods_SomosMasApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */; };
 		FB46181527EB528E00DBE262 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181427EB528E00DBE262 /* NewUser.swift */; };
@@ -53,6 +55,8 @@
 		A1FB4ED327E2130B00B6258A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1FB4ED627E2130B00B6258A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1FB4ED827E2130B00B6258A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A88F1AFC27F396860062608D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A88F1AFD27F396860062608D /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A8C466F327EAD3AF00A2DDBE /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		B9E3374CE651B6E05431D41C /* Pods-SomosMasApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomosMasApp.debug.xcconfig"; path = "Target Support Files/Pods-SomosMasApp/Pods-SomosMasApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B9F4BCA7CE019643862D60A3 /* Pods-SomosMasApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SomosMasApp.release.xcconfig"; path = "Target Support Files/Pods-SomosMasApp/Pods-SomosMasApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 		87CBCB1A27E974A900C13180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A88F1AF927F396560062608D /* Splash */,
 				994F9B9127F214C400C2E2FF /* SecondTab */,
 				9993882827F0D1C4009B596B /* TabBar */,
 				9993881B27F0D086009B596B /* Home */,
@@ -254,6 +259,31 @@
 			path = SomosMasApp;
 			sourceTree = "<group>";
 		};
+		A88F1AF927F396560062608D /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A88F1AFB27F3966A0062608D /* Controller */,
+				A88F1AFA27F396640062608D /* View */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		A88F1AFA27F396640062608D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A88F1AFD27F396860062608D /* SplashViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A88F1AFB27F3966A0062608D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A88F1AFC27F396860062608D /* SplashViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A8C466F227EAD39F00A2DDBE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +416,7 @@
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
 				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
+				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
@@ -444,6 +475,7 @@
 				FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */,
 				A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
+				A88F1AFE27F396860062608D /* SplashViewController.swift in Sources */,
 				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
 				FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */,
 				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
