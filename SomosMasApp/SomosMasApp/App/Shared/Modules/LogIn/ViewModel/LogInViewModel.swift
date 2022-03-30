@@ -10,6 +10,12 @@ import Alamofire
 
 class LogInViewModel {
     
+    private let delegate: LogInDelegate
+    
+    init(delegate: LogInDelegate){
+        self.delegate = delegate
+    }
+    
     var newUserSession = {(_ userSession: UserSession) -> Void in }
     
     func validateAccess(email: String?, password: String?, completionHandler: @escaping (Bool, String?) -> Void) {

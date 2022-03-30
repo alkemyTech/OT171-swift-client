@@ -8,6 +8,10 @@
 import UIKit
 import Alamofire
 
+protocol LogInDelegate {
+    func showMessage(message:String)
+}
+
 class logInViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -73,4 +77,13 @@ extension logInViewController: UITextFieldDelegate {
         warningLabel.isHidden = true
     }
 
+}
+
+// LogInDelegate extension
+extension logInViewController: LogInDelegate {
+    func showMessage(message: String) {
+        let alert = UIAlertController(title: "An error has been ocurred", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.self.present(alert, animated: true)
+    }
 }
