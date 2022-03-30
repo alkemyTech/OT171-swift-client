@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="kWz-7w-Umy" id="ZZ3-wC-zF6"/>
+                <outlet property="collectionView" destination="pQG-RF-AG3" id="ct0-EH-EPV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +19,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kWz-7w-Umy">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pQG-RF-AG3">
+                    <rect key="frame" x="0.0" y="44" width="414" height="320"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="320" id="NTH-fK-3b0"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Wmt-h4-iLJ">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.60392156860000001" green="0.78823529410000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="kWz-7w-Umy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2gk-Ox-UTb"/>
-                <constraint firstItem="kWz-7w-Umy" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="Cn5-8F-bAm"/>
-                <constraint firstItem="kWz-7w-Umy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vxN-Rn-qcD"/>
-                <constraint firstItem="kWz-7w-Umy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x9m-ag-BjR"/>
+                <constraint firstItem="pQG-RF-AG3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="PNn-qH-tSI"/>
+                <constraint firstItem="pQG-RF-AG3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ds7-NH-2HU"/>
+                <constraint firstItem="pQG-RF-AG3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="iR0-Sa-OUg"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
         </view>

@@ -36,6 +36,9 @@
 		FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */; };
 		FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181927EB53EF00DBE262 /* RegisterUserService.swift */; };
 		FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */; };
+		FBC030C527F4829D006BDE08 /* SliderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC030C427F4829D006BDE08 /* SliderData.swift */; };
+		FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */; };
+		FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterResponse.swift; sourceTree = "<group>"; };
 		FB46181927EB53EF00DBE262 /* RegisterUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserService.swift; sourceTree = "<group>"; };
 		FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		FBC030C427F4829D006BDE08 /* SliderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderData.swift; sourceTree = "<group>"; };
+		FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 		9993881C27F0D09B009B596B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */,
 				995E4C5F27F1F7D100632693 /* HomeViewController.xib */,
 			);
 			path = View;
@@ -196,6 +203,7 @@
 		9993881E27F0D0B7009B596B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */,
 				995E4C5E27F1F7D100632693 /* HomeViewController.swift */,
 			);
 			path = Controller;
@@ -356,6 +364,7 @@
 		FB46181327EB522500DBE262 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FBC030C427F4829D006BDE08 /* SliderData.swift */,
 				FB46181427EB528E00DBE262 /* NewUser.swift */,
 				FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */,
 				8727FAF627EE9A9E004FAE80 /* LoginModel.swift */,
@@ -436,6 +445,7 @@
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
 				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
+				FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */,
@@ -494,12 +504,14 @@
 			files = (
 				8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */,
 				8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */,
+				FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */,
 				FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */,
 				A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
 				A88F1AFE27F396860062608D /* SplashViewController.swift in Sources */,
 				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
 				FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */,
+				FBC030C527F4829D006BDE08 /* SliderData.swift in Sources */,
 				87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */,
 				87CDAC8827F3BB87006738D0 /* UserSession.swift in Sources */,
 				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
