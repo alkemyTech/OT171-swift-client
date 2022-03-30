@@ -48,11 +48,18 @@ class logInViewController: UIViewController {
         let user = Credentials(email: emailTextField?.text, password: passwordTextField?.text)
         viewModel.startSession(user: user)
         // text validation
+        presentTabBar()
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         let signUpController = SignUpViewController()
         self.navigationController?.pushViewController(signUpController, animated: true)
+    }
+    
+    func presentTabBar(){
+        let tabBarController = TabBarViewController()
+               tabBarController.modalPresentationStyle = .overFullScreen
+               self.present(tabBarController, animated: true)
     }
     
 }
