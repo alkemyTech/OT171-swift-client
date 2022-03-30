@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondScreenViewController" customModule="SomosMasApp" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SVb-Pd-eRq">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXAMPLE OF SECOND TAB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpg-Bg-qlj">
+                            <rect key="frame" x="102" y="398.5" width="210" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Dpg-Bg-qlj" firstAttribute="centerY" secondItem="SVb-Pd-eRq" secondAttribute="centerY" id="nvL-Uj-gZm"/>
+                        <constraint firstItem="Dpg-Bg-qlj" firstAttribute="centerX" secondItem="SVb-Pd-eRq" secondAttribute="centerX" id="q6n-g7-ZOS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.60392156860000001" green="0.78823529410000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="SVb-Pd-eRq" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="KQ0-Ou-pe4"/>
+                <constraint firstItem="SVb-Pd-eRq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ltn-Mg-Uaq"/>
+                <constraint firstItem="SVb-Pd-eRq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="apv-el-g53"/>
+                <constraint firstItem="SVb-Pd-eRq" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="zy3-e7-9Ku"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -6,9 +6,11 @@
 //
 
 import Foundation
-
+import Alamofire
 
 class LogInViewModel {
+    
+    var newUserSession = {(_ userSession: UserSession) -> Void in }
     
     func validateAccess(email: String?, password: String?, completionHandler: @escaping (Bool, String?) -> Void) {
         
@@ -54,4 +56,15 @@ class LogInViewModel {
         return (result,resultMessage)
     }
     
+    // [OT171-25] Save Token:
+    func startSession(user: Credentials) {
+        LoginService().login(user: user) { token in
+            // Token Saved
+            let session = UserSession(token: token)
+            self.newUserSession(session)
+            // Navigation to Home View here
+        } errorHandler: { errorMessage in
+            // Modal for Error could be here.
+        }
+    }
 }

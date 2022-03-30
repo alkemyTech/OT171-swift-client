@@ -20,6 +20,7 @@ class RegisterUserService {
             switch response {
                 case .success(let data):
                     do {
+                        
                         if let data = data {
                             let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
