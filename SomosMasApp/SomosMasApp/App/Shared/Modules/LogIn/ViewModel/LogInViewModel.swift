@@ -81,11 +81,11 @@ class LogInViewModel {
             self.newUserSession(session)
             // Navigation to Home View here
             self.delegate.presentTabBar()
-        } errorHandler: { errorMessage in
-            
-            //Case token authentication error
-            if (user.email!.isValidEmail) && (user.password!.isValidPassword && user.password!.count >= 1){
-            self.delegate.showMessage(message: "Authentication error. Wrong email or password")
+        } errorHandler: { errorMessage, handled in
+            if handled {
+                self.delegate.showHandledError(message: errorMessage)
+            } else {
+                self.delegate.showMessage(message: errorMessage)
             }
         }
     }

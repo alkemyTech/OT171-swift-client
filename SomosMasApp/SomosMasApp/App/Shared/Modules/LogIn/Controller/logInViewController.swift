@@ -10,6 +10,7 @@ import Alamofire
 
 protocol LogInDelegate {
     func showMessage(message:String)
+    func showHandledError(message:String)
     func presentTabBar()
 }
 
@@ -24,8 +25,12 @@ class logInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.viewModel = LogInViewModel(delegate: self)
+  
+        // Associates a target object and action method with the control
+        emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        
+        viewModel = LogInViewModel(delegate: self)
         emailTextField.delegate = self
         passwordTextField.delegate = self
         self.navigationItem.setHidesBackButton(true, animated: true)
@@ -37,7 +42,11 @@ class logInViewController: UIViewController {
         warningLabel.isHidden = true
     }
     
-
+    // function to hide warningLabel when the user change the text 
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        warningLabel.isHidden = true
+    }
+    
     @IBAction func logInButtonPressed(_ sender: UIButton) {
         viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
             if !confirmAccess {
@@ -45,11 +54,9 @@ class logInViewController: UIViewController {
                 self.warningLabel.isHidden = false
             } else {
                 self.warningLabel.isHidden = true
+                self.userValidation()
             }
         }
-        // [OT171-25] Function for API Validation:
-        
-        userValidation()
     }
     
     func userValidation() {
@@ -77,6 +84,12 @@ extension logInViewController: UITextFieldDelegate {
 
 // LogInDelegate extension
 extension logInViewController: LogInDelegate {
+    
+    func showHandledError(message:String) {
+        warningLabel.text = message
+        warningLabel.isHidden = false
+    }
+    
     func showMessage(message:String) {
         let alert = UIAlertController(title: "An error has been ocurred", message: message, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

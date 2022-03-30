@@ -19,7 +19,7 @@ struct ApiManager {
     }
     
     func post(url: String, params: [String:Any] ,completion: @escaping (Result<Data?, AFError>) -> Void) {
-        AF.request(url, method: .post, parameters: params).response { response in
+        AF.request(url, method: .post, parameters: params).validate().response { response in
             completion(response.result)
         }
     }
