@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class logInViewController: UIViewController {
 
@@ -31,15 +32,22 @@ class logInViewController: UIViewController {
     
 
     @IBAction func logInButtonPressed(_ sender: UIButton) {
-        
-        /*viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
+        viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
             if !confirmAccess {
                 self.warningLabel.text = errorMessage!
                 self.warningLabel.isHidden = false
             } else {
                 self.warningLabel.isHidden = true
             }
-        }*/
+        }
+        // [OT171-25] Function for API Validation:
+        userValidation()
+    }
+    
+    func userValidation() {
+        let user = Credentials(email: emailTextField?.text, password: passwordTextField?.text)
+        viewModel.startSession(user: user)
+        // text validation
         presentTabBar()
     }
     

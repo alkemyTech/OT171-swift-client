@@ -23,5 +23,5 @@ struct ApiManager {
             completion(response.result)
         }
     }
-    
+        
 }
