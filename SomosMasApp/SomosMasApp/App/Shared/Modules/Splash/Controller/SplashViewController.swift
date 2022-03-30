@@ -24,8 +24,7 @@ class SplashViewController: UIViewController {
             let alert = UIAlertController(title: "Timer has finished", message: "", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                 let logInViewController = logInViewController()
-                logInViewController.modalPresentationStyle = .fullScreen
-                self.present(logInViewController, animated: true, completion: nil)
+                self.navigationController?.pushViewController(logInViewController, animated: true)
             }))
             
             self.present(alert, animated: true)

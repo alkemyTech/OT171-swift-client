@@ -10,6 +10,7 @@ import Alamofire
 
 protocol LogInDelegate {
     func showMessage(message:String)
+    func presentTabBar()
 }
 
 class logInViewController: UIViewController {
@@ -18,14 +19,16 @@ class logInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var warningLabel: UILabel!
     
-    private let viewModel = LogInViewModel()
+    private var viewModel: LogInViewModel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.viewModel = LogInViewModel(delegate: self)
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,25 +48,18 @@ class logInViewController: UIViewController {
             }
         }
         // [OT171-25] Function for API Validation:
+        
         userValidation()
     }
     
     func userValidation() {
         let user = Credentials(email: emailTextField?.text, password: passwordTextField?.text)
         viewModel.startSession(user: user)
-        // text validation
-        presentTabBar()
     }
     
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         let signUpController = SignUpViewController()
         self.navigationController?.pushViewController(signUpController, animated: true)
-    }
-    
-    func presentTabBar(){
-        let tabBarController = TabBarViewController()
-               tabBarController.modalPresentationStyle = .overFullScreen
-               self.present(tabBarController, animated: true)
     }
     
 }
@@ -81,9 +77,15 @@ extension logInViewController: UITextFieldDelegate {
 
 // LogInDelegate extension
 extension logInViewController: LogInDelegate {
-    func showMessage(message: String) {
+    func showMessage(message:String) {
         let alert = UIAlertController(title: "An error has been ocurred", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        alert.self.present(alert, animated: true)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+    }
+    
+    func presentTabBar(){
+        let tabBarController = TabBarViewController()
+        tabBarController.modalPresentationStyle = .overFullScreen
+        self.present(tabBarController, animated: true, completion: nil)
     }
 }
