@@ -62,11 +62,9 @@ class LogInViewModel {
             // Token Saved
             let session = UserSession(token: token)
             self.newUserSession(session)
-            print("Token saved: \(token)")
             // Navigation to Home View here
         } errorHandler: { errorMessage in
             // Modal for Error could be here.
-            print("failed to save token")
         }
     }
 }
