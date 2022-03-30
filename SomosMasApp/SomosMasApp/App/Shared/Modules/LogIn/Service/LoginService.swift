@@ -13,22 +13,30 @@ struct LoginService {
     let webserviceURL = Bundle.main.object(forInfoDictionaryKey: "WEBSERVICE_URL") as! String
     let token = ""
 
-    func login(user: Credentials, completionHandler: @escaping ResultLoginHandler, errorHandler: @escaping ErrorHandler) {
+    func login(user: Credentials, completionHandler: @escaping (ResultLoginHandler), errorHandler: @escaping (ErrorHandler)) {
 
-        let Encoder = JSONParameterEncoder.default
-        AF.request("\(webserviceURL)api/login", method: .post, parameters: user, encoder: Encoder).responseDecodable(of: LoginUserResponse.self, decoder: JSONDecoder()){ response in
-
-            switch response.result {
-            case .success(let data):
-                guard let token = data.data.token else {
-                    errorHandler(data.message)
-                    return
-                }
-                completionHandler(token)
-            case .failure(let error):
-                errorHandler(error.localizedDescription)
+        guard let params = user.dictionary else {return}
+        
+        ApiManager.shared.post(url: "\(webserviceURL)api/login", params: params, completion: { response in
+            
+            switch response {
+                case .success(let data):
+                    do {
+                        if let data = data {
+                            let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .convertFromSnakeCase
+                            let response = try decoder.decode(LoginUserResponse.self, from: data)
+                            completionHandler(response.data.token ?? "")
+                        } else {
+                            errorHandler("unespected error")
+                        }
+                    } catch {
+                        errorHandler("unespected error")
+                    }
+                case .failure(let error):
+                errorHandler(error.errorDescription ?? "unespected error")
             }
-        }
+        })
     }
 }
 
