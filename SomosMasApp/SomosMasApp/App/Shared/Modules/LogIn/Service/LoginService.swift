@@ -18,7 +18,6 @@ struct LoginService {
         guard let params = user.dictionary else {return}
         
         ApiManager.shared.post(url: "\(webserviceURL)api/login", params: params, completion: { response in
-            
             switch response {
                 case .success(let data):
                     do {
@@ -26,15 +25,19 @@ struct LoginService {
                             let decoder = JSONDecoder()
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             let response = try decoder.decode(LoginUserResponse.self, from: data)
-                            completionHandler(response.data.token ?? "")
+                            if response.success {
+                                completionHandler(response.data?.token ?? "")
+                            } else {
+                                errorHandler(response.message, true)
+                            }
                         } else {
-                            errorHandler(genericError)
+                            errorHandler(genericError, false)
                         }
                     } catch {
-                        errorHandler(genericError)
+                        errorHandler(genericError, false)
                     }
                 case .failure(let error):
-                errorHandler(error.errorDescription ?? genericError)
+                errorHandler(error.errorDescription ?? genericError, false)
             }
         })
     }
@@ -43,4 +46,4 @@ struct LoginService {
 let genericError = "Unexpected error"
 
 typealias ResultLoginHandler = (_ token : String) -> Void
-typealias ErrorHandler = (_ errorMessage: String) -> Void
+typealias ErrorHandler = (_ errorMessage: String,_ handled: Bool) -> Void

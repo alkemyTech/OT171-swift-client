@@ -11,19 +11,36 @@ import Alamofire
 class LogInViewModel {
     
     var newUserSession = {(_ userSession: UserSession) -> Void in }
+    private let delegate: LogInDelegate
+    
+    init(delegate: LogInDelegate){
+        self.delegate = delegate
+    }
     
     func validateAccess(email: String?, password: String?, completionHandler: @escaping (Bool, String?) -> Void) {
         
         let errorMessage = "Please, type something."
         let emptyFieldMessage = "Please, fill both fields."
+        let emptyEmailMessage = "Please, type your email."
+        let emptyPasswordMessage = "Please, type your password."
         
         guard let safeEmail = email, let safePassword = password else {
             completionHandler(false, errorMessage)
             return
         }
         
-        if safeEmail == "" || safePassword == "" {
+        if safeEmail == "" && safePassword == "" {
             completionHandler(false, emptyFieldMessage)
+            return
+        }
+        
+        if safeEmail == "" {
+            completionHandler(false, emptyEmailMessage)
+            return
+        }
+        
+        if safePassword == "" {
+            completionHandler(false, emptyPasswordMessage)
             return
         }
         
@@ -63,8 +80,13 @@ class LogInViewModel {
             let session = UserSession(token: token)
             self.newUserSession(session)
             // Navigation to Home View here
-        } errorHandler: { errorMessage in
-            // Modal for Error could be here.
+            self.delegate.presentTabBar()
+        } errorHandler: { errorMessage, handled in
+            if handled {
+                self.delegate.showHandledError(message: errorMessage)
+            } else {
+                self.delegate.showMessage(message: errorMessage)
+            }
         }
     }
 }

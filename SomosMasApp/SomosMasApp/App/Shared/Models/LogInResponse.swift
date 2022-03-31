@@ -10,7 +10,7 @@ import Foundation
 // User Response
 struct LoginUserResponse: Codable {
     let success: Bool
-    let data: LoginDataResponse
+    let data: LoginDataResponse?
     let message: String
     
     enum CodingKeys: String, CodingKey {
