@@ -14,7 +14,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var myDescription: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         myTitle.font = UIFont.boldSystemFont(ofSize: 20)
     }
 
