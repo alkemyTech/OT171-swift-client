@@ -23,6 +23,8 @@
 		9993882727F0D190009B596B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993882627F0D190009B596B /* TabBarViewController.swift */; };
 		A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC72B027EA260B00D9D16C /* logInViewController.swift */; };
 		A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DC72B227EA260B00D9D16C /* logInView.xib */; };
+		A1F1236D27F72CA100657AF4 /* TestimoniosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1236B27F72CA000657AF4 /* TestimoniosCollectionViewCell.swift */; };
+		A1F1236E27F72CA100657AF4 /* TestimoniosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F1236C27F72CA000657AF4 /* TestimoniosCollectionViewCell.xib */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED327E2130B00B6258A /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		9993882627F0D190009B596B /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A1DC72B027EA260B00D9D16C /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		A1DC72B227EA260B00D9D16C /* logInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logInView.xib; sourceTree = "<group>"; };
+		A1F1236B27F72CA000657AF4 /* TestimoniosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimoniosCollectionViewCell.swift; sourceTree = "<group>"; };
+		A1F1236C27F72CA000657AF4 /* TestimoniosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestimoniosCollectionViewCell.xib; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */,
+				A1F1236C27F72CA000657AF4 /* TestimoniosCollectionViewCell.xib */,
 				995E4C5F27F1F7D100632693 /* HomeViewController.xib */,
 			);
 			path = View;
@@ -201,6 +206,7 @@
 			children = (
 				FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */,
 				995E4C5E27F1F7D100632693 /* HomeViewController.swift */,
+				A1F1236B27F72CA000657AF4 /* TestimoniosCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
 				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
 				FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */,
+				A1F1236E27F72CA100657AF4 /* TestimoniosCollectionViewCell.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */,
@@ -511,6 +518,7 @@
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
 				A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */,
+				A1F1236D27F72CA100657AF4 /* TestimoniosCollectionViewCell.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				FB46181527EB528E00DBE262 /* NewUser.swift in Sources */,
 				994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */,

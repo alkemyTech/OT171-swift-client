@@ -15,6 +15,11 @@ class HomeViewController: UIViewController {
         let image: UIImage?
     }
     
+    struct TestimoniosData {
+        let image: UIImage?
+        let epigrafe: String?
+    }
+    
     let sliderData = [ SliderData(title: "Marcelo Aguirre", description: "Presidente", image: UIImage(named:"Image_1")),
                        SliderData(title: "Lucas Ocampo", description: "RRHH", image: UIImage(named:"Image_2")),
                        SliderData(title: "Guillermo Costa", description: "Contador", image: UIImage(named:"Image_3")),
@@ -22,8 +27,19 @@ class HomeViewController: UIViewController {
                        SliderData(title: "Martina Diglido", description: "Marketing", image: UIImage(named:"Image_5"))
                      ]
     
+    let testimoniosData = [ TestimoniosData(image: UIImage(named:"Image_1"), epigrafe: "Epígrafe requerido para esta imagen"),
+                            TestimoniosData(image: UIImage(named:"Image_2"), epigrafe: "Epígrafe requerido para esta imagen"),
+                            TestimoniosData(image: UIImage(named:"Image_3"), epigrafe: "Epígrafe requerido para esta imagen"),
+                            TestimoniosData(image: UIImage(named:"Image_4"), epigrafe: "Epígrafe requerido para esta imagen"),
+                            TestimoniosData(image: UIImage(named:"Image_5"), epigrafe: "Epígrafe requerido para esta imagen"),
+                            TestimoniosData(image: UIImage(named:"Image_6"), epigrafe: "Epígrafe requerido para esta imagen")
+                          ]
+    
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var testimoniosCollectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +49,12 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
+        
         testimoniosCollectionView.isPagingEnabled = true
         testimoniosCollectionView.dataSource = self
         testimoniosCollectionView.delegate = self
         testimoniosCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        testimoniosCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
+        testimoniosCollectionView.register(UINib(nibName: "TestimoniosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Tcell")
         
     }
     
@@ -49,18 +66,30 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sliderData.count
+        if collectionView == self.collectionView {
+            return sliderData.count
+        }
+            return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
-        
-        cell?.myTitle.text = sliderData[indexPath.row].title
-        cell?.myImage.image = sliderData[indexPath.row].image
-        cell?.myDescription.text = sliderData[indexPath.row].description
+        if collectionView == self.collectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
+            
+            cell?.myTitle.text = sliderData[indexPath.row].title
+            cell?.myImage.image = sliderData[indexPath.row].image
+            cell?.myDescription.text = sliderData[indexPath.row].description
 
-        return cell ?? HomeCollectionViewCell()
+            return cell ?? HomeCollectionViewCell()
+        } else {
+            let cell = testimoniosCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimoniosCollectionViewCell
+            
+            cell?.testimonioImage.image = testimoniosData[indexPath.row].image
+            cell?.testimonioEpigrafe.text = testimoniosData[indexPath.row].epigrafe
+            
+            return cell ?? TestimoniosCollectionViewCell()
+        }
+
     }
 
 }
