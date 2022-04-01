@@ -23,7 +23,8 @@ class HomeViewController: UIViewController {
                      ]
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var testimoniosCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +33,11 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
+        testimoniosCollectionView.isPagingEnabled = true
+        testimoniosCollectionView.dataSource = self
+        testimoniosCollectionView.delegate = self
+        testimoniosCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        testimoniosCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
         
     }
     
