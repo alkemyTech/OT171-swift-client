@@ -25,7 +25,6 @@
 		A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DC72B227EA260B00D9D16C /* logInView.xib */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
-		A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECE27E2130600B6258A /* ViewController.swift */; };
 		A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED327E2130B00B6258A /* Assets.xcassets */; };
 		A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED527E2130B00B6258A /* LaunchScreen.storyboard */; };
 		A88F1AFE27F396860062608D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F1AFC27F396860062608D /* SplashViewController.swift */; };
@@ -36,6 +35,8 @@
 		FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */; };
 		FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181927EB53EF00DBE262 /* RegisterUserService.swift */; };
 		FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */; };
+		FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */; };
+		FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +60,6 @@
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A1FB4ECE27E2130600B6258A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1FB4ED327E2130B00B6258A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1FB4ED627E2130B00B6258A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1FB4ED827E2130B00B6258A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +72,8 @@
 		FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterResponse.swift; sourceTree = "<group>"; };
 		FB46181927EB53EF00DBE262 /* RegisterUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserService.swift; sourceTree = "<group>"; };
 		FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		9993881C27F0D09B009B596B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */,
 				995E4C5F27F1F7D100632693 /* HomeViewController.xib */,
 			);
 			path = View;
@@ -196,6 +199,7 @@
 		9993881E27F0D0B7009B596B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */,
 				995E4C5E27F1F7D100632693 /* HomeViewController.swift */,
 			);
 			path = Controller;
@@ -268,7 +272,6 @@
 				FB0F37B627E28DBB004D3DB5 /* App */,
 				A1FB4ECA27E2130600B6258A /* AppDelegate.swift */,
 				A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */,
-				A1FB4ECE27E2130600B6258A /* ViewController.swift */,
 				A1FB4ED327E2130B00B6258A /* Assets.xcassets */,
 				A1FB4ED527E2130B00B6258A /* LaunchScreen.storyboard */,
 				A1FB4ED827E2130B00B6258A /* Info.plist */,
@@ -436,6 +439,7 @@
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
 				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
+				FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */,
@@ -494,6 +498,7 @@
 			files = (
 				8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */,
 				8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */,
+				FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */,
 				FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */,
 				A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
@@ -505,7 +510,6 @@
 				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
-				A1FB4ECF27E2130600B6258A /* ViewController.swift in Sources */,
 				A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				FB46181527EB528E00DBE262 /* NewUser.swift in Sources */,
