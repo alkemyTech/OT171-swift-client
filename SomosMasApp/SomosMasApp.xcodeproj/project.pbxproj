@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF327EE999B004FAE80 /* LogInResponse.swift */; };
 		8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF627EE9A9E004FAE80 /* LoginModel.swift */; };
+		879FC97727F7BC1F002947B6 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879FC97527F7BC1F002947B6 /* NewsCollectionViewCell.swift */; };
+		879FC97827F7BC1F002947B6 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879FC97627F7BC1F002947B6 /* NewsCollectionViewCell.xib */; };
 		87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABD46727EF85A100BC4441 /* LoginService.swift */; };
 		87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0C27E9741F00C13180 /* Extensions.swift */; };
 		87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0D27E9741F00C13180 /* Observable.swift */; };
@@ -45,6 +47,8 @@
 		068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomosMasApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8727FAF327EE999B004FAE80 /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
 		8727FAF627EE9A9E004FAE80 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		879FC97527F7BC1F002947B6 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		879FC97627F7BC1F002947B6 /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
 		87ABD46727EF85A100BC4441 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		87CBCB0C27E9741F00C13180 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87CBCB0D27E9741F00C13180 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			children = (
 				FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */,
 				A1F1236C27F72CA000657AF4 /* TestimoniosCollectionViewCell.xib */,
+				879FC97627F7BC1F002947B6 /* NewsCollectionViewCell.xib */,
 				995E4C5F27F1F7D100632693 /* HomeViewController.xib */,
 			);
 			path = View;
@@ -207,6 +212,7 @@
 				FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */,
 				995E4C5E27F1F7D100632693 /* HomeViewController.swift */,
 				A1F1236B27F72CA000657AF4 /* TestimoniosCollectionViewCell.swift */,
+				879FC97527F7BC1F002947B6 /* NewsCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 				A1FB4ED727E2130B00B6258A /* LaunchScreen.storyboard in Resources */,
 				A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */,
 				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
+				879FC97827F7BC1F002947B6 /* NewsCollectionViewCell.xib in Resources */,
 				FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */,
 				A1F1236E27F72CA100657AF4 /* TestimoniosCollectionViewCell.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
@@ -521,6 +528,7 @@
 				A1F1236D27F72CA100657AF4 /* TestimoniosCollectionViewCell.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				FB46181527EB528E00DBE262 /* NewUser.swift in Sources */,
+				879FC97727F7BC1F002947B6 /* NewsCollectionViewCell.swift in Sources */,
 				994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
 				9993882727F0D190009B596B /* TabBarViewController.swift in Sources */,
