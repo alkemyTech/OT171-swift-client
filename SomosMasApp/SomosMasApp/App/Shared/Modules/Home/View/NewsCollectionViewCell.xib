@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,6 +37,16 @@
                                     <constraint firstAttribute="height" constant="205" id="Hof-EG-DL9"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-Sp-Uf0">
+                                <rect key="frame" x="70" y="107" width="117.5" height="47"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Ver mas" imagePadding="4" buttonSize="large">
+                                    <imageReference key="image" image="chevron.right.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newsButtonTapped:" destination="H7E-Nu-W9M" eventType="touchUpInside" id="G9x-xh-qeV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -44,7 +55,9 @@
                             <constraint firstItem="Yyl-7u-MgU" firstAttribute="leading" secondItem="IMz-pX-ri0" secondAttribute="leading" id="DRJ-1S-3HY"/>
                             <constraint firstItem="Yyl-7u-MgU" firstAttribute="top" secondItem="IMz-pX-ri0" secondAttribute="top" id="IJc-Sa-Dzf"/>
                             <constraint firstItem="ZgA-hJ-xu4" firstAttribute="leading" secondItem="IMz-pX-ri0" secondAttribute="leading" constant="20" id="Oht-dl-X8V"/>
+                            <constraint firstItem="OJh-Sp-Uf0" firstAttribute="centerX" secondItem="IMz-pX-ri0" secondAttribute="centerX" id="P3C-Zf-6hv"/>
                             <constraint firstAttribute="trailing" secondItem="ZgA-hJ-xu4" secondAttribute="trailing" constant="20" id="fTZ-hk-JKu"/>
+                            <constraint firstItem="OJh-Sp-Uf0" firstAttribute="centerY" secondItem="IMz-pX-ri0" secondAttribute="centerY" id="o9S-e4-r4f"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -52,19 +65,23 @@
             <viewLayoutGuide key="safeArea" id="rz3-5s-NVv"/>
             <constraints>
                 <constraint firstItem="IMz-pX-ri0" firstAttribute="top" secondItem="H7E-Nu-W9M" secondAttribute="top" id="AK2-S3-kQ6"/>
+                <constraint firstItem="IMz-pX-ri0" firstAttribute="centerY" secondItem="H7E-Nu-W9M" secondAttribute="centerY" id="Dnj-oS-Px2"/>
                 <constraint firstAttribute="bottom" secondItem="IMz-pX-ri0" secondAttribute="bottom" id="OR3-g9-8ro"/>
+                <constraint firstItem="IMz-pX-ri0" firstAttribute="centerX" secondItem="H7E-Nu-W9M" secondAttribute="centerX" id="dc3-bB-Jcf"/>
                 <constraint firstAttribute="trailing" secondItem="IMz-pX-ri0" secondAttribute="trailing" id="nVG-kN-9up"/>
                 <constraint firstItem="IMz-pX-ri0" firstAttribute="leading" secondItem="H7E-Nu-W9M" secondAttribute="leading" id="wC4-V5-ZIL"/>
             </constraints>
             <size key="customSize" width="258" height="261"/>
             <connections>
+                <outlet property="newsButton" destination="OJh-Sp-Uf0" id="x8G-Pc-NT2"/>
                 <outlet property="newsDescription" destination="ZgA-hJ-xu4" id="zbF-Vc-RTi"/>
                 <outlet property="newsImage" destination="Yyl-7u-MgU" id="nLP-5W-Fjo"/>
             </connections>
-            <point key="canvasLocation" x="286.95652173913044" y="140.95982142857142"/>
+            <point key="canvasLocation" x="286.23188405797106" y="140.95982142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="chevron.right.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

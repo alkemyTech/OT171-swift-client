@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     struct LastestNewsData {
         let image: UIImage?
         let epigraph: String?
+        let buttonHidden: Bool?
     }
     
     let sliderData = [ SliderData(title: "Marcelo Aguirre", description: "Presidente", image: UIImage(named:"Image_1")),
@@ -40,17 +41,18 @@ class HomeViewController: UIViewController {
                             TestimoniosData(image: UIImage(named:"Image_6"), epigrafe: "Epígrafe requerido para esta imagen")
                           ]
     
-    let lastestNewsData = [ LastestNewsData(image: UIImage(named:"Image_1"), epigraph: "Epígrafe 1"),
-                            LastestNewsData(image: UIImage(named:"Image_2"), epigraph: "Epígrafe 2"),
-                            LastestNewsData(image: UIImage(named:"Image_3"), epigraph: "Epígrafe 3"),
-                            LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe 4"),
-                            LastestNewsData(image: UIImage(systemName: "chevron.right.circle"), epigraph: nil)
+    let lastestNewsData = [ LastestNewsData(image: UIImage(named:"Image_1"), epigraph: "Epígrafe 1", buttonHidden: true),
+                            LastestNewsData(image: UIImage(named:"Image_2"), epigraph: "Epígrafe 2", buttonHidden: true),
+                            LastestNewsData(image: UIImage(named:"Image_3"), epigraph: "Epígrafe 3", buttonHidden: true),
+                            LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe 4", buttonHidden: true),
+                            LastestNewsData(image: nil, epigraph: nil, buttonHidden: false)
                           ]
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var testimoniosCollectionView: UICollectionView!
     @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,6 +117,7 @@ extension HomeViewController: UICollectionViewDataSource {
             
             cell3?.newsImage.image = lastestNewsData[indexPath.row].image
             cell3?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
+            cell3?.newsButton.isHidden = lastestNewsData[indexPath.row].buttonHidden ?? true
             return cell3 ?? NewsCollectionViewCell()
         }
         
