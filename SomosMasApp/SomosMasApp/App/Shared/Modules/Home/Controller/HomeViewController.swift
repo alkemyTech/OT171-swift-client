@@ -43,8 +43,8 @@ class HomeViewController: UIViewController {
     let lastestNewsData = [ LastestNewsData(image: UIImage(named:"Image_1"), epigraph: "Epígrafe 1"),
                             LastestNewsData(image: UIImage(named:"Image_2"), epigraph: "Epígrafe 2"),
                             LastestNewsData(image: UIImage(named:"Image_3"), epigraph: "Epígrafe 3"),
-                            LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe 3"),
-                            LastestNewsData(image: UIImage(named:"Image_5"), epigraph: "Epígrafe requerido para esta imagen")
+                            LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe 4"),
+                            LastestNewsData(image: UIImage(systemName: "chevron.right.circle"), epigraph: nil)
                           ]
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -85,16 +85,14 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
             return sliderData.count
-        }
+        } else if collectionView == self.testimoniosCollectionView {
+                return testimoniosData.count
+        } else if collectionView == self.lastestNewsCollectionView {
+            return lastestNewsData.count
+            }
             return 4
     }
     
-    func testimoniosCollectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int  {
-        if collectionView == self.testimoniosCollectionView {
-            return testimoniosData.count
-        }
-            return 4
-    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collectionView {
@@ -106,17 +104,18 @@ extension HomeViewController: UICollectionViewDataSource {
 
             return cell ?? HomeCollectionViewCell()
         } else if collectionView == self.testimoniosCollectionView {
-            let cell = testimoniosCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimoniosCollectionViewCell
+            let cell2 = testimoniosCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimoniosCollectionViewCell
             
-            cell?.testimonioImage.image = testimoniosData[indexPath.row].image
-            cell?.testimonioEpigrafe.text = testimoniosData[indexPath.row].epigrafe
+            cell2?.testimonioImage.image = testimoniosData[indexPath.row].image
+            cell2?.testimonioEpigrafe.text = testimoniosData[indexPath.row].epigrafe
             
-            return cell ?? TestimoniosCollectionViewCell()
-        } else { // lastestnews
-            let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "newscell", for: indexPath) as? NewsCollectionViewCell
+            return cell2 ?? TestimoniosCollectionViewCell()
+        } else if collectionView == self.lastestNewsCollectionView { // lastestnews
+            let cell3 = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "newscell", for: indexPath) as? NewsCollectionViewCell
             
-            cell?.newsImage.image = lastestNewsData[indexPath.row].image
-            cell?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
+            cell3?.newsImage.image = lastestNewsData[indexPath.row].image
+            cell3?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
+            return cell3 ?? NewsCollectionViewCell()
         }
         
         return UICollectionViewCell()
