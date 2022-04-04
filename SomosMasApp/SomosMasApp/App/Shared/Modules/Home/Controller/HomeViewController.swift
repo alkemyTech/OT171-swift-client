@@ -67,15 +67,27 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
+        switch collectionView {
+        case self.testimoniosCollectionView:
+            // Return Max pages = 4
+            return testimoniosData.count > 4 ? 4 : testimoniosData.count
+        // Here can be added news cases
+        default:
             return sliderData.count
         }
-        // Return Max pages = 4
-        return testimoniosData.count > 4 ? 4 : testimoniosData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.collectionView {
+        switch collectionView{
+        case self.testimoniosCollectionView:
+            let cell = testimoniosCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimoniosCollectionViewCell
+            
+            cell?.testimonioImage.image = testimoniosData[indexPath.row].image
+            cell?.testimonioEpigrafe.text = testimoniosData[indexPath.row].epigrafe
+            
+            return cell ?? TestimoniosCollectionViewCell()
+        //Here can be added news cases
+        default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
             
             cell?.myTitle.text = sliderData[indexPath.row].title
@@ -83,17 +95,8 @@ extension HomeViewController: UICollectionViewDataSource {
             cell?.myDescription.text = sliderData[indexPath.row].description
 
             return cell ?? HomeCollectionViewCell()
-        } else {
-            let cell = testimoniosCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimoniosCollectionViewCell
-            
-            cell?.testimonioImage.image = testimoniosData[indexPath.row].image
-            cell?.testimonioEpigrafe.text = testimoniosData[indexPath.row].epigrafe
-            
-            return cell ?? TestimoniosCollectionViewCell()
         }
-
     }
-
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
