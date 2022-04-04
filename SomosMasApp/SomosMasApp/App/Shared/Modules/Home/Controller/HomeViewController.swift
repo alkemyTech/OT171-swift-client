@@ -27,12 +27,12 @@ class HomeViewController: UIViewController {
                        SliderData(title: "Martina Diglido", description: "Marketing", image: UIImage(named:"Image_5"))
                      ]
     
-    let testimoniosData = [ TestimoniosData(image: UIImage(named:"Image_1"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_2"), epigrafe: "Epígrafe requerido para esta imagen"),
+    let testimoniosData = [ TestimoniosData(image: UIImage(named:"Image_6"), epigrafe: "Epígrafe requerido para esta imagen"),
+                            TestimoniosData(image: UIImage(named:"Image_7"), epigrafe: "Epígrafe requerido para esta imagen"),
                             TestimoniosData(image: UIImage(named:"Image_3"), epigrafe: "Epígrafe requerido para esta imagen"),
                             TestimoniosData(image: UIImage(named:"Image_4"), epigrafe: "Epígrafe requerido para esta imagen"),
                             TestimoniosData(image: UIImage(named:"Image_5"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_6"), epigrafe: "Epígrafe requerido para esta imagen")
+                            TestimoniosData(image: UIImage(named:"Image_1"), epigrafe: "Epígrafe requerido para esta imagen")
                           ]
     
     
@@ -59,17 +59,19 @@ class HomeViewController: UIViewController {
     }
     
 }
+
 extension HomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
             return sliderData.count
         }
-            return 4
+        // Return Max pages = 4
+        return testimoniosData.count > 4 ? 4 : testimoniosData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
