@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     struct TestimoniosData {
         let image: UIImage?
         let epigrafe: String?
+        let verMas: Bool?
     }
     
     let sliderData = [ SliderData(title: "Marcelo Aguirre", description: "Presidente", image: UIImage(named:"Image_1")),
@@ -27,12 +28,9 @@ class HomeViewController: UIViewController {
                        SliderData(title: "Martina Diglido", description: "Marketing", image: UIImage(named:"Image_5"))
                      ]
     
-    let testimoniosData = [ TestimoniosData(image: UIImage(named:"Image_6"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_7"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_3"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_4"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_5"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_1"), epigrafe: "Epígrafe requerido para esta imagen")
+    var testimoniosData = [ TestimoniosData(image: UIImage(named:"Image_6"), epigrafe: "Epígrafe requerido para esta imagen", verMas: true),
+                            TestimoniosData(image: UIImage(named:"Image_7"), epigrafe: "Epígrafe requerido para esta imagen", verMas: true),
+                            TestimoniosData(image: nil, epigrafe: nil, verMas: false)
                           ]
     
     
@@ -84,6 +82,7 @@ extension HomeViewController: UICollectionViewDataSource {
             
             cell?.testimonioImage.image = testimoniosData[indexPath.row].image
             cell?.testimonioEpigrafe.text = testimoniosData[indexPath.row].epigrafe
+            cell?.verMasButton.isHidden = testimoniosData[indexPath.row].verMas ?? true
             
             return cell ?? TestimoniosCollectionViewCell()
         //Here can be added news cases

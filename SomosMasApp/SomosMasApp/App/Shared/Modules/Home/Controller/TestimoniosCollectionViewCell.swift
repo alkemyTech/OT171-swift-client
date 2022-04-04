@@ -11,10 +11,11 @@ class TestimoniosCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var testimonioImage: UIImageView!
     @IBOutlet weak var testimonioEpigrafe: UILabel!
+    @IBOutlet weak var verMasButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        verMasButton.isHidden = true
     }
 
 }
