@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
     struct TestimonialsData {
         let image: UIImage?
         let epigraph: String?
-        let seeMore: Bool?
     }
     
     let sliderData = [ SliderData(title: "Marcelo Aguirre", description: "Presidente", image: UIImage(named:"Image_1")),
@@ -28,16 +27,13 @@ class HomeViewController: UIViewController {
                        SliderData(title: "Martina Diglido", description: "Marketing", image: UIImage(named:"Image_5"))
                      ]
     
-    var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen", seeMore: true),
-                            TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen", seeMore: true),
-                            TestimonialsData(image: nil, epigraph: nil, seeMore: false)
+    var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen"),
+                            TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen"),
+                            TestimonialsData(image: nil, epigraph: nil)
                           ]
-    
-    
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var testimonialsCollectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +49,11 @@ class HomeViewController: UIViewController {
         testimonialsCollectionView.delegate = self
         testimonialsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         testimonialsCollectionView.register(UINib(nibName: "TestimonialsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Tcell")
-        
+        testimonialsCollectionView.register(UINib(nibName: "SeeMoreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "seeMoreCell")
     }
-    
 }
 
-extension HomeViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -68,7 +63,7 @@ extension HomeViewController: UICollectionViewDataSource {
         switch collectionView {
         case self.testimonialsCollectionView:
             // Return Max pages = 4
-            return testimonialsData.count > 4 ? 4 : testimonialsData.count
+            return min(testimonialsData.count + 1, 5)
         // Here can be added news cases
         default:
             return sliderData.count
@@ -77,14 +72,20 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView{
-        case self.testimonialsCollectionView:
+        case testimonialsCollectionView:
+            // Add seeMore page
+            if indexPath.row == min(testimonialsData.count, 4) {
+                let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
+                
+                return cell ?? SeeMoreCollectionViewCell()
+            } else {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
             
             cell?.testimonialImage.image = testimonialsData[indexPath.row].image
             cell?.testimonialEpigraph.text = testimonialsData[indexPath.row].epigraph
-            cell?.seeMoreButton.isHidden = testimonialsData[indexPath.row].seeMore ?? true
             
             return cell ?? TestimonialsCollectionViewCell()
+            }
         //Here can be added news cases
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
@@ -96,12 +97,26 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell ?? HomeCollectionViewCell()
         }
     }
-}
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        collectionView.deselectItem(at: indexPath, animated: true)
+        switch collectionView {
+        case testimonialsCollectionView:
+            if indexPath.row == min(testimonialsData.count, 4) {
+                print("Se ha seleccionado un item")
+            }
+        default:
+            break
+        }
+        
+        }
+    }
+
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let screenSize = collectionView.frame.size
         let cellWidth = floor(screenSize.width)
         let cellHeight = floor(screenSize.height)

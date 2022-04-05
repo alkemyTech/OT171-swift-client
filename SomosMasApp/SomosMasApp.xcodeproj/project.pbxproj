@@ -25,6 +25,8 @@
 		A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1DC72B227EA260B00D9D16C /* logInView.xib */; };
 		A1F1236D27F72CA100657AF4 /* TestimonialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1236B27F72CA000657AF4 /* TestimonialsCollectionViewCell.swift */; };
 		A1F1236E27F72CA100657AF4 /* TestimonialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F1236C27F72CA000657AF4 /* TestimonialsCollectionViewCell.xib */; };
+		A1F1237127FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1236F27FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift */; };
+		A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F1237027FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED327E2130B00B6258A /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		A1DC72B227EA260B00D9D16C /* logInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logInView.xib; sourceTree = "<group>"; };
 		A1F1236B27F72CA000657AF4 /* TestimonialsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1F1236C27F72CA000657AF4 /* TestimonialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestimonialsCollectionViewCell.xib; sourceTree = "<group>"; };
+		A1F1236F27FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		A1F1237027FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeMoreCollectionViewCell.xib; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			children = (
 				FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */,
 				A1F1236C27F72CA000657AF4 /* TestimonialsCollectionViewCell.xib */,
+				A1F1237027FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib */,
 				995E4C5F27F1F7D100632693 /* HomeViewController.xib */,
 			);
 			path = View;
@@ -207,6 +212,7 @@
 				FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */,
 				995E4C5E27F1F7D100632693 /* HomeViewController.swift */,
 				A1F1236B27F72CA000657AF4 /* TestimonialsCollectionViewCell.swift */,
+				A1F1236F27FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 				A1F1236E27F72CA100657AF4 /* TestimonialsCollectionViewCell.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
+				A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */,
 				994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 			);
@@ -510,6 +517,7 @@
 				A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
 				A88F1AFE27F396860062608D /* SplashViewController.swift in Sources */,
+				A1F1237127FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift in Sources */,
 				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
 				FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */,
 				87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */,

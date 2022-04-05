@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ad0-7N-LpA">
+                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ad0-7N-LpA">
                         <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epígraph" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-o0-znW">
@@ -36,27 +35,12 @@
                                     <constraint firstAttribute="height" constant="205" id="E93-Gw-dby"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-dg-sfA">
-                                <rect key="frame" x="78.5" y="118" width="101.5" height="25"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" red="0.85882352939999995" green="0.3411764706" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Ver más">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <imageReference key="image" image="arrow.forward" catalog="system" symbolScale="large"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                    </preferredSymbolConfiguration>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="BrB-o0-znW" secondAttribute="trailing" constant="20" id="4UD-GX-cKb"/>
                             <constraint firstItem="BrB-o0-znW" firstAttribute="top" secondItem="fcL-rM-x0F" secondAttribute="bottom" constant="3" id="8Xk-WS-6aB"/>
                             <constraint firstItem="BrB-o0-znW" firstAttribute="centerX" secondItem="fcL-rM-x0F" secondAttribute="centerX" id="9Uu-nt-0nS"/>
-                            <constraint firstItem="Auh-dg-sfA" firstAttribute="centerY" secondItem="ad0-7N-LpA" secondAttribute="centerY" id="CfA-ps-X43"/>
-                            <constraint firstItem="Auh-dg-sfA" firstAttribute="centerX" secondItem="ad0-7N-LpA" secondAttribute="centerX" id="Nyg-Fh-Gcu"/>
                             <constraint firstItem="BrB-o0-znW" firstAttribute="leading" secondItem="ad0-7N-LpA" secondAttribute="leading" constant="20" id="RSu-JL-wmU"/>
                             <constraint firstItem="fcL-rM-x0F" firstAttribute="leading" secondItem="ad0-7N-LpA" secondAttribute="leading" id="dSG-CY-FZm"/>
                             <constraint firstAttribute="trailing" secondItem="fcL-rM-x0F" secondAttribute="trailing" id="f7L-vh-Jmm"/>
@@ -74,7 +58,6 @@
             </constraints>
             <size key="customSize" width="258" height="261"/>
             <connections>
-                <outlet property="seeMoreButton" destination="Auh-dg-sfA" id="xkO-fY-ycJ"/>
                 <outlet property="testimonialEpigraph" destination="BrB-o0-znW" id="otf-zk-NKI"/>
                 <outlet property="testimonialImage" destination="fcL-rM-x0F" id="kpE-Ff-oa9"/>
             </connections>
@@ -82,7 +65,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
