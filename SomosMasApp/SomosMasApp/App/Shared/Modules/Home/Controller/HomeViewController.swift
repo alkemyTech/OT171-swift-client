@@ -29,7 +29,6 @@ class HomeViewController: UIViewController {
     
     var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen"),
                             TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen"),
-                            TestimonialsData(image: nil, epigraph: nil)
                           ]
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -62,7 +61,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case self.testimonialsCollectionView:
-            // Return Max pages = 4
+            // Return Max pages = 4 and add 1 more for item "Ver más"
             return min(testimonialsData.count + 1, 5)
         // Here can be added news cases
         default:
@@ -103,7 +102,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch collectionView {
         case testimonialsCollectionView:
             if indexPath.row == min(testimonialsData.count, 4) {
-                print("Se ha seleccionado un item")
+                // Add an action when the item is selected
             }
         default:
             break

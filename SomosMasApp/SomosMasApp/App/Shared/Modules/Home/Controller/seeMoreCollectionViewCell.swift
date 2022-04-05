@@ -12,10 +12,5 @@ class SeeMoreCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var seeMoreLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let redView = UIView(frame: bounds)
-        redView.backgroundColor = .systemRed
-        self.selectedBackgroundView = redView
     }
-
 }
