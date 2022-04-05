@@ -11,8 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="pQG-RF-AG3" id="ct0-EH-EPV"/>
-                <outlet property="lastestNewsCollectionView" destination="A87-ic-mHB" id="0dX-xm-mNI"/>
-                <outlet property="testimoniosCollectionView" destination="5rO-Pe-k9A" id="MGP-ke-ZQ1"/>
+                <outlet property="testimonialsCollectionView" destination="5rO-Pe-k9A" id="zc1-lS-xum"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,10 +24,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gYx-P6-mGR">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="1400"/>
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZd-lu-JC5">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="1400"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pQG-RF-AG3">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="320"/>
@@ -43,7 +42,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                         </collectionView>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5rO-Pe-k9A">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5rO-Pe-k9A">
                                             <rect key="frame" x="0.0" y="390" width="390" height="320"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -57,49 +56,20 @@
                                             </collectionViewFlowLayout>
                                         </collectionView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testimonios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="max-tl-qjP">
-                                            <rect key="frame" x="125.66666666666667" y="350" width="138.66666666666663" height="32"/>
+                                            <rect key="frame" x="125.66666666666667" y="350.66666666666669" width="138.66666666666663" height="31.333333333333314"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultimas novedades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5S-Qg-Skk">
-                                            <rect key="frame" x="85.000000000000014" y="740" width="220.33333333333337" height="31.333333333333371"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="A87-ic-mHB">
-                                            <rect key="frame" x="0.0" y="779.33333333333337" width="390" height="320.00000000000011"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="320" id="0fh-NG-ceb"/>
-                                            </constraints>
-                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uOh-u5-gEN">
-                                                <size key="itemSize" width="128" height="128"/>
-                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            </collectionViewFlowLayout>
-                                        </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="f5S-Qg-Skk" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="2ZY-Mi-Tak"/>
                                         <constraint firstItem="max-tl-qjP" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="2bx-39-avd"/>
-                                        <constraint firstItem="f5S-Qg-Skk" firstAttribute="top" secondItem="5rO-Pe-k9A" secondAttribute="bottom" constant="30" id="7zI-VL-0k4"/>
                                         <constraint firstItem="pQG-RF-AG3" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" id="Dd0-1r-HyI"/>
                                         <constraint firstItem="5rO-Pe-k9A" firstAttribute="top" secondItem="max-tl-qjP" secondAttribute="bottom" constant="8" symbolic="YES" id="Dfn-u9-SdZ"/>
-                                        <constraint firstAttribute="height" constant="1400" id="ELV-xH-3Uq"/>
-                                        <constraint firstItem="A87-ic-mHB" firstAttribute="top" secondItem="f5S-Qg-Skk" secondAttribute="bottom" constant="8" symbolic="YES" id="JBv-CL-HCB"/>
+                                        <constraint firstAttribute="height" constant="1000" id="ELV-xH-3Uq"/>
                                         <constraint firstAttribute="trailing" secondItem="5rO-Pe-k9A" secondAttribute="trailing" id="Q8g-JG-OJ0"/>
-                                        <constraint firstItem="5rO-Pe-k9A" firstAttribute="top" secondItem="max-tl-qjP" secondAttribute="bottom" constant="8" symbolic="YES" id="Qgj-Hx-DdH"/>
-                                        <constraint firstItem="A87-ic-mHB" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" id="X95-7E-HSn"/>
-                                        <constraint firstAttribute="trailing" secondItem="A87-ic-mHB" secondAttribute="trailing" id="bYy-d7-pKE"/>
-                                        <constraint firstItem="A87-ic-mHB" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="kD9-wo-aUg"/>
-                                        <constraint firstItem="max-tl-qjP" firstAttribute="top" secondItem="pQG-RF-AG3" secondAttribute="bottom" constant="30" id="nPP-oN-clR"/>
                                         <constraint firstItem="5rO-Pe-k9A" firstAttribute="top" secondItem="pQG-RF-AG3" secondAttribute="bottom" constant="70" id="q90-aN-s42"/>
-                                        <constraint firstItem="f5S-Qg-Skk" firstAttribute="top" secondItem="5rO-Pe-k9A" secondAttribute="bottom" constant="30" id="qyF-R4-ieW"/>
-                                        <constraint firstItem="A87-ic-mHB" firstAttribute="top" secondItem="f5S-Qg-Skk" secondAttribute="bottom" constant="8" symbolic="YES" id="toF-Li-Eza"/>
                                         <constraint firstAttribute="trailing" secondItem="pQG-RF-AG3" secondAttribute="trailing" id="vsn-j5-xxn"/>
                                         <constraint firstItem="pQG-RF-AG3" firstAttribute="top" secondItem="kZd-lu-JC5" secondAttribute="top" id="yti-l0-CmX"/>
                                         <constraint firstItem="5rO-Pe-k9A" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" id="z1y-lh-FHj"/>

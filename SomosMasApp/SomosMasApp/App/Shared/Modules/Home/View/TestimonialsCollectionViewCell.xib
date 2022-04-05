@@ -10,17 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Tcell" id="gTV-IL-0wX" customClass="TestimoniosCollectionViewCell" customModule="SomosMasApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TestimonialsCollectionViewCell" customModule="SomosMasApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ad0-7N-LpA">
+                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ad0-7N-LpA">
                         <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epígrafe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-o0-znW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epígraph" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-o0-znW">
                                 <rect key="frame" x="20" y="208" width="218" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Lhk-Ww-Fh0"/>
@@ -58,8 +58,8 @@
             </constraints>
             <size key="customSize" width="258" height="261"/>
             <connections>
-                <outlet property="testimonioEpigrafe" destination="BrB-o0-znW" id="P5r-Om-SJl"/>
-                <outlet property="testimonioImage" destination="fcL-rM-x0F" id="bFr-IX-rlW"/>
+                <outlet property="testimonialEpigraph" destination="BrB-o0-znW" id="otf-zk-NKI"/>
+                <outlet property="testimonialImage" destination="fcL-rM-x0F" id="kpE-Ff-oa9"/>
             </connections>
             <point key="canvasLocation" x="286.95652173913044" y="140.95982142857142"/>
         </collectionViewCell>

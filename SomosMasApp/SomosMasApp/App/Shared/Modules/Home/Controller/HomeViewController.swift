@@ -15,15 +15,9 @@ class HomeViewController: UIViewController {
         let image: UIImage?
     }
     
-    struct TestimoniosData {
-        let image: UIImage?
-        let epigrafe: String?
-    }
-    
-    struct LastestNewsData {
+    struct TestimonialsData {
         let image: UIImage?
         let epigraph: String?
-        let buttonHidden: Bool?
     }
     
     let sliderData = [ SliderData(title: "Marcelo Aguirre", description: "Presidente", image: UIImage(named:"Image_1")),
@@ -33,26 +27,12 @@ class HomeViewController: UIViewController {
                        SliderData(title: "Martina Diglido", description: "Marketing", image: UIImage(named:"Image_5"))
                      ]
     
-    let testimoniosData = [ TestimoniosData(image: UIImage(named:"Image_1"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_2"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_3"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_4"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_5"), epigrafe: "Epígrafe requerido para esta imagen"),
-                            TestimoniosData(image: UIImage(named:"Image_6"), epigrafe: "Epígrafe requerido para esta imagen")
-                          ]
-    
-    let lastestNewsData = [ LastestNewsData(image: UIImage(named:"Image_1"), epigraph: "Epígrafe 1", buttonHidden: true),
-                            LastestNewsData(image: UIImage(named:"Image_2"), epigraph: "Epígrafe 2", buttonHidden: true),
-                            LastestNewsData(image: UIImage(named:"Image_3"), epigraph: "Epígrafe 3", buttonHidden: true),
-                            LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe 4", buttonHidden: true),
-                            LastestNewsData(image: nil, epigraph: nil, buttonHidden: false)
+    var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen"),
+                            TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen"),
                           ]
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var testimoniosCollectionView: UICollectionView!
-    @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
-    
-
+    @IBOutlet weak var testimonialsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,41 +43,50 @@ class HomeViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
         
-        testimoniosCollectionView.isPagingEnabled = true
-        testimoniosCollectionView.dataSource = self
-        testimoniosCollectionView.delegate = self
-        testimoniosCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        testimoniosCollectionView.register(UINib(nibName: "TestimoniosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Tcell")
-        
-        //lastest news
-        lastestNewsCollectionView.isPagingEnabled = true
-        lastestNewsCollectionView.dataSource = self
-        lastestNewsCollectionView.delegate = self
-        lastestNewsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        lastestNewsCollectionView.register(UINib(nibName: "NewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "newscell")
+        testimonialsCollectionView.isPagingEnabled = true
+        testimonialsCollectionView.dataSource = self
+        testimonialsCollectionView.delegate = self
+        testimonialsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        testimonialsCollectionView.register(UINib(nibName: "TestimonialsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Tcell")
+        testimonialsCollectionView.register(UINib(nibName: "SeeMoreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "seeMoreCell")
     }
-    
 }
-extension HomeViewController: UICollectionViewDataSource {
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
+        switch collectionView {
+        case self.testimonialsCollectionView:
+            // Return Max pages = 4 and add 1 more for item "Ver más"
+            return min(testimonialsData.count + 1, 5)
+        // Here can be added news cases
+        default:
             return sliderData.count
-        } else if collectionView == self.testimoniosCollectionView {
-                return testimoniosData.count
-        } else if collectionView == self.lastestNewsCollectionView {
-            return lastestNewsData.count
-            }
-            return 4
+        }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.collectionView {
+        switch collectionView{
+        case testimonialsCollectionView:
+            // Add seeMore page
+            if indexPath.row == min(testimonialsData.count, 4) {
+                let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
+                
+                return cell ?? SeeMoreCollectionViewCell()
+            } else {
+            let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
+            
+            cell?.testimonialImage.image = testimonialsData[indexPath.row].image
+            cell?.testimonialEpigraph.text = testimonialsData[indexPath.row].epigraph
+            
+            return cell ?? TestimonialsCollectionViewCell()
+            }
+        //Here can be added news cases
+        default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
             
             cell?.myTitle.text = sliderData[indexPath.row].title
@@ -105,41 +94,29 @@ extension HomeViewController: UICollectionViewDataSource {
             cell?.myDescription.text = sliderData[indexPath.row].description
 
             return cell ?? HomeCollectionViewCell()
-        } else if collectionView == self.testimoniosCollectionView {
-            let cell2 = testimoniosCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimoniosCollectionViewCell
-            
-            cell2?.testimonioImage.image = testimoniosData[indexPath.row].image
-            cell2?.testimonioEpigrafe.text = testimoniosData[indexPath.row].epigrafe
-            
-            return cell2 ?? TestimoniosCollectionViewCell()
-        } else if collectionView == self.lastestNewsCollectionView { // lastestnews
-            let cell3 = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "newscell", for: indexPath) as? NewsCollectionViewCell
-            
-            cell3?.newsImage.image = lastestNewsData[indexPath.row].image
-            cell3?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
-            cell3?.newsButton.isHidden = lastestNewsData[indexPath.row].buttonHidden ?? true
-            return cell3 ?? NewsCollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        collectionView.deselectItem(at: indexPath, animated: true)
+        switch collectionView {
+        case testimonialsCollectionView:
+            if indexPath.row == min(testimonialsData.count, 4) {
+                // Add an action when the item is selected
+            }
+        default:
+            break
         }
         
-        return UICollectionViewCell()
+        }
     }
 
-}
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let screenSize = collectionView.frame.size
-        let cellWidth = floor(screenSize.width)
-        let cellHeight = floor(screenSize.height)
-
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-    
-    func testimoniosCollectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let screenSize = testimoniosCollectionView.frame.size
+        let screenSize = collectionView.frame.size
         let cellWidth = floor(screenSize.width)
         let cellHeight = floor(screenSize.height)
 
