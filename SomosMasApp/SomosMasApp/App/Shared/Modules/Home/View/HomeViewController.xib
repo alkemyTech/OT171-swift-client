@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="pQG-RF-AG3" id="ct0-EH-EPV"/>
-                <outlet property="testimoniosCollectionView" destination="5rO-Pe-k9A" id="MGP-ke-ZQ1"/>
+                <outlet property="testimonialsCollectionView" destination="5rO-Pe-k9A" id="zc1-lS-xum"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

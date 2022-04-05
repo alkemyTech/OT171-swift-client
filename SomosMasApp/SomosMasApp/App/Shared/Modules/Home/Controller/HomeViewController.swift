@@ -15,10 +15,10 @@ class HomeViewController: UIViewController {
         let image: UIImage?
     }
     
-    struct TestimoniosData {
+    struct TestimonialsData {
         let image: UIImage?
-        let epigrafe: String?
-        let verMas: Bool?
+        let epigraph: String?
+        let seeMore: Bool?
     }
     
     let sliderData = [ SliderData(title: "Marcelo Aguirre", description: "Presidente", image: UIImage(named:"Image_1")),
@@ -28,15 +28,15 @@ class HomeViewController: UIViewController {
                        SliderData(title: "Martina Diglido", description: "Marketing", image: UIImage(named:"Image_5"))
                      ]
     
-    var testimoniosData = [ TestimoniosData(image: UIImage(named:"Image_6"), epigrafe: "Epígrafe requerido para esta imagen", verMas: true),
-                            TestimoniosData(image: UIImage(named:"Image_7"), epigrafe: "Epígrafe requerido para esta imagen", verMas: true),
-                            TestimoniosData(image: nil, epigrafe: nil, verMas: false)
+    var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen", seeMore: true),
+                            TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen", seeMore: true),
+                            TestimonialsData(image: nil, epigraph: nil, seeMore: false)
                           ]
     
     
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var testimoniosCollectionView: UICollectionView!
+    @IBOutlet weak var testimonialsCollectionView: UICollectionView!
     
     
     override func viewDidLoad() {
@@ -48,11 +48,11 @@ class HomeViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "mycell")
         
-        testimoniosCollectionView.isPagingEnabled = true
-        testimoniosCollectionView.dataSource = self
-        testimoniosCollectionView.delegate = self
-        testimoniosCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        testimoniosCollectionView.register(UINib(nibName: "TestimoniosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Tcell")
+        testimonialsCollectionView.isPagingEnabled = true
+        testimonialsCollectionView.dataSource = self
+        testimonialsCollectionView.delegate = self
+        testimonialsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        testimonialsCollectionView.register(UINib(nibName: "TestimonialsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Tcell")
         
     }
     
@@ -66,9 +66,9 @@ extension HomeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case self.testimoniosCollectionView:
+        case self.testimonialsCollectionView:
             // Return Max pages = 4
-            return testimoniosData.count > 4 ? 4 : testimoniosData.count
+            return testimonialsData.count > 4 ? 4 : testimonialsData.count
         // Here can be added news cases
         default:
             return sliderData.count
@@ -77,14 +77,14 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView{
-        case self.testimoniosCollectionView:
-            let cell = testimoniosCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimoniosCollectionViewCell
+        case self.testimonialsCollectionView:
+            let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
             
-            cell?.testimonioImage.image = testimoniosData[indexPath.row].image
-            cell?.testimonioEpigrafe.text = testimoniosData[indexPath.row].epigrafe
-            cell?.verMasButton.isHidden = testimoniosData[indexPath.row].verMas ?? true
+            cell?.testimonialImage.image = testimonialsData[indexPath.row].image
+            cell?.testimonialEpigrafe.text = testimonialsData[indexPath.row].epigraph
+            cell?.seeMoreButton.isHidden = testimonialsData[indexPath.row].seeMore ?? true
             
-            return cell ?? TestimoniosCollectionViewCell()
+            return cell ?? TestimonialsCollectionViewCell()
         //Here can be added news cases
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
