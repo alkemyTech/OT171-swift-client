@@ -11,7 +11,7 @@ class TestimonialsCollectionViewCell: UICollectionViewCell {
 
     
     @IBOutlet weak var testimonialImage: UIImageView!
-    @IBOutlet weak var testimonialEpigrafe: UILabel!
+    @IBOutlet weak var testimonialEpigraph: UILabel!
     @IBOutlet weak var seeMoreButton: UIButton!
     
     override func awakeFromNib() {

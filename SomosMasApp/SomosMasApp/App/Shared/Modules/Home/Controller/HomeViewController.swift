@@ -81,7 +81,7 @@ extension HomeViewController: UICollectionViewDataSource {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
             
             cell?.testimonialImage.image = testimonialsData[indexPath.row].image
-            cell?.testimonialEpigrafe.text = testimonialsData[indexPath.row].epigraph
+            cell?.testimonialEpigraph.text = testimonialsData[indexPath.row].epigraph
             cell?.seeMoreButton.isHidden = testimonialsData[indexPath.row].seeMore ?? true
             
             return cell ?? TestimonialsCollectionViewCell()

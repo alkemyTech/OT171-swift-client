@@ -75,7 +75,7 @@
             <size key="customSize" width="258" height="261"/>
             <connections>
                 <outlet property="seeMoreButton" destination="Auh-dg-sfA" id="xkO-fY-ycJ"/>
-                <outlet property="testimonialEpigrafe" destination="BrB-o0-znW" id="wEv-Xb-dkX"/>
+                <outlet property="testimonialEpigraph" destination="BrB-o0-znW" id="otf-zk-NKI"/>
                 <outlet property="testimonialImage" destination="fcL-rM-x0F" id="kpE-Ff-oa9"/>
             </connections>
             <point key="canvasLocation" x="286.95652173913044" y="140.95982142857142"/>
