@@ -10,26 +10,24 @@ import UIKit
 class SplashViewController: UIViewController {
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
-    
+    private let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loader.startAnimating()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             
             self.loader.stopAnimating()
             
-            let alert = UIAlertController(title: "Timer has finished", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                let homeViewController = HomeViewController()
                 let logInViewController = logInViewController()
-                self.navigationController?.pushViewController(logInViewController, animated: true)
-            }))
-            
-            self.present(alert, animated: true)
+                if let _ = self.defaults.string(forKey: "token"){
+                    self.navigationController?.pushViewController(homeViewController, animated: true)
+                } else {
+                    self.navigationController?.pushViewController(logInViewController, animated: true)
+                }
         }
-        
     }
-
 }
