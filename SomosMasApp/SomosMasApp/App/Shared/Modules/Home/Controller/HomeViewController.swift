@@ -20,6 +20,11 @@ class HomeViewController: UIViewController {
         let epigraph: String?
     }
     
+    struct LastestNewsData {
+        let image: UIImage?
+        let epigraph: String?
+    }
+    
     let sliderData = [ SliderData(title: "Marcelo Aguirre", description: "Presidente", image: UIImage(named:"Image_1")),
                        SliderData(title: "Lucas Ocampo", description: "RRHH", image: UIImage(named:"Image_2")),
                        SliderData(title: "Guillermo Costa", description: "Contador", image: UIImage(named:"Image_3")),
@@ -31,8 +36,15 @@ class HomeViewController: UIViewController {
                             TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen"),
                           ]
     
+    let lastestNewsData = [ LastestNewsData(image: UIImage(named:"Image_1"), epigraph: "Epígrafe para imagen 1"),
+                            LastestNewsData(image: UIImage(named:"Image_2"), epigraph: "Epígrafe para imagen 2"),
+                            LastestNewsData(image: UIImage(named:"Image_3"), epigraph: "Epígrafe para imagen 3"),
+                            LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe para imagen 4")
+                          ]
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var testimonialsCollectionView: UICollectionView!
+    @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +59,12 @@ class HomeViewController: UIViewController {
         testimonialsCollectionView.delegate = self
         testimonialsCollectionView.register(UINib(nibName: "TestimonialsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Tcell")
         testimonialsCollectionView.register(UINib(nibName: "SeeMoreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "seeMoreCell")
+        lastestNewsCollectionView.isPagingEnabled = true
+        lastestNewsCollectionView.dataSource = self
+        lastestNewsCollectionView.delegate = self
+        lastestNewsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        lastestNewsCollectionView.register(UINib(nibName: "NewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "newscell")
+        lastestNewsCollectionView.register(UINib(nibName: "SeeMoreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "seeMoreCell")
 
         let backButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeApp))
         self.navigationItem.leftBarButtonItem  = backButton
@@ -68,7 +86,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         case self.testimonialsCollectionView:
             // Return Max pages = 4 and add 1 more for item "Ver más"
             return min(testimonialsData.count + 1, 5)
-        // Here can be added news cases
+        case self.lastestNewsCollectionView:
+            // Return Max pages = 4 and add 1 more for item "Ver más". Its another case becouse takes data from another Array
+            return min(lastestNewsData.count + 1, 5)
         default:
             return sliderData.count
         }
@@ -90,7 +110,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             return cell ?? TestimonialsCollectionViewCell()
             }
-        //Here can be added news cases
+        case lastestNewsCollectionView:
+            if indexPath.row == min(lastestNewsData.count, 4) {
+                let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
+
+                return cell ?? SeeMoreCollectionViewCell()
+            } else {
+            let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "newscell", for: indexPath) as? NewsCollectionViewCell
+            
+            cell?.newsImage.image = lastestNewsData[indexPath.row].image
+            cell?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
+            
+            return cell ?? NewsCollectionViewCell()
+            }
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
             
@@ -108,6 +140,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         case testimonialsCollectionView:
             if indexPath.row == min(testimonialsData.count, 4) {
                 // Add an action when the item is selected
+            }
+        case lastestNewsCollectionView:
+            if indexPath.row == min(lastestNewsData.count, 4) {
+                // Add an action when "ver Más" item from "Ultimas novedades" is selected
             }
         default:
             break
