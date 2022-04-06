@@ -45,7 +45,6 @@ class HomeViewController: UIViewController {
         testimonialsCollectionView.isPagingEnabled = true
         testimonialsCollectionView.dataSource = self
         testimonialsCollectionView.delegate = self
-        testimonialsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         testimonialsCollectionView.register(UINib(nibName: "TestimonialsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Tcell")
         testimonialsCollectionView.register(UINib(nibName: "SeeMoreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "seeMoreCell")
 

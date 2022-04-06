@@ -10,7 +10,5 @@ import UIKit
 class SeeMoreCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var seeMoreLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+
 }
