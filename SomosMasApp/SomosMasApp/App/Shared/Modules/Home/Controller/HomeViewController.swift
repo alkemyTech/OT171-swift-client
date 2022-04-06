@@ -7,13 +7,11 @@
 
 import UIKit
 
+protocol SliderListDelegate {
+    func reloadSlider()
+}
+
 class HomeViewController: UIViewController {
-    
-    struct SliderData {
-        let title: String?
-        let description: String?
-        let image: UIImage?
-    }
     
     struct TestimonialsData {
         let image: UIImage?
@@ -24,13 +22,6 @@ class HomeViewController: UIViewController {
         let image: UIImage?
         let epigraph: String?
     }
-    
-    let sliderData = [ SliderData(title: "Marcelo Aguirre", description: "Presidente", image: UIImage(named:"Image_1")),
-                       SliderData(title: "Lucas Ocampo", description: "RRHH", image: UIImage(named:"Image_2")),
-                       SliderData(title: "Guillermo Costa", description: "Contador", image: UIImage(named:"Image_3")),
-                       SliderData(title: "Victoria Sanchez", description: "Tesorera", image: UIImage(named:"Image_4")),
-                       SliderData(title: "Martina Diglido", description: "Marketing", image: UIImage(named:"Image_5"))
-                     ]
     
     var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen"),
                             TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen"),
@@ -46,9 +37,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var testimonialsCollectionView: UICollectionView!
     @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
     
+    private let service = SliderService()
+    private var viewModel: SliderViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.viewModel = SliderViewModel(service: self.service, delegate: self)
+        self.viewModel?.getSliders()
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -90,7 +87,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             // Return Max pages = 4 and add 1 more for item "Ver más". Its another case becouse takes data from another Array
             return min(lastestNewsData.count + 1, 5)
         default:
-            return sliderData.count
+            return self.viewModel?.getSlidersCount() ?? 0
         }
     }
     
@@ -126,9 +123,15 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
             
-            cell?.myTitle.text = sliderData[indexPath.row].title
-            cell?.myImage.image = sliderData[indexPath.row].image
-            cell?.myDescription.text = sliderData[indexPath.row].description
+            cell?.myTitle.text = self.viewModel?.getSliders(at: indexPath.row).name
+            cell?.myDescription.text = self.viewModel?.getSliders(at: indexPath.row).description
+            
+            cell?.myImage.contentMode = .scaleAspectFill
+            
+            let imagePath = self.viewModel?.getSliders(at: indexPath.row).image
+            let imageUrl = URL(string: imagePath!)
+            
+            cell?.myImage.load(url: imageUrl!)
 
             return cell ?? HomeCollectionViewCell()
         }
@@ -162,6 +165,15 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let cellHeight = floor(screenSize.height)
 
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+}
+
+extension HomeViewController: SliderListDelegate{
+    
+    
+    func reloadSlider() {
+        self.collectionView.reloadData()
     }
     
 }
