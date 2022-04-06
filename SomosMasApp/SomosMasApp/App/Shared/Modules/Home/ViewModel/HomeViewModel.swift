@@ -21,7 +21,6 @@ class SliderViewModel {
     
     func getSliders(){
         sliderService.getAllSliders {response in
-            self.delegate.toogleLoading()
             self.slidersResponded = response
        
             self.delegate.reloadSlider()

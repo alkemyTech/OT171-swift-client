@@ -8,7 +8,6 @@
 import UIKit
 
 protocol SliderListDelegate {
-    func toogleLoading()
     func reloadSlider()
 }
 
@@ -172,9 +171,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: SliderListDelegate{
     
-    func toogleLoading() {
-        print("Cargando")
-    }
     
     func reloadSlider() {
         self.collectionView.reloadData()
