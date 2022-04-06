@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="collectionView" destination="pQG-RF-AG3" id="ct0-EH-EPV"/>
                 <outlet property="lastestNewsCollectionView" destination="CJW-gU-FBs" id="kz5-pF-KPd"/>
-                <outlet property="testimonialsCollectionView" destination="5rO-Pe-k9A" id="zc1-lS-xum"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
