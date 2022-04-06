@@ -34,6 +34,9 @@
 		A1F1236E27F72CA100657AF4 /* TestimonialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F1236C27F72CA000657AF4 /* TestimonialsCollectionViewCell.xib */; };
 		A1F1237127FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1236F27FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift */; };
 		A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F1237027FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib */; };
+		A1F1237427FE4EE300657AF4 /* TestimonialsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1237327FE4EE300657AF4 /* TestimonialsList.swift */; };
+		A1F1237627FE4F5400657AF4 /* TestimonialsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1237527FE4F5400657AF4 /* TestimonialsListResponse.swift */; };
+		A1F1237827FE4FF500657AF4 /* TestimonialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1237727FE4FF400657AF4 /* TestimonialsService.swift */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED327E2130B00B6258A /* Assets.xcassets */; };
@@ -79,6 +82,9 @@
 		A1F1236C27F72CA000657AF4 /* TestimonialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestimonialsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A1F1236F27FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1F1237027FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeMoreCollectionViewCell.xib; sourceTree = "<group>"; };
+		A1F1237327FE4EE300657AF4 /* TestimonialsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsList.swift; sourceTree = "<group>"; };
+		A1F1237527FE4F5400657AF4 /* TestimonialsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsListResponse.swift; sourceTree = "<group>"; };
+		A1F1237727FE4FF400657AF4 /* TestimonialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsService.swift; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				9963492E27FDC7CB00A463C9 /* SliderService.swift */,
+				A1F1237727FE4FF400657AF4 /* TestimonialsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -406,6 +413,8 @@
 		FB46181327EB522500DBE262 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A1F1237327FE4EE300657AF4 /* TestimonialsList.swift */,
+				A1F1237527FE4F5400657AF4 /* TestimonialsListResponse.swift */,
 				9963493027FDC7DA00A463C9 /* SliderList.swift */,
 				9963493127FDC7DA00A463C9 /* SliderListResponse.swift */,
 				FB46181427EB528E00DBE262 /* NewUser.swift */,
@@ -549,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */,
+				A1F1237827FE4FF500657AF4 /* TestimonialsService.swift in Sources */,
 				8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */,
 				9963492F27FDC7CC00A463C9 /* SliderService.swift in Sources */,
 				FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */,
@@ -560,6 +570,7 @@
 				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
 				FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */,
 				87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */,
+				A1F1237627FE4F5400657AF4 /* TestimonialsListResponse.swift in Sources */,
 				87CDAC8827F3BB87006738D0 /* UserSession.swift in Sources */,
 				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
@@ -573,6 +584,7 @@
 				8794839E27FD3E980066B8F2 /* NewsCollectionViewCell.swift in Sources */,
 				9963492D27FDC7BE00A463C9 /* HomeViewModel.swift in Sources */,
 				994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */,
+				A1F1237427FE4EE300657AF4 /* TestimonialsList.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
 				9993882727F0D190009B596B /* TabBarViewController.swift in Sources */,
 				A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */,

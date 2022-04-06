@@ -8,24 +8,16 @@
 import UIKit
 
 protocol SliderListDelegate {
+    func reloadTestimonials()
     func reloadSlider()
 }
 
 class HomeViewController: UIViewController {
     
-    struct TestimonialsData {
-        let image: UIImage?
-        let epigraph: String?
-    }
-    
     struct LastestNewsData {
         let image: UIImage?
         let epigraph: String?
     }
-    
-    var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen"),
-                            TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen"),
-                          ]
     
     let lastestNewsData = [ LastestNewsData(image: UIImage(named:"Image_1"), epigraph: "Epígrafe para imagen 1"),
                             LastestNewsData(image: UIImage(named:"Image_2"), epigraph: "Epígrafe para imagen 2"),
@@ -37,15 +29,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var testimonialsCollectionView: UICollectionView!
     @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
     
-    private let service = SliderService()
-    private var viewModel: SliderViewModel?
+    private let serviceSlider = SliderService()
+    private let serviceTestimonials = TestimonialsService()
+    private var sliderViewModel: SliderViewModel?
+    private var testimonialsViewModel: TestimonialsViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        self.viewModel = SliderViewModel(service: self.service, delegate: self)
-        self.viewModel?.getSliders()
+        self.sliderViewModel = SliderViewModel(service: self.serviceSlider, delegate: self)
+        self.testimonialsViewModel = TestimonialsViewModel(service: self.serviceTestimonials, delegate: self)
+        self.testimonialsViewModel?.getTestimonials()
+        self.sliderViewModel?.getSliders()
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -82,12 +78,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch collectionView {
         case self.testimonialsCollectionView:
             // Return Max pages = 4 and add 1 more for item "Ver más"
-            return min(testimonialsData.count + 1, 5)
+            return min(testimonialsViewModel!.getTestimonialsCount() + 1, 5)
         case self.lastestNewsCollectionView:
             // Return Max pages = 4 and add 1 more for item "Ver más". Its another case becouse takes data from another Array
             return min(lastestNewsData.count + 1, 5)
         default:
-            return self.viewModel?.getSlidersCount() ?? 0
+            return self.sliderViewModel?.getSlidersCount() ?? 0
         }
     }
     
@@ -95,16 +91,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch collectionView{
         case testimonialsCollectionView:
             // Add seeMore page
-            if indexPath.row == min(testimonialsData.count, 4) {
+            if indexPath.row == min(testimonialsViewModel!.getTestimonialsCount(), 4) {
                 let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
                 
                 return cell ?? SeeMoreCollectionViewCell()
             } else {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
-            
-            cell?.testimonialImage.image = testimonialsData[indexPath.row].image
-            cell?.testimonialEpigraph.text = testimonialsData[indexPath.row].epigraph
-            
+                let imagePath = self.testimonialsViewModel?.getTestimonial(at: indexPath.row).image
+                let imageUrl = URL(string: imagePath!)
+                
+                cell?.testimonialImage.load(url: imageUrl!)
+                cell?.testimonialEpigraph.text = testimonialsViewModel?.getTestimonial(at: indexPath.row).description
+                
             return cell ?? TestimonialsCollectionViewCell()
             }
         case lastestNewsCollectionView:
@@ -123,14 +121,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
             
-            cell?.myTitle.text = self.viewModel?.getSliders(at: indexPath.row).name
-            cell?.myDescription.text = self.viewModel?.getSliders(at: indexPath.row).description
+            cell?.myTitle.text = self.sliderViewModel?.getSliders(at: indexPath.row).name
+            cell?.myDescription.text = self.sliderViewModel?.getSliders(at: indexPath.row).description
             
             cell?.myImage.contentMode = .scaleAspectFill
             
-            let imagePath = self.viewModel?.getSliders(at: indexPath.row).image
+            let imagePath = self.sliderViewModel?.getSliders(at: indexPath.row).image
             let imageUrl = URL(string: imagePath!)
-            
             cell?.myImage.load(url: imageUrl!)
 
             return cell ?? HomeCollectionViewCell()
@@ -141,7 +138,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         collectionView.deselectItem(at: indexPath, animated: true)
         switch collectionView {
         case testimonialsCollectionView:
-            if indexPath.row == min(testimonialsData.count, 4) {
+            if indexPath.row == min(testimonialsViewModel!.getTestimonialsCount(), 4) {
                 // Add an action when the item is selected
             }
         case lastestNewsCollectionView:
@@ -171,6 +168,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: SliderListDelegate{
     
+    func reloadTestimonials() {
+        self.testimonialsCollectionView.reloadData()
+    }
     
     func reloadSlider() {
         self.collectionView.reloadData()
