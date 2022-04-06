@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="pQG-RF-AG3" id="ct0-EH-EPV"/>
+                <outlet property="lastestNewsCollectionView" destination="CJW-gU-FBs" id="9aC-Qc-Tj4"/>
                 <outlet property="testimonialsCollectionView" destination="5rO-Pe-k9A" id="zc1-lS-xum"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,10 +25,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gYx-P6-mGR">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZd-lu-JC5">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="1200"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pQG-RF-AG3">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="320"/>
@@ -61,16 +62,42 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultimas novedades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8w-zF-wF7">
+                                            <rect key="frame" x="85.000000000000014" y="737" width="220.33333333333337" height="31.333333333333371"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CJW-gU-FBs">
+                                            <rect key="frame" x="1" y="776" width="388" height="320"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="320" id="jNQ-Ss-umC"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C10-iW-pvF">
+                                                <size key="itemSize" width="128" height="128"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="max-tl-qjP" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="2bx-39-avd"/>
+                                        <constraint firstItem="CJW-gU-FBs" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" constant="1" id="3WV-pb-XiT"/>
+                                        <constraint firstItem="A8w-zF-wF7" firstAttribute="top" secondItem="5rO-Pe-k9A" secondAttribute="bottom" constant="27" id="BCE-Pu-4ev"/>
                                         <constraint firstItem="pQG-RF-AG3" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" id="Dd0-1r-HyI"/>
                                         <constraint firstItem="5rO-Pe-k9A" firstAttribute="top" secondItem="max-tl-qjP" secondAttribute="bottom" constant="8" symbolic="YES" id="Dfn-u9-SdZ"/>
-                                        <constraint firstAttribute="height" constant="1000" id="ELV-xH-3Uq"/>
+                                        <constraint firstAttribute="height" constant="1200" id="ELV-xH-3Uq"/>
+                                        <constraint firstAttribute="trailing" secondItem="CJW-gU-FBs" secondAttribute="trailing" constant="1" id="P5g-fp-qAh"/>
                                         <constraint firstAttribute="trailing" secondItem="5rO-Pe-k9A" secondAttribute="trailing" id="Q8g-JG-OJ0"/>
+                                        <constraint firstItem="CJW-gU-FBs" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="TsA-p5-1aa"/>
+                                        <constraint firstItem="CJW-gU-FBs" firstAttribute="top" secondItem="A8w-zF-wF7" secondAttribute="bottom" constant="7.6699999999999999" id="hTG-Ue-hvr"/>
+                                        <constraint firstItem="A8w-zF-wF7" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="n9Y-aP-hFb"/>
                                         <constraint firstItem="5rO-Pe-k9A" firstAttribute="top" secondItem="pQG-RF-AG3" secondAttribute="bottom" constant="70" id="q90-aN-s42"/>
                                         <constraint firstAttribute="trailing" secondItem="pQG-RF-AG3" secondAttribute="trailing" id="vsn-j5-xxn"/>
+                                        <constraint firstItem="A8w-zF-wF7" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="y9C-qJ-VeE"/>
                                         <constraint firstItem="pQG-RF-AG3" firstAttribute="top" secondItem="kZd-lu-JC5" secondAttribute="top" id="yti-l0-CmX"/>
                                         <constraint firstItem="5rO-Pe-k9A" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" id="z1y-lh-FHj"/>
                                     </constraints>
