@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF327EE999B004FAE80 /* LogInResponse.swift */; };
 		8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF627EE9A9E004FAE80 /* LoginModel.swift */; };
+		8794839E27FD3E980066B8F2 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */; };
+		879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */; };
 		87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABD46727EF85A100BC4441 /* LoginService.swift */; };
 		87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0C27E9741F00C13180 /* Extensions.swift */; };
 		87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0D27E9741F00C13180 /* Observable.swift */; };
@@ -47,6 +49,8 @@
 		068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomosMasApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8727FAF327EE999B004FAE80 /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
 		8727FAF627EE9A9E004FAE80 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
 		87ABD46727EF85A100BC4441 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		87CBCB0C27E9741F00C13180 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87CBCB0D27E9741F00C13180 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		9993881C27F0D09B009B596B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */,
 				FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */,
 				A1F1236C27F72CA000657AF4 /* TestimonialsCollectionViewCell.xib */,
 				A1F1237027FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib */,
@@ -209,6 +214,7 @@
 		9993881E27F0D0B7009B596B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */,
 				FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */,
 				995E4C5E27F1F7D100632693 /* HomeViewController.swift */,
 				A1F1236B27F72CA000657AF4 /* TestimonialsCollectionViewCell.swift */,
@@ -458,6 +464,7 @@
 				A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */,
 				994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
+				879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +536,7 @@
 				A1F1236D27F72CA100657AF4 /* TestimonialsCollectionViewCell.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				FB46181527EB528E00DBE262 /* NewUser.swift in Sources */,
+				8794839E27FD3E980066B8F2 /* NewsCollectionViewCell.swift in Sources */,
 				994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
 				9993882727F0D190009B596B /* TabBarViewController.swift in Sources */,
