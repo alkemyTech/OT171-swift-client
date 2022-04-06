@@ -34,9 +34,7 @@ class SliderViewModel {
     }
     
     func getSlidersCount() -> Int {
-        print(slidersResponded.count)
         return slidersResponded.count
-        
     }
 }
 
