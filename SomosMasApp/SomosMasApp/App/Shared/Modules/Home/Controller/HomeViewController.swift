@@ -102,7 +102,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 let imageUrl = URL(string: imagePath!)
                 
                 cell?.testimonialImage.load(url: imageUrl!)
-                cell?.testimonialEpigraph.text = testimonialsViewModel?.getTestimonial(at: indexPath.row).description
+                cell?.testimonialEpigraph.text = testimonialsViewModel?.getTestimonial(at: indexPath.row).name
                 
             return cell ?? TestimonialsCollectionViewCell()
             }
