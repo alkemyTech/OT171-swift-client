@@ -32,16 +32,13 @@ class HomeViewController: UIViewController {
     private let serviceSlider = SliderService()
     private let serviceTestimonials = TestimonialsService()
     private var sliderViewModel: SliderViewModel?
-    private var testimonialsViewModel: TestimonialsViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        self.sliderViewModel = SliderViewModel(service: self.serviceSlider, delegate: self)
-        self.testimonialsViewModel = TestimonialsViewModel(service: self.serviceTestimonials, delegate: self)
-        self.testimonialsViewModel?.getTestimonials()
+        self.sliderViewModel = SliderViewModel(service1: serviceSlider, service2: serviceTestimonials, delegate: self)
         self.sliderViewModel?.getSliders()
+        self.sliderViewModel?.getTestimonials()
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -77,11 +74,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case self.testimonialsCollectionView:
-            if testimonialsViewModel?.getTestimonialsCount() == 0 {
+            if sliderViewModel?.getTestimonialsCount() == 0 {
                 return 0
             } else {
             // Return Max pages = 4 and add 1 more for item "Ver más"
-            return min(testimonialsViewModel!.getTestimonialsCount() + 1, 5)
+            return min(sliderViewModel!.getTestimonialsCount() + 1, 5)
             }
         case self.lastestNewsCollectionView:
             // Return Max pages = 4 and add 1 more for item "Ver más". Its another case becouse takes data from another Array
@@ -95,11 +92,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch collectionView{
         case testimonialsCollectionView:
             // Add seeMore page
-            if indexPath.row == min(testimonialsViewModel!.getTestimonialsCount(), 4) {
+            if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
                 
                 return cell ?? SeeMoreCollectionViewCell()
-            } else if indexPath.row == testimonialsViewModel?.getTestimonialsCount() && testimonialsViewModel?.getTestimonialsCount() == 0 {
+            } else if indexPath.row == sliderViewModel?.getTestimonialsCount() && sliderViewModel?.getTestimonialsCount() == 0 {
                 let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? TestimonialsCollectionViewCell
                 //Hide section
                 cell?.isHidden = true
@@ -108,11 +105,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             } else {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
                 //Add images
-                let imagePath = self.testimonialsViewModel?.getTestimonial(at: indexPath.row).image
+                let imagePath = self.sliderViewModel?.getTestimonial(at: indexPath.row).image
                 let imageUrl = URL(string: imagePath!)
                 
                 cell?.testimonialImage.load(url: imageUrl!)
-                cell?.testimonialEpigraph.text = testimonialsViewModel?.getTestimonial(at: indexPath.row).name
+                cell?.testimonialEpigraph.text = sliderViewModel?.getTestimonial(at: indexPath.row).name
                 
             return cell ?? TestimonialsCollectionViewCell()
             }
@@ -149,7 +146,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         collectionView.deselectItem(at: indexPath, animated: true)
         switch collectionView {
         case testimonialsCollectionView:
-            if indexPath.row == min(testimonialsViewModel!.getTestimonialsCount(), 4) {
+            if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 // Add an action when the item is selected
             }
         case lastestNewsCollectionView:

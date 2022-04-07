@@ -11,10 +11,13 @@ class SliderViewModel {
     
     private var sliderService: SliderService
     private var slidersResponded = [SlidersList]()
+    private var testimonialsService: TestimonialsService
+    private var testimonialsResponse = [TestimonialsList]()
     private var delegate: SliderListDelegate
     
-    init(service: SliderService, delegate: SliderListDelegate) {
-        self.sliderService = service
+    init(service1: SliderService, service2: TestimonialsService, delegate: SliderListDelegate) {
+        self.sliderService = service1
+        self.testimonialsService = service2
         self.delegate = delegate
     }
     
@@ -28,25 +31,6 @@ class SliderViewModel {
         }
     }
     
-    func getSliders(at index: Int) -> SlidersList {
-        return slidersResponded[index]
-    }
-    
-    func getSlidersCount() -> Int {
-        return slidersResponded.count
-    }
-}
-
-class TestimonialsViewModel {
-    private var testimonialsService: TestimonialsService
-    private var testimonialsResponse = [TestimonialsList]()
-    private var delegate: SliderListDelegate
-    
-    init(service:TestimonialsService, delegate: SliderListDelegate) {
-        self.testimonialsService = service
-        self.delegate = delegate
-    }
-    
     func getTestimonials(){
         testimonialsService.getAllSliders {response in
             self.testimonialsResponse = response
@@ -56,14 +40,19 @@ class TestimonialsViewModel {
         }
     }
     
+    func getSliders(at index: Int) -> SlidersList {
+        return slidersResponded[index]
+    }
+    
     func getTestimonial(at index: Int) -> TestimonialsList {
         return testimonialsResponse[index]
+    }
+    
+    func getSlidersCount() -> Int {
+        return slidersResponded.count
     }
     
     func getTestimonialsCount() -> Int {
         return testimonialsResponse.count
     }
 }
-
-
-
