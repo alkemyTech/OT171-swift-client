@@ -97,7 +97,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 
                 return cell ?? SeeMoreCollectionViewCell()
             } else if indexPath.row == sliderViewModel?.getTestimonialsCount() && sliderViewModel?.getTestimonialsCount() == 0 {
-                let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? TestimonialsCollectionViewCell
+                let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
                 //Hide section
                 cell?.isHidden = true
                 
