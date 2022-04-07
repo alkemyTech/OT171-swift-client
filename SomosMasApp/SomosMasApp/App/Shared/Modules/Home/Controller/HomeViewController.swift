@@ -97,6 +97,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 return cell ?? SeeMoreCollectionViewCell()
             } else {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
+                //Add images
                 let imagePath = self.testimonialsViewModel?.getTestimonial(at: indexPath.row).image
                 let imageUrl = URL(string: imagePath!)
                 
