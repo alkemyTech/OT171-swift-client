@@ -18,6 +18,8 @@
 		87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CBCB1F27E974A900C13180 /* SignUpViewController.xib */; };
 		87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */; };
 		87CDAC8827F3BB87006738D0 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CDAC8727F3BB87006738D0 /* UserSession.swift */; };
+		9932EC1027FF2DFF0073B0C7 /* NosotrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9932EC0E27FF2DFF0073B0C7 /* NosotrosViewController.swift */; };
+		9932EC1127FF2DFF0073B0C7 /* NosotrosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9932EC0F27FF2DFF0073B0C7 /* NosotrosViewController.xib */; };
 		994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F9B9427F2166E00C2E2FF /* SecondScreenViewController.swift */; };
 		994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994F9B9527F2166E00C2E2FF /* SecondScreenViewController.xib */; };
 		995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995E4C5E27F1F7D100632693 /* HomeViewController.swift */; };
@@ -63,6 +65,8 @@
 		87CBCB1F27E974A900C13180 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		87CDAC8727F3BB87006738D0 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		9932EC0E27FF2DFF0073B0C7 /* NosotrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NosotrosViewController.swift; sourceTree = "<group>"; };
+		9932EC0F27FF2DFF0073B0C7 /* NosotrosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NosotrosViewController.xib; sourceTree = "<group>"; };
 		994F9B9427F2166E00C2E2FF /* SecondScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenViewController.swift; sourceTree = "<group>"; };
 		994F9B9527F2166E00C2E2FF /* SecondScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondScreenViewController.xib; sourceTree = "<group>"; };
 		995E4C5E27F1F7D100632693 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		87CBCB1A27E974A900C13180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9993F9A327FF2D5300D431AE /* Nosotros */,
 				A88F1AF927F396560062608D /* Splash */,
 				994F9B9127F214C400C2E2FF /* SecondTab */,
 				9993882827F0D1C4009B596B /* TabBar */,
@@ -266,6 +271,31 @@
 				9993882627F0D190009B596B /* TabBarViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9993F9A327FF2D5300D431AE /* Nosotros */ = {
+			isa = PBXGroup;
+			children = (
+				9993F9A427FF2D5C00D431AE /* ViewController */,
+				9993F9A527FF2D6900D431AE /* View */,
+			);
+			path = Nosotros;
+			sourceTree = "<group>";
+		};
+		9993F9A427FF2D5C00D431AE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9932EC0E27FF2DFF0073B0C7 /* NosotrosViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9993F9A527FF2D6900D431AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9932EC0F27FF2DFF0073B0C7 /* NosotrosViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A1DC72AE27EA260B00D9D16C /* LogIn */ = {
@@ -490,6 +520,7 @@
 				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
 				FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */,
 				A1F1236E27F72CA100657AF4 /* TestimonialsCollectionViewCell.xib in Resources */,
+				9932EC1127FF2DFF0073B0C7 /* NosotrosViewController.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */,
@@ -577,6 +608,7 @@
 				9993882727F0D190009B596B /* TabBarViewController.swift in Sources */,
 				A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */,
 				9963493327FDC7DA00A463C9 /* SliderListResponse.swift in Sources */,
+				9932EC1027FF2DFF0073B0C7 /* NosotrosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
