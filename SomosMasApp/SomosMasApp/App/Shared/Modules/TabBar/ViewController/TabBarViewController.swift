@@ -32,31 +32,20 @@ class TabBarViewController: UITabBarController {
         firstTabNavigationController.tabBarItem = UITabBarItem(title: firstTabTitle, image: firstTabImage, selectedImage: nil)
         
         
-        //As a example i added a second tab to the tab bar here.
+        // "Nosotros" Tab
         
-        let secondViewController = SecondScreenViewController(nibName: "SecondScreenViewController", bundle: nil)
+        let secondViewController = NosotrosViewController(nibName: "NosotrosViewController", bundle: nil)
         
-        secondViewController.title = "Screen 2"
+        secondViewController.title = "Nosotros"
         
         let secondTabNavigationController = UINavigationController(rootViewController: secondViewController)
         
-        secondTabNavigationController.tabBarItem = UITabBarItem(title: "Screen 2", image: UIImage(systemName: "list.dash"), selectedImage: nil)
-        
-        
-        // "Nosotros" Tab
-        
-        let thirdViewController = NosotrosViewController(nibName: "NosotrosViewController", bundle: nil)
-        
-        thirdViewController.title = "Nosotros"
-        
-        let thirdTabNavigationController = UINavigationController(rootViewController: thirdViewController)
-        
-        thirdTabNavigationController.tabBarItem = UITabBarItem(title: "Nosotros", image: UIImage(systemName: "person.3"), selectedImage: nil)
+        secondTabNavigationController.tabBarItem = UITabBarItem(title: "Nosotros", image: UIImage(systemName: "person.3"), selectedImage: nil)
         
         
         
-        // every tab of the app has to be inside this array, so if you are adding a tab bar, you have to add the tab bar here, for example [firstTabNavigationController, secondTabNavigationController, thirdTabBarNavigationController, fourthTabBarNavigationController]
-        viewControllers = [firstTabNavigationController, secondTabNavigationController, thirdTabNavigationController]
+        // every tab of the app has to be inside this array, so if you are adding a tab bar, you have to add the tab bar here, for example [firstTabNavigationController, secondTabNavigationController, thirdTabBarNavigationController]
+        viewControllers = [firstTabNavigationController, secondTabNavigationController]
     }
 }
 
