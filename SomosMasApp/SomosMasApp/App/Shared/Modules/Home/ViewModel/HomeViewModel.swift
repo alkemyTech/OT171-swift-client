@@ -24,7 +24,6 @@ class SliderViewModel {
     func getSliders(){
         sliderService.getAllSliders {response in
             self.slidersResponded = response
-       
             self.delegate.reloadSlider()
         } onError: {
             self.delegate.reloadSlider()
@@ -32,11 +31,10 @@ class SliderViewModel {
     }
     
     func getTestimonials() {
-     //   let testimonialsArray = [String]()
-     //   return testimonialsArray
         testimonialsService.getAllSliders {response in
         self.testimonialsResponse = response
         self.delegate.reloadTestimonials()
+        self.delegate.hideTestimonialsWithoutData()
         } onError: {
             self.delegate.hideTestimonials()
             self.delegate.hideLabel()

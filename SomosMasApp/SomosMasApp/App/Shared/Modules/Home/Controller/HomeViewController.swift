@@ -8,6 +8,7 @@
 import UIKit
 
 protocol SliderListDelegate {
+    func hideTestimonialsWithoutData()
     func hideTestimonials()
     func reloadTestimonials()
     func hideLabel()
@@ -150,7 +151,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         default:
             break
         }
-        
         }
     }
 
@@ -165,15 +165,20 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
         return CGSize(width: cellWidth, height: cellHeight)
     }
-    
 }
 
 extension HomeViewController: SliderListDelegate{
+    func hideTestimonialsWithoutData(){
+        if self.sliderViewModel?.getTestimonialsCount() == 0 {
+            hideLabel()
+            hideTestimonials()
+        }
+    }
     
     func hideTestimonials() {
         self.testimonialsCollectionView.isHidden = true
     }
-    
+
     func reloadTestimonials() {
         self.testimonialsCollectionView.reloadData()
     }
