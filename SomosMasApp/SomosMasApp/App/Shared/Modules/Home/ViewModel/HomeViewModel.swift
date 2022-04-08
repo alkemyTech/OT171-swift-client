@@ -38,6 +38,7 @@ class SliderViewModel {
             self.delegate.reloadNews()
         } onError: {
             self.delegate.reloadNews()
+            self.delegate.hideSectionsWithoutData()
         }
     }
     

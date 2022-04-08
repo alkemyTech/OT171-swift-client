@@ -10,6 +10,7 @@ import UIKit
 protocol SliderListDelegate {
     func reloadSlider()
     func reloadNews()
+    func hideSectionsWithoutData()
 }
 
 class HomeViewController: UIViewController {
@@ -37,6 +38,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var testimonialsCollectionView: UICollectionView!
     @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
+    @IBOutlet weak var lastestNewsTitleLabel: UILabel!
+    
     
     private let service = SliderService()
     private let serviceNews = NewsService()
@@ -87,7 +90,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             // Return Max pages = 4 and add 1 more for item "Ver más"
             return min(testimonialsData.count + 1, 5)
         case self.lastestNewsCollectionView:
-            return min((viewModel?.getNewsCount() ?? 0) + 1, 5) // func para reducir
+            return min(viewModel!.getNewsCount() + 1, 5) // func para reducir
         default:
             return self.viewModel?.getSlidersCount() ?? 0
         }
@@ -175,7 +178,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: SliderListDelegate{
-    
+    func hideSectionsWithoutData(){
+        if self.viewModel?.getNewsCount() == 0 {
+            self.lastestNewsCollectionView.isHidden = true
+            self.lastestNewsTitleLabel.isHidden = true
+        }
+    }
     
     func reloadSlider() {
         self.collectionView.reloadData()
