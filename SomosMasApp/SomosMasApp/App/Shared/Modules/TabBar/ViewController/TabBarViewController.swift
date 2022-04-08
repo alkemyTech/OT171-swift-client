@@ -31,20 +31,19 @@ class TabBarViewController: UITabBarController {
             //This line sets details of the items from the tab.
             firstTabNavigationController.tabBarItem = UITabBarItem(title: firstTabTitle, image: firstTabImage, selectedImage: nil)
             
-        
-           //As a example i added a second tab to the tab bar here.
-        
-           let secondViewController = SecondScreenViewController(nibName: "SecondScreenViewController", bundle: nil)
-        
-            secondViewController.title = "Screen 2"
-           
-            let secondTabNavigationController = UINavigationController(rootViewController: secondViewController)
-        
-            secondTabNavigationController.tabBarItem = UITabBarItem(title: "Screen 2", image: UIImage(systemName: "list.dash"), selectedImage: nil)
-             
-           // every tab of the app has to be inside this array, so if you are adding a tab bar, you have to add the tab bar here, for example [firstTabNavigationController, secondTabNavigationController, ThirdTabBarNavigationController]
-            viewControllers = [firstTabNavigationController, secondTabNavigationController]
-        }
+            //As a example i added a second tab to the tab bar here.
+         
+            let newsViewController = NewsViewController(nibName: "NewsViewController", bundle: nil)
+         
+            newsViewController.title = "News"
+            
+            let homeTabNavigationController = UINavigationController(rootViewController: newsViewController)
+         
+            homeTabNavigationController.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "list.dash"), selectedImage: nil)
+              
+            // every tab of the app has to be inside this array, so if you are adding a tab bar, you have to add the tab bar here, for example [firstTabNavigationController, secondTabNavigationController, ThirdTabBarNavigationController]
+             viewControllers = [firstTabNavigationController, homeTabNavigationController]
+         }
 }
 
 
