@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="forceLeftToRight" reuseIdentifier="newscell" id="H7E-Nu-W9M" customClass="NewsCollectionViewCell" customModule="SomosMasApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="IMz-pX-ri0">
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epígrafe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgA-hJ-xu4">
+                                <rect key="frame" x="20" y="208" width="218" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="68E-xo-VlF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yyl-7u-MgU">
+                                <rect key="frame" x="0.0" y="0.0" width="258" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="Hof-EG-DL9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZgA-hJ-xu4" firstAttribute="top" secondItem="Yyl-7u-MgU" secondAttribute="bottom" constant="3" id="3WI-kf-Vi2"/>
+                            <constraint firstAttribute="trailing" secondItem="Yyl-7u-MgU" secondAttribute="trailing" id="3fn-E5-JJC"/>
+                            <constraint firstAttribute="trailing" secondItem="Yyl-7u-MgU" secondAttribute="trailing" id="7dH-Jq-dBx"/>
+                            <constraint firstItem="Yyl-7u-MgU" firstAttribute="leading" secondItem="IMz-pX-ri0" secondAttribute="leading" id="DRJ-1S-3HY"/>
+                            <constraint firstItem="Yyl-7u-MgU" firstAttribute="leading" secondItem="IMz-pX-ri0" secondAttribute="leading" id="Ftk-2O-5oq"/>
+                            <constraint firstItem="Yyl-7u-MgU" firstAttribute="top" secondItem="IMz-pX-ri0" secondAttribute="top" id="IJc-Sa-Dzf"/>
+                            <constraint firstItem="Yyl-7u-MgU" firstAttribute="top" secondItem="IMz-pX-ri0" secondAttribute="top" id="J91-oM-fVq"/>
+                            <constraint firstItem="ZgA-hJ-xu4" firstAttribute="leading" secondItem="IMz-pX-ri0" secondAttribute="leading" constant="20" id="Oht-dl-X8V"/>
+                            <constraint firstItem="Yyl-7u-MgU" firstAttribute="centerX" secondItem="IMz-pX-ri0" secondAttribute="centerX" id="eTO-l2-APi"/>
+                            <constraint firstAttribute="trailing" secondItem="ZgA-hJ-xu4" secondAttribute="trailing" constant="20" id="fTZ-hk-JKu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="rz3-5s-NVv"/>
+            <constraints>
+                <constraint firstItem="IMz-pX-ri0" firstAttribute="top" secondItem="H7E-Nu-W9M" secondAttribute="top" id="AK2-S3-kQ6"/>
+                <constraint firstAttribute="bottom" secondItem="IMz-pX-ri0" secondAttribute="bottom" id="OR3-g9-8ro"/>
+                <constraint firstAttribute="trailing" secondItem="IMz-pX-ri0" secondAttribute="trailing" id="nVG-kN-9up"/>
+                <constraint firstItem="IMz-pX-ri0" firstAttribute="leading" secondItem="H7E-Nu-W9M" secondAttribute="leading" id="wC4-V5-ZIL"/>
+            </constraints>
+            <size key="customSize" width="258" height="261"/>
+            <connections>
+                <outlet property="newsDescription" destination="ZgA-hJ-xu4" id="zbF-Vc-RTi"/>
+                <outlet property="newsImage" destination="Yyl-7u-MgU" id="nLP-5W-Fjo"/>
+            </connections>
+            <point key="canvasLocation" x="286.23188405797106" y="140.95982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
