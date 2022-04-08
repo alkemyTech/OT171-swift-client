@@ -11,6 +11,8 @@
 		8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF627EE9A9E004FAE80 /* LoginModel.swift */; };
 		8794839E27FD3E980066B8F2 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */; };
 		879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */; };
+		879B32DC2800ED3F00205274 /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879B32DB2800ED3F00205274 /* NewsList.swift */; };
+		879B32DE2800ED6400205274 /* NewsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879B32DD2800ED6400205274 /* NewsListResponse.swift */; };
 		87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABD46727EF85A100BC4441 /* LoginService.swift */; };
 		87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0C27E9741F00C13180 /* Extensions.swift */; };
 		87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB0D27E9741F00C13180 /* Observable.swift */; };
@@ -56,6 +58,8 @@
 		8727FAF627EE9A9E004FAE80 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
+		879B32DB2800ED3F00205274 /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
+		879B32DD2800ED6400205274 /* NewsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListResponse.swift; sourceTree = "<group>"; };
 		87ABD46727EF85A100BC4441 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		87CBCB0C27E9741F00C13180 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87CBCB0D27E9741F00C13180 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -406,6 +410,8 @@
 		FB46181327EB522500DBE262 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				879B32DB2800ED3F00205274 /* NewsList.swift */,
+				879B32DD2800ED6400205274 /* NewsListResponse.swift */,
 				9963493027FDC7DA00A463C9 /* SliderList.swift */,
 				9963493127FDC7DA00A463C9 /* SliderListResponse.swift */,
 				FB46181427EB528E00DBE262 /* NewUser.swift */,
@@ -554,6 +560,7 @@
 				FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */,
 				FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */,
 				A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */,
+				879B32DC2800ED3F00205274 /* NewsList.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
 				A88F1AFE27F396860062608D /* SplashViewController.swift in Sources */,
 				A1F1237127FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift in Sources */,
@@ -571,6 +578,7 @@
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				FB46181527EB528E00DBE262 /* NewUser.swift in Sources */,
 				8794839E27FD3E980066B8F2 /* NewsCollectionViewCell.swift in Sources */,
+				879B32DE2800ED6400205274 /* NewsListResponse.swift in Sources */,
 				9963492D27FDC7BE00A463C9 /* HomeViewModel.swift in Sources */,
 				994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
