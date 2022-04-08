@@ -9,6 +9,7 @@ import UIKit
 
 protocol SliderListDelegate {
     func reloadSlider()
+    func reloadNews()
 }
 
 class HomeViewController: UIViewController {
@@ -38,14 +39,16 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
     
     private let service = SliderService()
+    private let serviceNews = NewsService()
     private var viewModel: SliderViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        self.viewModel = SliderViewModel(service: self.service, delegate: self)
+        self.viewModel = SliderViewModel(service: self.service, service3: self.serviceNews, delegate: self)
         self.viewModel?.getSliders()
+        self.viewModel?.getNews()
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -84,8 +87,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             // Return Max pages = 4 and add 1 more for item "Ver más"
             return min(testimonialsData.count + 1, 5)
         case self.lastestNewsCollectionView:
-            // Return Max pages = 4 and add 1 more for item "Ver más". Its another case becouse takes data from another Array
-            return min(lastestNewsData.count + 1, 5)
+            return min((viewModel?.getNewsCount() ?? 0) + 1, 5) // func para reducir
         default:
             return self.viewModel?.getSlidersCount() ?? 0
         }
@@ -108,16 +110,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell ?? TestimonialsCollectionViewCell()
             }
         case lastestNewsCollectionView:
-            if indexPath.row == min(lastestNewsData.count, 4) {
+            if indexPath.row == min(viewModel!.getNewsCount(), 4) {
                 let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
 
                 return cell ?? SeeMoreCollectionViewCell()
             } else {
             let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "newscell", for: indexPath) as? NewsCollectionViewCell
             
-            cell?.newsImage.image = lastestNewsData[indexPath.row].image
-            cell?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
-            
+                let imagePath = self.viewModel?.getNews(at: indexPath.row).image
+                let imageUrl = URL(string: imagePath!)
+                
+                cell?.newsImage.load(url: imageUrl!)
+                cell?.newsDescription.text = viewModel?.getNews(at: indexPath.row).name
+                
             return cell ?? NewsCollectionViewCell()
             }
         default:
@@ -145,7 +150,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 // Add an action when the item is selected
             }
         case lastestNewsCollectionView:
-            if indexPath.row == min(lastestNewsData.count, 4) {
+            if indexPath.row == min(viewModel!.getNewsCount(), 4) {
                 // Add an action when "ver Más" item from "Ultimas novedades" is selected
             }
         default:
@@ -176,4 +181,8 @@ extension HomeViewController: SliderListDelegate{
         self.collectionView.reloadData()
     }
     
+    func reloadNews() {
+        self.lastestNewsCollectionView.reloadData()
+    }
+
 }

@@ -11,9 +11,5 @@ class NewsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsDescription: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+        
 }
