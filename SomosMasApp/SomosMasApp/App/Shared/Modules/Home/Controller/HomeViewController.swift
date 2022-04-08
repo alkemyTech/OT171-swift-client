@@ -75,12 +75,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case self.testimonialsCollectionView:
-            if sliderViewModel?.getTestimonialsCount() == 0 {
-                return 0
-            } else {
             // Return Max pages = 4 and add 1 more for item "Ver más"
             return min(sliderViewModel!.getTestimonialsCount() + 1, 5)
-            }
         case self.lastestNewsCollectionView:
             // Return Max pages = 4 and add 1 more for item "Ver más". Its another case becouse takes data from another Array
             return min(lastestNewsData.count + 1, 5)
@@ -92,17 +88,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView{
         case testimonialsCollectionView:
+            //Hide collection view
+            if sliderViewModel?.getTestimonials() == [] {
+                let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
+                cell?.isHidden = true
+                
+                return cell ?? TestimonialsCollectionViewCell()
+            }
             // Add seeMore page
             if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
                 
                 return cell ?? SeeMoreCollectionViewCell()
-            } else if indexPath.row == sliderViewModel?.getTestimonialsCount() && sliderViewModel?.getTestimonialsCount() == 0 {
-                let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
-                //Hide section
-                cell?.isHidden = true
-                
-                return cell ?? TestimonialsCollectionViewCell()
             } else {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
                 //Add images
