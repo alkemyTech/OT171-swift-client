@@ -42,8 +42,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        self.showSpinner(onView: self.view)
         self.viewModel = SliderViewModel(service: self.service, delegate: self)
         self.viewModel?.getSliders()
         collectionView.isPagingEnabled = true
@@ -65,10 +64,15 @@ class HomeViewController: UIViewController {
 
         let backButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeApp))
         self.navigationItem.leftBarButtonItem  = backButton
+        
     }
     @objc func closeApp() {
         exit(0)
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.removeSpinner()
     }
 }
 
