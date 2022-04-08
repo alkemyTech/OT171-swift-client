@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
                             LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe para imagen 4")
                           ]
     
+    @IBOutlet weak var testimonialsTitleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var testimonialsCollectionView: UICollectionView!
     @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
@@ -110,6 +111,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 
                 cell?.testimonialImage.load(url: imageUrl!)
                 cell?.testimonialEpigraph.text = sliderViewModel?.getTestimonial(at: indexPath.row).name
+                cell?.testimonialDescription.text = sliderViewModel?.getTestimonial(at: indexPath.row).description
                 
             return cell ?? TestimonialsCollectionViewCell()
             }

@@ -10,4 +10,5 @@ import Foundation
 struct TestimonialsList: Codable {
     let image: String?
     let name: String?
+    let description: String?
 }
