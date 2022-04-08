@@ -31,12 +31,15 @@ class SliderViewModel {
         }
     }
     
-    func getTestimonials(){
+    func getTestimonials() {
+     //   let testimonialsArray = [String]()
+     //   return testimonialsArray
         testimonialsService.getAllSliders {response in
-            self.testimonialsResponse = response
-            self.delegate.reloadTestimonials()
+        self.testimonialsResponse = response
+        self.delegate.reloadTestimonials()
         } onError: {
-            self.delegate.reloadTestimonials()
+            self.delegate.hideTestimonials()
+            self.delegate.hideLabel()
         }
     }
     

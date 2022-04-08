@@ -8,7 +8,9 @@
 import UIKit
 
 protocol SliderListDelegate {
+    func hideTestimonials()
     func reloadTestimonials()
+    func hideLabel()
     func reloadSlider()
 }
 
@@ -88,13 +90,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView{
         case testimonialsCollectionView:
-            //Hide collection view
-            if sliderViewModel?.getTestimonials() == [] {
-                let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
-                cell?.isHidden = true
-                
-                return cell ?? TestimonialsCollectionViewCell()
-            }
             // Add seeMore page
             if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
@@ -175,8 +170,16 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 extension HomeViewController: SliderListDelegate{
     
+    func hideTestimonials() {
+        self.testimonialsCollectionView.isHidden = true
+    }
+    
     func reloadTestimonials() {
         self.testimonialsCollectionView.reloadData()
+    }
+    
+    func hideLabel() {
+        self.testimonialsTitleLabel.isHidden = true
     }
     
     func reloadSlider() {
