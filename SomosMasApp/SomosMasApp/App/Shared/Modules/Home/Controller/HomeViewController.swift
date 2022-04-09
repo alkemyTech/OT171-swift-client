@@ -19,22 +19,11 @@ class HomeViewController: UIViewController {
         let image: UIImage?
         let epigraph: String?
     }
-    
-    struct LastestNewsData {
-        let image: UIImage?
-        let epigraph: String?
-    }
-    
+        
     var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen"),
                             TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen"),
                           ]
-    
-    let lastestNewsData = [ LastestNewsData(image: UIImage(named:"Image_1"), epigraph: "Epígrafe para imagen 1"),
-                            LastestNewsData(image: UIImage(named:"Image_2"), epigraph: "Epígrafe para imagen 2"),
-                            LastestNewsData(image: UIImage(named:"Image_3"), epigraph: "Epígrafe para imagen 3"),
-                            LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe para imagen 4")
-                          ]
-    
+        
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var testimonialsCollectionView: UICollectionView!
     @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
@@ -90,7 +79,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             // Return Max pages = 4 and add 1 more for item "Ver más"
             return min(testimonialsData.count + 1, 5)
         case self.lastestNewsCollectionView:
-            return min(viewModel!.getNewsCount() + 1, 5) // func para reducir
+            return min(viewModel!.getNewsCount() + 1, 5)
         default:
             return self.viewModel?.getSlidersCount() ?? 0
         }
