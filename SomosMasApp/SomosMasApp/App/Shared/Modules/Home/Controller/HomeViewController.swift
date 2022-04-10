@@ -112,6 +112,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 let imagePath = self.viewModel?.getNews(at: indexPath.row).image
                 let imageUrl = URL(string: imagePath!)
                 
+                cell?.newsImage.contentMode = .scaleAspectFit
                 cell?.newsImage.load(url: imageUrl!)
                 cell?.newsDescription.text = viewModel?.getNews(at: indexPath.row).name
                 
