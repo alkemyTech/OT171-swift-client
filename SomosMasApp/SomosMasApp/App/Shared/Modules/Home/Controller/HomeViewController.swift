@@ -170,8 +170,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 extension HomeViewController: SliderListDelegate{
     func hideSectionsWithoutData(){
         if self.viewModel?.getNewsCount() == 0 {
+            // Hide section if service doesn't return data
             self.lastestNewsCollectionView.isHidden = true
             self.lastestNewsTitleLabel.isHidden = true
+            // Reduce height constraint to zero
+            self.lastestNewsCollectionView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            self.lastestNewsTitleLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
         }
     }
     
