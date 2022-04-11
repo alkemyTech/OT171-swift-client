@@ -10,7 +10,6 @@ import UIKit
 protocol SliderListDelegate {
     func hideTestimonials()
     func reloadTestimonials()
-    func hideLabel()
     func reloadSlider()
 }
 
@@ -170,14 +169,11 @@ extension HomeViewController: SliderListDelegate{
     
     func hideTestimonials() {
         self.testimonialsCollectionView.isHidden = true
+        self.testimonialsTitleLabel.isHidden = true
     }
 
     func reloadTestimonials() {
         self.testimonialsCollectionView.reloadData()
-    }
-    
-    func hideLabel() {
-        self.testimonialsTitleLabel.isHidden = true
     }
     
     func reloadSlider() {
