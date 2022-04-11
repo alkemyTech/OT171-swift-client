@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NosotrosViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
-                <outlet property="nosotrosCollectionView" destination="sqT-j0-I6H" id="Zkg-Wp-NsY"/>
+                <outlet property="nosotrosCollectionView" destination="50v-Ra-7if" id="tGy-Vi-gm3"/>
+                <outlet property="textView" destination="ubz-ga-t9M" id="dXX-ML-y11"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,25 +21,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2N-j7-0Ii">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="458"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" id="sqT-j0-I6H">
-                            <rect key="frame" x="0.0" y="367" width="414" height="451"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jRs-bl-xu6">
-                                <size key="itemSize" width="128" height="128"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                        </collectionView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-ga-t9M">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="367"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="233.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="233.5" id="yn8-o1-adW"/>
+                            </constraints>
+                            <mutableString key="text">Desde 1997 en Somos Más trabajamos con los chicos y chicas, mamás y papás, abuelos y vecinos del barrio La Cava generando procesos de crecimiento y de inserción social. Uniendo las manos de todas las familias, las que viven en el barrio y las que viven fuera de él, es que podemos pensar, crear y garantizar estos procesos. Somos una asociación civil sin fines de lucro que se creó en 1997 con la intención de dar alimento a las familias del barrio. Con el tiempo fuimos involucrándonos con la comunidad y agrandando y mejorando nuestra capacidad de trabajo. Hoy somos un centro comunitario que acompaña a más de 700 personas a través de las áreas de: Educación, deportes, primera infancia, salud, alimentación y trabajo social.</mutableString>
                             <color key="textColor" systemColor="labelColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                     </subviews>
@@ -46,22 +39,51 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="414" id="9Wx-65-jHx"/>
                         <constraint firstItem="ubz-ga-t9M" firstAttribute="top" secondItem="y2N-j7-0Ii" secondAttribute="top" id="dqG-f7-xEs"/>
-                        <constraint firstItem="sqT-j0-I6H" firstAttribute="top" secondItem="ubz-ga-t9M" secondAttribute="bottom" id="jKx-x4-QNa"/>
                         <constraint firstItem="ubz-ga-t9M" firstAttribute="centerX" secondItem="y2N-j7-0Ii" secondAttribute="centerX" id="kNm-9V-ovm"/>
                         <constraint firstAttribute="trailing" secondItem="ubz-ga-t9M" secondAttribute="trailing" id="lMf-uj-RF4"/>
                         <constraint firstItem="ubz-ga-t9M" firstAttribute="leading" secondItem="y2N-j7-0Ii" secondAttribute="leading" id="oiu-QL-aql"/>
-                        <constraint firstItem="sqT-j0-I6H" firstAttribute="top" secondItem="ubz-ga-t9M" secondAttribute="bottom" id="uTX-sv-RpD"/>
-                        <constraint firstAttribute="height" constant="818" id="y7C-At-1tG"/>
+                        <constraint firstAttribute="height" constant="458" id="y7C-At-1tG"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3D-W3-lIp">
+                    <rect key="frame" x="0.0" y="500" width="414" height="362"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="50v-Ra-7if">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="354"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FIn-N7-zQB">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="50v-Ra-7if" firstAttribute="top" secondItem="s3D-W3-lIp" secondAttribute="top" id="Jla-4u-5wy"/>
+                        <constraint firstAttribute="trailing" secondItem="50v-Ra-7if" secondAttribute="trailing" id="NXh-sq-uuY"/>
+                        <constraint firstItem="50v-Ra-7if" firstAttribute="leading" secondItem="s3D-W3-lIp" secondAttribute="leading" id="iVK-Re-qR5"/>
+                        <constraint firstAttribute="bottom" secondItem="50v-Ra-7if" secondAttribute="bottom" constant="8" id="li4-Is-PkE"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.60392156860000001" green="0.78823529410000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s3D-W3-lIp" secondAttribute="trailing" id="08q-hM-T5j"/>
                 <constraint firstItem="y2N-j7-0Ii" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6Vl-mb-fGf"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="73X-id-S4U"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8a5-QK-NWU"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="top" secondItem="y2N-j7-0Ii" secondAttribute="bottom" constant="-2" id="A3F-01-b6G"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BOR-cC-yGD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s3D-W3-lIp" secondAttribute="bottom" id="EnY-Xp-ZMD"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nnm-sp-ldu"/>
                 <constraint firstItem="y2N-j7-0Ii" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bC7-6i-Rkc"/>
-                <constraint firstItem="y2N-j7-0Ii" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="btB-Av-ede"/>
+                <constraint firstItem="y2N-j7-0Ii" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-360" id="btB-Av-ede"/>
                 <constraint firstAttribute="trailing" secondItem="y2N-j7-0Ii" secondAttribute="trailing" id="ev0-wN-xH2"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="top" secondItem="y2N-j7-0Ii" secondAttribute="bottom" constant="-2" id="mDN-df-pPR"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="top" secondItem="y2N-j7-0Ii" secondAttribute="bottom" constant="-2" id="mHv-mh-Kbp"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="139.95535714285714"/>
         </view>

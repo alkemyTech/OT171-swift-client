@@ -20,35 +20,50 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-9s-V0Q">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mye-5X-OrR">
-                                <rect key="frame" x="27.5" y="58" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1F-NR-80O">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="ZcN-Kz-Qdl"/>
+                                    <constraint firstAttribute="width" constant="100" id="q3R-pi-1Ih"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Job TItle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiH-XN-xAN">
+                                <rect key="frame" x="0.0" y="79" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1F-NR-80O">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="58"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job TItle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiH-XN-xAN">
-                                <rect key="frame" x="0.0" y="79" width="100" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mye-5X-OrR">
+                                <rect key="frame" x="0.0" y="58" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Z1F-NR-80O" firstAttribute="top" secondItem="fxw-9s-V0Q" secondAttribute="top" id="0P0-xI-qqe"/>
                             <constraint firstItem="RiH-XN-xAN" firstAttribute="top" secondItem="Mye-5X-OrR" secondAttribute="bottom" id="2NK-c7-ye6"/>
                             <constraint firstItem="Z1F-NR-80O" firstAttribute="centerX" secondItem="fxw-9s-V0Q" secondAttribute="centerX" id="446-sJ-OBp"/>
+                            <constraint firstAttribute="bottom" secondItem="RiH-XN-xAN" secondAttribute="bottom" id="5kt-hT-BkE"/>
                             <constraint firstItem="Z1F-NR-80O" firstAttribute="top" secondItem="fxw-9s-V0Q" secondAttribute="top" id="6eF-8S-br5"/>
+                            <constraint firstAttribute="trailing" secondItem="Mye-5X-OrR" secondAttribute="trailing" id="7Gr-wg-mJU"/>
                             <constraint firstItem="Mye-5X-OrR" firstAttribute="centerX" secondItem="fxw-9s-V0Q" secondAttribute="centerX" id="AAI-QZ-Yq0"/>
+                            <constraint firstAttribute="trailing" secondItem="Z1F-NR-80O" secondAttribute="trailing" id="D6f-Ih-8yh"/>
+                            <constraint firstAttribute="trailing" secondItem="RiH-XN-xAN" secondAttribute="trailing" id="DNg-fq-vbb"/>
                             <constraint firstAttribute="bottom" secondItem="RiH-XN-xAN" secondAttribute="bottom" id="Gzd-Al-WqL"/>
+                            <constraint firstItem="Z1F-NR-80O" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="LgY-nb-fN9"/>
                             <constraint firstAttribute="trailing" secondItem="Z1F-NR-80O" secondAttribute="trailing" id="Pvv-J9-Ner"/>
+                            <constraint firstItem="Mye-5X-OrR" firstAttribute="top" secondItem="Z1F-NR-80O" secondAttribute="bottom" id="aOU-sc-OO5"/>
+                            <constraint firstItem="Mye-5X-OrR" firstAttribute="top" secondItem="Z1F-NR-80O" secondAttribute="bottom" id="bOt-Ap-ABV"/>
                             <constraint firstAttribute="trailing" secondItem="RiH-XN-xAN" secondAttribute="trailing" id="btF-Hh-YPs"/>
                             <constraint firstItem="RiH-XN-xAN" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="exE-5H-hQT"/>
                             <constraint firstItem="Z1F-NR-80O" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="fob-N7-8dK"/>
+                            <constraint firstItem="RiH-XN-xAN" firstAttribute="top" secondItem="Mye-5X-OrR" secondAttribute="bottom" id="g5i-D3-4yz"/>
+                            <constraint firstItem="RiH-XN-xAN" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="mPw-Z3-T3p"/>
                             <constraint firstItem="RiH-XN-xAN" firstAttribute="centerX" secondItem="fxw-9s-V0Q" secondAttribute="centerX" id="tJw-Qb-E3I"/>
                             <constraint firstItem="Mye-5X-OrR" firstAttribute="top" secondItem="Z1F-NR-80O" secondAttribute="bottom" id="tQ8-Gx-JJT"/>
+                            <constraint firstItem="Mye-5X-OrR" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="xko-Ws-Qm4"/>
                         </constraints>
                     </view>
                 </subviews>
