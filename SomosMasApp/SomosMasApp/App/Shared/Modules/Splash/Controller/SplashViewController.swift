@@ -21,10 +21,10 @@ class SplashViewController: UIViewController {
             
             self.loader.stopAnimating()
             
-                let homeViewController = TabBarViewController()
+                let tabBarController = TabBarViewController()
                 let logInViewController = logInViewController()
                 if let _ = self.defaults.string(forKey: "token"){
-                    self.navigationController?.pushViewController(homeViewController, animated: true)
+                    self.navigationController?.pushViewController(tabBarController, animated: true)
                 } else {
                     self.navigationController?.pushViewController(logInViewController, animated: true)
                 }
