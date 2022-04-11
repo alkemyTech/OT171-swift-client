@@ -51,6 +51,8 @@
 		FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */; };
 		FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */; };
 		FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */; };
+		FBCC597E2804AADD0041D9CA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCC597A2804AADD0041D9CA /* NewsViewController.swift */; };
+		FBCC597F2804AADD0041D9CA /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCC597C2804AADD0041D9CA /* NewsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		FBCC597A2804AADD0041D9CA /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		FBCC597C2804AADD0041D9CA /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		87CBCB1A27E974A900C13180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FBCC59772804AADD0041D9CA /* News */,
 				A88F1AF927F396560062608D /* Splash */,
 				A1F1270328047A5D00657AF4 /* Nosotros */,
 				9993882827F0D1C4009B596B /* TabBar */,
@@ -434,6 +439,47 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		FBCC59772804AADD0041D9CA /* News */ = {
+			isa = PBXGroup;
+			children = (
+				FBCC59782804AADD0041D9CA /* ViewModel */,
+				FBCC59792804AADD0041D9CA /* Controller */,
+				FBCC597B2804AADD0041D9CA /* View */,
+				FBCC597D2804AADD0041D9CA /* Services */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		FBCC59782804AADD0041D9CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FBCC59792804AADD0041D9CA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBCC597A2804AADD0041D9CA /* NewsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FBCC597B2804AADD0041D9CA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBCC597C2804AADD0041D9CA /* NewsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FBCC597D2804AADD0041D9CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -505,6 +551,7 @@
 				A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 				879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */,
+				FBCC597F2804AADD0041D9CA /* NewsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +619,7 @@
 				87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */,
 				A1F1237627FE4F5400657AF4 /* TestimonialsListResponse.swift in Sources */,
 				87CDAC8827F3BB87006738D0 /* UserSession.swift in Sources */,
+				FBCC597E2804AADD0041D9CA /* NewsViewController.swift in Sources */,
 				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
 				A1F1270928047A5D00657AF4 /* NosotrosViewController.swift in Sources */,
