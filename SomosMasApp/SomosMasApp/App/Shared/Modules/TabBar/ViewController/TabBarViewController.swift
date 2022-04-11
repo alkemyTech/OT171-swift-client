@@ -43,9 +43,17 @@ class TabBarViewController: UITabBarController {
         secondTabNavigationController.tabBarItem = UITabBarItem(title: "Nosotros", image: UIImage(systemName: "person.3"), selectedImage: nil)
         
         
+        // "News" Tab
+        
+        let tercerViewController = NewsViewController(nibName: "NewsViewController", bundle: nil)
+
+        let tercerTabNavigationController = UINavigationController(rootViewController: tercerViewController)
+
+        tercerTabNavigationController.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "newspaper"), selectedImage: nil)
+        
         
         // every tab of the app has to be inside this array, so if you are adding a tab bar, you have to add the tab bar here, for example [firstTabNavigationController, secondTabNavigationController, thirdTabBarNavigationController]
-        viewControllers = [firstTabNavigationController, secondTabNavigationController]
+        viewControllers = [firstTabNavigationController, secondTabNavigationController, tercerTabNavigationController]
     }
 }
 
