@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="collectionView" destination="pQG-RF-AG3" id="ct0-EH-EPV"/>
                 <outlet property="lastestNewsCollectionView" destination="h4B-M9-zss" id="Ffa-na-Mi5"/>
-                <outlet property="lastestNewsTitleLabel" destination="kEc-qJ-nOw" id="oR7-SF-jlr"/>
+                <outlet property="lastestNewsTitleLabel" destination="kEc-qJ-nOw" id="tt0-tl-6xU"/>
                 <outlet property="testimonialsCollectionView" destination="5rO-Pe-k9A" id="zc1-lS-xum"/>
                 <outlet property="testimonialsTitleLabel" destination="Elq-Vy-XVo" id="H2I-Pv-Q5W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

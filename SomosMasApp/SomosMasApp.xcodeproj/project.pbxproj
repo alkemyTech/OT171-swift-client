@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF327EE999B004FAE80 /* LogInResponse.swift */; };
 		8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF627EE9A9E004FAE80 /* LoginModel.swift */; };
+		874C5F242804DD1900ADA695 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C5F232804DD1900ADA695 /* NewsService.swift */; };
+		874C5F262804DD3F00ADA695 /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C5F252804DD3F00ADA695 /* NewsList.swift */; };
+		874C5F282804DD4600ADA695 /* NewsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C5F272804DD4600ADA695 /* NewsListResponse.swift */; };
 		8794839E27FD3E980066B8F2 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */; };
 		879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */; };
 		87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABD46727EF85A100BC4441 /* LoginService.swift */; };
@@ -57,6 +60,9 @@
 		068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomosMasApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8727FAF327EE999B004FAE80 /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
 		8727FAF627EE9A9E004FAE80 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		874C5F232804DD1900ADA695 /* NewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		874C5F252804DD3F00ADA695 /* NewsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
+		874C5F272804DD4600ADA695 /* NewsListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListResponse.swift; sourceTree = "<group>"; };
 		8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
 		87ABD46727EF85A100BC4441 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 		9963492827FDC68700A463C9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				874C5F232804DD1900ADA695 /* NewsService.swift */,
 				9963492E27FDC7CB00A463C9 /* SliderService.swift */,
 				A1F1237727FE4FF400657AF4 /* TestimonialsService.swift */,
 			);
@@ -413,6 +420,8 @@
 		FB46181327EB522500DBE262 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				874C5F252804DD3F00ADA695 /* NewsList.swift */,
+				874C5F272804DD4600ADA695 /* NewsListResponse.swift */,
 				A1F1237327FE4EE300657AF4 /* TestimonialsList.swift */,
 				A1F1237527FE4F5400657AF4 /* TestimonialsListResponse.swift */,
 				9963493027FDC7DA00A463C9 /* SliderList.swift */,
@@ -567,6 +576,7 @@
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
 				A88F1AFE27F396860062608D /* SplashViewController.swift in Sources */,
 				A1F1237127FCDA8100657AF4 /* SeeMoreCollectionViewCell.swift in Sources */,
+				874C5F262804DD3F00ADA695 /* NewsList.swift in Sources */,
 				87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */,
 				FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */,
 				87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */,
@@ -578,6 +588,8 @@
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
 				A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */,
 				A1F1236D27F72CA100657AF4 /* TestimonialsCollectionViewCell.swift in Sources */,
+				874C5F282804DD4600ADA695 /* NewsListResponse.swift in Sources */,
+				874C5F242804DD1900ADA695 /* NewsService.swift in Sources */,
 				9963493227FDC7DA00A463C9 /* SliderList.swift in Sources */,
 				9963492B27FDC7A300A463C9 /* ImageViewExtension.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
