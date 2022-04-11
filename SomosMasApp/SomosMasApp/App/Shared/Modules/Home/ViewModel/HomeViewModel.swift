@@ -33,8 +33,12 @@ class SliderViewModel {
     func getTestimonials() {
         testimonialsService.getAllSliders {response in
         self.testimonialsResponse = response
-        self.delegate.reloadTestimonials()
-        self.delegate.hideTestimonialsWithoutData()
+            if self.getTestimonialsCount() == 0 {
+                self.delegate.hideTestimonials()
+                self.delegate.hideLabel()
+            } else {
+                self.delegate.reloadTestimonials()
+            }
         } onError: {
             self.delegate.hideTestimonials()
             self.delegate.hideLabel()

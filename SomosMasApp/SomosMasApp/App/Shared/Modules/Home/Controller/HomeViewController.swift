@@ -8,7 +8,6 @@
 import UIKit
 
 protocol SliderListDelegate {
-    func hideTestimonialsWithoutData()
     func hideTestimonials()
     func reloadTestimonials()
     func hideLabel()
@@ -168,12 +167,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: SliderListDelegate{
-    func hideTestimonialsWithoutData(){
-        if self.sliderViewModel?.getTestimonialsCount() == 0 {
-            hideLabel()
-            hideTestimonials()
-        }
-    }
     
     func hideTestimonials() {
         self.testimonialsCollectionView.isHidden = true
