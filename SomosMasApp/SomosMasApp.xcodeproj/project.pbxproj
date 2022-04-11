@@ -18,8 +18,8 @@
 		87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CBCB1F27E974A900C13180 /* SignUpViewController.xib */; };
 		87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */; };
 		87CDAC8827F3BB87006738D0 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CDAC8727F3BB87006738D0 /* UserSession.swift */; };
-		994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F9B9427F2166E00C2E2FF /* SecondScreenViewController.swift */; };
-		994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994F9B9527F2166E00C2E2FF /* SecondScreenViewController.xib */; };
+		9932EC1027FF2DFF0073B0C7 /* NosotrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9932EC0E27FF2DFF0073B0C7 /* NosotrosViewController.swift */; };
+		9932EC1127FF2DFF0073B0C7 /* NosotrosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9932EC0F27FF2DFF0073B0C7 /* NosotrosViewController.xib */; };
 		995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995E4C5E27F1F7D100632693 /* HomeViewController.swift */; };
 		995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995E4C5F27F1F7D100632693 /* HomeViewController.xib */; };
 		9963492B27FDC7A300A463C9 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9963492A27FDC7A300A463C9 /* ImageViewExtension.swift */; };
@@ -45,9 +45,6 @@
 		FB46181527EB528E00DBE262 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181427EB528E00DBE262 /* NewUser.swift */; };
 		FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */; };
 		FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181927EB53EF00DBE262 /* RegisterUserService.swift */; };
-		FB7B6C3C2800B71000D1765C /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7B6C3B2800B71000D1765C /* Spinner.swift */; };
-		FB7B6C452800E1FD00D1765C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7B6C432800E1FD00D1765C /* NewsViewController.swift */; };
-		FB7B6C462800E1FD00D1765C /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB7B6C442800E1FD00D1765C /* NewsViewController.xib */; };
 		FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */; };
 		FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */; };
 		FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */; };
@@ -66,8 +63,8 @@
 		87CBCB1F27E974A900C13180 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		87CDAC8727F3BB87006738D0 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
-		994F9B9427F2166E00C2E2FF /* SecondScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenViewController.swift; sourceTree = "<group>"; };
-		994F9B9527F2166E00C2E2FF /* SecondScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondScreenViewController.xib; sourceTree = "<group>"; };
+		9932EC0E27FF2DFF0073B0C7 /* NosotrosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NosotrosViewController.swift; sourceTree = "<group>"; };
+		9932EC0F27FF2DFF0073B0C7 /* NosotrosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NosotrosViewController.xib; sourceTree = "<group>"; };
 		995E4C5E27F1F7D100632693 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		995E4C5F27F1F7D100632693 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		9963492A27FDC7A300A463C9 /* ImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
@@ -96,9 +93,6 @@
 		FB46181427EB528E00DBE262 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterResponse.swift; sourceTree = "<group>"; };
 		FB46181927EB53EF00DBE262 /* RegisterUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserService.swift; sourceTree = "<group>"; };
-		FB7B6C3B2800B71000D1765C /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
-		FB7B6C432800E1FD00D1765C /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		FB7B6C442800E1FD00D1765C /* NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -130,7 +124,6 @@
 				9963492A27FDC7A300A463C9 /* ImageViewExtension.swift */,
 				87CBCB0C27E9741F00C13180 /* Extensions.swift */,
 				87CBCB0D27E9741F00C13180 /* Observable.swift */,
-				FB7B6C3B2800B71000D1765C /* Spinner.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -138,9 +131,8 @@
 		87CBCB1A27E974A900C13180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				FB7B6C3D2800E1A700D1765C /* News */,
+				9993F9A327FF2D5300D431AE /* Nosotros */,
 				A88F1AF927F396560062608D /* Splash */,
-				994F9B9127F214C400C2E2FF /* SecondTab */,
 				9993882827F0D1C4009B596B /* TabBar */,
 				9993881B27F0D086009B596B /* Home */,
 				A1DC72AE27EA260B00D9D16C /* LogIn */,
@@ -182,31 +174,6 @@
 				87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		994F9B9127F214C400C2E2FF /* SecondTab */ = {
-			isa = PBXGroup;
-			children = (
-				994F9B9327F215D200C2E2FF /* ViewController */,
-				994F9B9227F215C500C2E2FF /* View */,
-			);
-			path = SecondTab;
-			sourceTree = "<group>";
-		};
-		994F9B9227F215C500C2E2FF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				994F9B9527F2166E00C2E2FF /* SecondScreenViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		994F9B9327F215D200C2E2FF /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				994F9B9427F2166E00C2E2FF /* SecondScreenViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9963492827FDC68700A463C9 /* Services */ = {
@@ -274,6 +241,31 @@
 				9993882627F0D190009B596B /* TabBarViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9993F9A327FF2D5300D431AE /* Nosotros */ = {
+			isa = PBXGroup;
+			children = (
+				9993F9A427FF2D5C00D431AE /* ViewController */,
+				9993F9A527FF2D6900D431AE /* View */,
+			);
+			path = Nosotros;
+			sourceTree = "<group>";
+		};
+		9993F9A427FF2D5C00D431AE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9932EC0E27FF2DFF0073B0C7 /* NosotrosViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9993F9A527FF2D6900D431AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9932EC0F27FF2DFF0073B0C7 /* NosotrosViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A1DC72AE27EA260B00D9D16C /* LogIn */ = {
@@ -433,47 +425,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		FB7B6C3D2800E1A700D1765C /* News */ = {
-			isa = PBXGroup;
-			children = (
-				FB7B6C422800E1C800D1765C /* ViewModel */,
-				FB7B6C412800E1C600D1765C /* Services */,
-				FB7B6C3F2800E1B900D1765C /* Controller */,
-				FB7B6C3E2800E1B300D1765C /* View */,
-			);
-			path = News;
-			sourceTree = "<group>";
-		};
-		FB7B6C3E2800E1B300D1765C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FB7B6C442800E1FD00D1765C /* NewsViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FB7B6C3F2800E1B900D1765C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				FB7B6C432800E1FD00D1765C /* NewsViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		FB7B6C412800E1C600D1765C /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		FB7B6C422800E1C800D1765C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,13 +490,12 @@
 				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
 				FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */,
 				A1F1236E27F72CA100657AF4 /* TestimonialsCollectionViewCell.xib in Resources */,
+				9932EC1127FF2DFF0073B0C7 /* NosotrosViewController.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */,
-				994F9B9727F2166E00C2E2FF /* SecondScreenViewController.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 				879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */,
-				FB7B6C462800E1FD00D1765C /* NewsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,18 +567,16 @@
 				A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */,
 				A1F1236D27F72CA100657AF4 /* TestimonialsCollectionViewCell.swift in Sources */,
 				9963493227FDC7DA00A463C9 /* SliderList.swift in Sources */,
-				FB7B6C3C2800B71000D1765C /* Spinner.swift in Sources */,
 				9963492B27FDC7A300A463C9 /* ImageViewExtension.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				FB46181527EB528E00DBE262 /* NewUser.swift in Sources */,
 				8794839E27FD3E980066B8F2 /* NewsCollectionViewCell.swift in Sources */,
 				9963492D27FDC7BE00A463C9 /* HomeViewModel.swift in Sources */,
-				994F9B9627F2166E00C2E2FF /* SecondScreenViewController.swift in Sources */,
 				A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */,
 				9993882727F0D190009B596B /* TabBarViewController.swift in Sources */,
 				A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */,
 				9963493327FDC7DA00A463C9 /* SliderListResponse.swift in Sources */,
-				FB7B6C452800E1FD00D1765C /* NewsViewController.swift in Sources */,
+				9932EC1027FF2DFF0073B0C7 /* NosotrosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
