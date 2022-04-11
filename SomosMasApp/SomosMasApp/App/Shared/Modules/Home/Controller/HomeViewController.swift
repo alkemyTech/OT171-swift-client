@@ -8,39 +8,39 @@
 import UIKit
 
 protocol SliderListDelegate {
+    func hideTestimonials()
+    func reloadTestimonials()
     func reloadSlider()
-    func reloadNews()
-    func hideSectionsWithoutData()
 }
 
 class HomeViewController: UIViewController {
     
-    struct TestimonialsData {
+    struct LastestNewsData {
         let image: UIImage?
         let epigraph: String?
     }
-        
-    var testimonialsData = [ TestimonialsData(image: UIImage(named:"Image_6"), epigraph: "Epígrafe requerido para esta imagen"),
-                            TestimonialsData(image: UIImage(named:"Image_7"), epigraph: "Epígrafe requerido para esta imagen"),
+    
+    let lastestNewsData = [ LastestNewsData(image: UIImage(named:"Image_1"), epigraph: "Epígrafe para imagen 1"),
+                            LastestNewsData(image: UIImage(named:"Image_2"), epigraph: "Epígrafe para imagen 2"),
+                            LastestNewsData(image: UIImage(named:"Image_3"), epigraph: "Epígrafe para imagen 3"),
+                            LastestNewsData(image: UIImage(named:"Image_4"), epigraph: "Epígrafe para imagen 4")
                           ]
-        
+    
+    @IBOutlet weak var testimonialsTitleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var testimonialsCollectionView: UICollectionView!
     @IBOutlet weak var lastestNewsCollectionView: UICollectionView!
-    @IBOutlet weak var lastestNewsTitleLabel: UILabel!
     
-    
-    private let service = SliderService()
-    private let serviceNews = NewsService()
-    private var viewModel: SliderViewModel?
+    private let serviceSlider = SliderService()
+    private let serviceTestimonials = TestimonialsService()
+    private var sliderViewModel: SliderViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        self.viewModel = SliderViewModel(service: self.service, service3: self.serviceNews, delegate: self)
-        self.viewModel?.getSliders()
-        self.viewModel?.getNews()
+        self.sliderViewModel = SliderViewModel(service1: serviceSlider, service2: serviceTestimonials, delegate: self)
+        self.sliderViewModel?.getSliders()
+        self.sliderViewModel?.getTestimonials()
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -77,11 +77,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch collectionView {
         case self.testimonialsCollectionView:
             // Return Max pages = 4 and add 1 more for item "Ver más"
-            return min(testimonialsData.count + 1, 5)
+            return min(sliderViewModel!.getTestimonialsCount() + 1, 5)
         case self.lastestNewsCollectionView:
-            return min(viewModel!.getNewsCount() + 1, 5)
+            // Return Max pages = 4 and add 1 more for item "Ver más". Its another case becouse takes data from another Array
+            return min(lastestNewsData.count + 1, 5)
         default:
-            return self.viewModel?.getSlidersCount() ?? 0
+            return self.sliderViewModel?.getSlidersCount() ?? 0
         }
     }
     
@@ -89,46 +90,45 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch collectionView{
         case testimonialsCollectionView:
             // Add seeMore page
-            if indexPath.row == min(testimonialsData.count, 4) {
+            if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
                 
                 return cell ?? SeeMoreCollectionViewCell()
             } else {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
-            
-            cell?.testimonialImage.image = testimonialsData[indexPath.row].image
-            cell?.testimonialEpigraph.text = testimonialsData[indexPath.row].epigraph
-            
+                //Add images
+                let imagePath = self.sliderViewModel?.getTestimonial(at: indexPath.row).image
+                let imageUrl = URL(string: imagePath!)
+                
+                cell?.testimonialImage.load(url: imageUrl!)
+                cell?.testimonialEpigraph.text = sliderViewModel?.getTestimonial(at: indexPath.row).name
+                cell?.testimonialDescription.text = sliderViewModel?.getTestimonial(at: indexPath.row).description
+                
             return cell ?? TestimonialsCollectionViewCell()
             }
         case lastestNewsCollectionView:
-            if indexPath.row == min(viewModel!.getNewsCount(), 4) {
+            if indexPath.row == min(lastestNewsData.count, 4) {
                 let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
 
                 return cell ?? SeeMoreCollectionViewCell()
             } else {
             let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "newscell", for: indexPath) as? NewsCollectionViewCell
             
-                let imagePath = self.viewModel?.getNews(at: indexPath.row).image
-                let imageUrl = URL(string: imagePath!)
-                
-                cell?.newsImage.contentMode = .scaleAspectFit
-                cell?.newsImage.load(url: imageUrl!)
-                cell?.newsDescription.text = viewModel?.getNews(at: indexPath.row).name
-                
+            cell?.newsImage.image = lastestNewsData[indexPath.row].image
+            cell?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
+            
             return cell ?? NewsCollectionViewCell()
             }
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
             
-            cell?.myTitle.text = self.viewModel?.getSliders(at: indexPath.row).name
-            cell?.myDescription.text = self.viewModel?.getSliders(at: indexPath.row).description
+            cell?.myTitle.text = self.sliderViewModel?.getSliders(at: indexPath.row).name
+            cell?.myDescription.text = self.sliderViewModel?.getSliders(at: indexPath.row).description
             
             cell?.myImage.contentMode = .scaleAspectFill
             
-            let imagePath = self.viewModel?.getSliders(at: indexPath.row).image
+            let imagePath = self.sliderViewModel?.getSliders(at: indexPath.row).image
             let imageUrl = URL(string: imagePath!)
-            
             cell?.myImage.load(url: imageUrl!)
 
             return cell ?? HomeCollectionViewCell()
@@ -139,17 +139,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         collectionView.deselectItem(at: indexPath, animated: true)
         switch collectionView {
         case testimonialsCollectionView:
-            if indexPath.row == min(testimonialsData.count, 4) {
+            if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 // Add an action when the item is selected
             }
         case lastestNewsCollectionView:
-            if indexPath.row == min(viewModel!.getNewsCount(), 4) {
+            if indexPath.row == min(lastestNewsData.count, 4) {
                 // Add an action when "ver Más" item from "Ultimas novedades" is selected
             }
         default:
             break
         }
-        
         }
     }
 
@@ -164,27 +163,21 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
         return CGSize(width: cellWidth, height: cellHeight)
     }
-    
 }
 
 extension HomeViewController: SliderListDelegate{
-    func hideSectionsWithoutData(){
-        if self.viewModel?.getNewsCount() == 0 {
-            // Hide section if service doesn't return data
-            self.lastestNewsCollectionView.isHidden = true
-            self.lastestNewsTitleLabel.isHidden = true
-            // Reduce height constraint to zero
-            self.lastestNewsCollectionView.heightAnchor.constraint(equalToConstant: 0).isActive = true
-            self.lastestNewsTitleLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
-        }
+    
+    func hideTestimonials() {
+        self.testimonialsCollectionView.isHidden = true
+        self.testimonialsTitleLabel.isHidden = true
+    }
+
+    func reloadTestimonials() {
+        self.testimonialsCollectionView.reloadData()
     }
     
     func reloadSlider() {
         self.collectionView.reloadData()
     }
     
-    func reloadNews() {
-        self.lastestNewsCollectionView.reloadData()
-    }
-
 }

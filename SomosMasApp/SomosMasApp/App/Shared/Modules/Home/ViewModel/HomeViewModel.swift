@@ -11,34 +11,32 @@ class SliderViewModel {
     
     private var sliderService: SliderService
     private var slidersResponded = [SlidersList]()
-    private var newsService: NewsService
-    private var newsResponse = [NewsList]()
+    private var testimonialsService: TestimonialsService
+    private var testimonialsResponse = [TestimonialsList]()
     private var delegate: SliderListDelegate
     
-    init(service: SliderService, service3: NewsService, delegate: SliderListDelegate) {
-        self.sliderService = service
-        self.newsService = service3
+    init(service1: SliderService, service2: TestimonialsService, delegate: SliderListDelegate) {
+        self.sliderService = service1
+        self.testimonialsService = service2
         self.delegate = delegate
-        
     }
     
     func getSliders(){
         sliderService.getAllSliders {response in
             self.slidersResponded = response
-       
             self.delegate.reloadSlider()
         } onError: {
             self.delegate.reloadSlider()
         }
     }
     
-    func getNews() {
-        newsService.getLastestNewsData {response in
-            self.newsResponse = response
-            self.delegate.reloadNews()
+    func getTestimonials() {
+        testimonialsService.getAllSliders {response in
+        self.testimonialsResponse = response
+            self.getTestimonialsCount() == 0 ? self.delegate.hideTestimonials()
+            : self.delegate.reloadTestimonials()
         } onError: {
-            self.delegate.reloadNews()
-            self.delegate.hideSectionsWithoutData()
+            self.delegate.hideTestimonials()
         }
     }
     
@@ -46,18 +44,15 @@ class SliderViewModel {
         return slidersResponded[index]
     }
     
-    func getNews(at index: Int) -> NewsList {
-        return newsResponse[index]
+    func getTestimonial(at index: Int) -> TestimonialsList {
+        return testimonialsResponse[index]
     }
     
     func getSlidersCount() -> Int {
         return slidersResponded.count
     }
     
-    func getNewsCount() -> Int {
-        return newsResponse.count
+    func getTestimonialsCount() -> Int {
+        return testimonialsResponse.count
     }
 }
-
-
-

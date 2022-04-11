@@ -14,6 +14,7 @@
                 <outlet property="lastestNewsCollectionView" destination="h4B-M9-zss" id="Ffa-na-Mi5"/>
                 <outlet property="lastestNewsTitleLabel" destination="kEc-qJ-nOw" id="oR7-SF-jlr"/>
                 <outlet property="testimonialsCollectionView" destination="5rO-Pe-k9A" id="zc1-lS-xum"/>
+                <outlet property="testimonialsTitleLabel" destination="Elq-Vy-XVo" id="H2I-Pv-Q5W"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,6 +45,12 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                         </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testimonios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elq-Vy-XVo">
+                                            <rect key="frame" x="20" y="350.66666666666669" width="350" height="31.333333333333314"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5rO-Pe-k9A">
                                             <rect key="frame" x="0.0" y="390" width="390" height="320"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,12 +64,6 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testimonios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="max-tl-qjP">
-                                            <rect key="frame" x="125.66666666666667" y="350.66666666666669" width="138.66666666666663" height="31.333333333333314"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultimas novedades" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEc-qJ-nOw">
                                             <rect key="frame" x="85.000000000000014" y="729" width="220.33333333333337" height="31.333333333333371"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
@@ -85,13 +86,14 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="max-tl-qjP" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="2bx-39-avd"/>
                                         <constraint firstItem="h4B-M9-zss" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" id="B4v-b5-W17"/>
                                         <constraint firstItem="pQG-RF-AG3" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" id="Dd0-1r-HyI"/>
-                                        <constraint firstItem="5rO-Pe-k9A" firstAttribute="top" secondItem="max-tl-qjP" secondAttribute="bottom" constant="8" symbolic="YES" id="Dfn-u9-SdZ"/>
                                         <constraint firstAttribute="height" constant="1200" id="ELV-xH-3Uq"/>
+                                        <constraint firstAttribute="trailing" secondItem="Elq-Vy-XVo" secondAttribute="trailing" constant="20" id="Jgx-gE-gMp"/>
                                         <constraint firstItem="kEc-qJ-nOw" firstAttribute="top" secondItem="5rO-Pe-k9A" secondAttribute="bottom" constant="19" id="P16-Dz-Tp4"/>
                                         <constraint firstAttribute="trailing" secondItem="5rO-Pe-k9A" secondAttribute="trailing" id="Q8g-JG-OJ0"/>
+                                        <constraint firstItem="5rO-Pe-k9A" firstAttribute="top" secondItem="Elq-Vy-XVo" secondAttribute="bottom" constant="8" id="VRQ-fY-4Lb"/>
+                                        <constraint firstItem="Elq-Vy-XVo" firstAttribute="leading" secondItem="kZd-lu-JC5" secondAttribute="leading" constant="20" id="h56-ui-9Dc"/>
                                         <constraint firstAttribute="trailing" secondItem="h4B-M9-zss" secondAttribute="trailing" id="obR-fA-Hnb"/>
                                         <constraint firstItem="5rO-Pe-k9A" firstAttribute="top" secondItem="pQG-RF-AG3" secondAttribute="bottom" constant="70" id="q90-aN-s42"/>
                                         <constraint firstItem="kEc-qJ-nOw" firstAttribute="centerX" secondItem="kZd-lu-JC5" secondAttribute="centerX" id="rsa-7A-tR0"/>

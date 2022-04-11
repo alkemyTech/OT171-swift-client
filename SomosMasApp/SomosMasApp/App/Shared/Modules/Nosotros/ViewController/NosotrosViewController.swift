@@ -1,13 +1,13 @@
 //
-//  SecondScreenViewController.swift
+//  NosotrosViewController.swift
 //  SomosMasApp
 //
-//  Created by Maximiliano Ituarte on 28/03/2022.
+//  Created by Maximiliano Ituarte on 07/04/2022.
 //
 
 import UIKit
 
-class SecondScreenViewController: UIViewController {
+class NosotrosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
