@@ -11,21 +11,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TestimonialsCollectionViewCell" customModule="SomosMasApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
+            <rect key="frame" x="0.0" y="0.0" width="258" height="264"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
+                <rect key="frame" x="0.0" y="0.0" width="258" height="264"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="ad0-7N-LpA">
-                        <rect key="frame" x="0.0" y="0.0" width="258" height="261"/>
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="264"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Epígraph" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-o0-znW">
                                 <rect key="frame" x="20" y="208" width="218" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Lhk-Ww-Fh0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -35,16 +35,24 @@
                                     <constraint firstAttribute="height" constant="205" id="E93-Gw-dby"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfs-tn-JkF">
+                                <rect key="frame" x="10" y="235" width="238" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fcL-rM-x0F" firstAttribute="top" secondItem="ad0-7N-LpA" secondAttribute="top" id="0kf-zG-GaT"/>
                             <constraint firstAttribute="trailing" secondItem="BrB-o0-znW" secondAttribute="trailing" constant="20" id="4UD-GX-cKb"/>
-                            <constraint firstItem="BrB-o0-znW" firstAttribute="top" secondItem="fcL-rM-x0F" secondAttribute="bottom" constant="3" id="8Xk-WS-6aB"/>
-                            <constraint firstItem="BrB-o0-znW" firstAttribute="centerX" secondItem="fcL-rM-x0F" secondAttribute="centerX" id="9Uu-nt-0nS"/>
                             <constraint firstItem="BrB-o0-znW" firstAttribute="leading" secondItem="ad0-7N-LpA" secondAttribute="leading" constant="20" id="RSu-JL-wmU"/>
+                            <constraint firstItem="BrB-o0-znW" firstAttribute="top" secondItem="fcL-rM-x0F" secondAttribute="bottom" constant="3" id="YpO-JQ-Dqy"/>
+                            <constraint firstItem="Lfs-tn-JkF" firstAttribute="leading" secondItem="ad0-7N-LpA" secondAttribute="leading" constant="10" id="aP9-JU-L6M"/>
                             <constraint firstItem="fcL-rM-x0F" firstAttribute="leading" secondItem="ad0-7N-LpA" secondAttribute="leading" id="dSG-CY-FZm"/>
                             <constraint firstAttribute="trailing" secondItem="fcL-rM-x0F" secondAttribute="trailing" id="f7L-vh-Jmm"/>
-                            <constraint firstItem="fcL-rM-x0F" firstAttribute="top" secondItem="ad0-7N-LpA" secondAttribute="top" id="iLQ-04-ce0"/>
+                            <constraint firstItem="Lfs-tn-JkF" firstAttribute="top" secondItem="BrB-o0-znW" secondAttribute="bottom" constant="7" id="rZK-kX-CR5"/>
+                            <constraint firstAttribute="trailing" secondItem="Lfs-tn-JkF" secondAttribute="trailing" constant="10" id="sQK-VV-lbE"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,12 +64,13 @@
                 <constraint firstAttribute="trailing" secondItem="ad0-7N-LpA" secondAttribute="trailing" id="MRZ-1F-ucU"/>
                 <constraint firstItem="ad0-7N-LpA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cBB-fg-fle"/>
             </constraints>
-            <size key="customSize" width="258" height="261"/>
+            <size key="customSize" width="264" height="270"/>
             <connections>
+                <outlet property="testimonialDescription" destination="Lfs-tn-JkF" id="l45-Ty-tUd"/>
                 <outlet property="testimonialEpigraph" destination="BrB-o0-znW" id="otf-zk-NKI"/>
                 <outlet property="testimonialImage" destination="fcL-rM-x0F" id="kpE-Ff-oa9"/>
             </connections>
-            <point key="canvasLocation" x="286.95652173913044" y="140.95982142857142"/>
+            <point key="canvasLocation" x="301" y="146"/>
         </collectionViewCell>
     </objects>
     <resources>

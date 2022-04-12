@@ -8,13 +8,8 @@
 import UIKit
 
 class TestimonialsCollectionViewCell: UICollectionViewCell {
-
     
     @IBOutlet weak var testimonialImage: UIImageView!
     @IBOutlet weak var testimonialEpigraph: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
+    @IBOutlet weak var testimonialDescription: UILabel!
 }
