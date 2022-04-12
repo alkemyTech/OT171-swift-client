@@ -11,6 +11,7 @@ protocol SliderListDelegate {
     func hideTestimonials()
     func reloadTestimonials()
     func reloadSlider()
+    func loading(state: Bool)
 }
 
 class HomeViewController: UIViewController {
@@ -60,6 +61,7 @@ class HomeViewController: UIViewController {
 
         let backButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeApp))
         self.navigationItem.leftBarButtonItem  = backButton
+        self.showSpinner(onView: self.view)
     }
     @objc func closeApp() {
         exit(0)
@@ -92,7 +94,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             // Add seeMore page
             if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
-                
                 return cell ?? SeeMoreCollectionViewCell()
             } else {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
@@ -103,7 +104,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 cell?.testimonialImage.load(url: imageUrl!)
                 cell?.testimonialEpigraph.text = sliderViewModel?.getTestimonial(at: indexPath.row).name
                 cell?.testimonialDescription.text = sliderViewModel?.getTestimonial(at: indexPath.row).description
-                
             return cell ?? TestimonialsCollectionViewCell()
             }
         case lastestNewsCollectionView:
@@ -116,10 +116,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             cell?.newsImage.image = lastestNewsData[indexPath.row].image
             cell?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
-            
+                
             return cell ?? NewsCollectionViewCell()
             }
         default:
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
             
             cell?.myTitle.text = self.sliderViewModel?.getSliders(at: indexPath.row).name
@@ -166,7 +167,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: SliderListDelegate{
-    
     func hideTestimonials() {
         self.testimonialsCollectionView.isHidden = true
         self.testimonialsTitleLabel.isHidden = true
@@ -180,4 +180,11 @@ extension HomeViewController: SliderListDelegate{
         self.collectionView.reloadData()
     }
     
+    func loading(state: Bool) {
+        if state == true {
+            return self.removeSpinner()
+        } else {
+            return self.showSpinner(onView: self.view)
+        }
+    }
 }

@@ -25,8 +25,10 @@ class SliderViewModel {
         sliderService.getAllSliders {response in
             self.slidersResponded = response
             self.delegate.reloadSlider()
+            self.delegate.loading(state: true)
         } onError: {
             self.delegate.reloadSlider()
+            self.delegate.loading(state: true)
         }
     }
     
@@ -35,8 +37,10 @@ class SliderViewModel {
         self.testimonialsResponse = response
             self.getTestimonialsCount() == 0 ? self.delegate.hideTestimonials()
             : self.delegate.reloadTestimonials()
+            self.delegate.loading(state: true)
         } onError: {
             self.delegate.hideTestimonials()
+            self.delegate.loading(state: true)
         }
     }
     
