@@ -53,6 +53,7 @@ class logInViewController: UIViewController {
             if !confirmAccess {
                 self.warningLabel.text = errorMessage!
                 self.warningLabel.isHidden = false
+                self.removeSpinner()
             } else {
                 self.warningLabel.isHidden = true
                 self.userValidation()
@@ -92,6 +93,7 @@ extension logInViewController: LogInDelegate {
     }
     
     func showMessage(message:String) {
+        self.removeSpinner()
         let alert = UIAlertController(title: "An error has been ocurred", message: message, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
