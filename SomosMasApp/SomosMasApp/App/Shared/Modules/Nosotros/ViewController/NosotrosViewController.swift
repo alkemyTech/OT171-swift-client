@@ -14,7 +14,6 @@ struct NosotrosData {
     let jobTitle: String?
 }
 
-let margin: CGFloat = 10
 
 class NosotrosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
