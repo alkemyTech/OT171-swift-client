@@ -42,9 +42,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showSpinner(onView: self.view)
         self.viewModel = SliderViewModel(service: self.service, delegate: self)
-        self.viewModel?.getSliders()
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -69,10 +67,6 @@ class HomeViewController: UIViewController {
     @objc func closeApp() {
         exit(0)
 
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.removeSpinner()
     }
 }
 

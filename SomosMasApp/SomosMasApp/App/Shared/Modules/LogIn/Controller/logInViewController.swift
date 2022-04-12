@@ -48,6 +48,7 @@ class logInViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
+        self.showSpinner(onView: self.view)
         viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
             if !confirmAccess {
                 self.warningLabel.text = errorMessage!
