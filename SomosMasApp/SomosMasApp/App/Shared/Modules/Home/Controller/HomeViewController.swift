@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
 
         let backButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeApp))
         self.navigationItem.leftBarButtonItem  = backButton
-        self.showSpinner(onView: self.view)
+        loading(state: false)
     }
     @objc func closeApp() {
         exit(0)
