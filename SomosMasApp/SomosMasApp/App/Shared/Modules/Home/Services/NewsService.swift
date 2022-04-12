@@ -25,7 +25,6 @@ class NewsService {
                     }
                 } catch {
                     onError()
-                    print(error)
                 }
             case.failure(_):
                 onError()

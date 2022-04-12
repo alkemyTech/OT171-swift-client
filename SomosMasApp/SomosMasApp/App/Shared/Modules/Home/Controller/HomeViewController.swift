@@ -98,9 +98,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
                 //Add images
                 let imagePath = self.sliderViewModel?.getTestimonial(at: indexPath.row).image
-                let imageUrl = URL(string: imagePath!)
+                if imagePath != nil {
+                    let imageUrl = URL(string: imagePath!)
+                    cell?.testimonialImage.load(url: imageUrl!)
+                } else {
+                    print(sliderViewModel?.imageError as Any)
+                }
                 
-                cell?.testimonialImage.load(url: imageUrl!)
                 cell?.testimonialEpigraph.text = sliderViewModel?.getTestimonial(at: indexPath.row).name
                 cell?.testimonialDescription.text = sliderViewModel?.getTestimonial(at: indexPath.row).description
                 
@@ -115,10 +119,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "newscell", for: indexPath) as? NewsCollectionViewCell
             
                 let imagePath = self.sliderViewModel?.getNews(at: indexPath.row).image
-                let imageUrl = URL(string: imagePath!)
+                if imagePath != nil {
+                    let imageUrl = URL(string: imagePath!)
+                    cell?.newsImage.load(url: imageUrl!)
+                } else {
+                    print(sliderViewModel?.imageError as Any)
+                }
                 
                 cell?.newsImage.contentMode = .scaleAspectFit
-                cell?.newsImage.load(url: imageUrl!)
                 cell?.newsDescription.text = sliderViewModel?.getNews(at: indexPath.row).name
                 
             return cell ?? NewsCollectionViewCell()
@@ -132,8 +140,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell?.myImage.contentMode = .scaleAspectFill
             
             let imagePath = self.sliderViewModel?.getSliders(at: indexPath.row).image
-            let imageUrl = URL(string: imagePath!)
-            cell?.myImage.load(url: imageUrl!)
+            if imagePath != nil {
+                let imageUrl = URL(string: imagePath!)
+                cell?.myImage.load(url: imageUrl!)
+            } else {
+                print(sliderViewModel?.imageError as Any)
+            }
 
             return cell ?? HomeCollectionViewCell()
         }
@@ -147,7 +159,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 // Add an action when the item is selected
             }
         case lastestNewsCollectionView:
-            if indexPath.row == min(sliderViewModel!.getNewsCount(), 4) {
+            if indexPath.row == min(sliderViewModel?.getNewsCount() ?? 0, 4) {
                 // Add an action when "ver Más" item from "Ultimas novedades" is selected
             }
         default:

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SliderViewModel {
     
@@ -46,7 +47,7 @@ class SliderViewModel {
     func getNews() {
         newsService.getLastestNewsData {response in
             self.newsResponse = response
-            self.delegate.reloadNews()
+            self.getNewsCount() == 0 ? self.delegate.hideSectionsWithoutData() : self.delegate.reloadNews()
         } onError: {
             self.delegate.reloadNews()
             self.delegate.hideSectionsWithoutData()
@@ -76,4 +77,6 @@ class SliderViewModel {
     func getNewsCount() -> Int {
         return newsResponse.count
     }
+
+    let imageError : String = "Unexpected error loading image"
 }
