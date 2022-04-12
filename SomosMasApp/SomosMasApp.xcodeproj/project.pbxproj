@@ -18,6 +18,10 @@
 		87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CBCB1F27E974A900C13180 /* SignUpViewController.xib */; };
 		87CBCB2427E9752A00C13180 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */; };
 		87CDAC8827F3BB87006738D0 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CDAC8727F3BB87006738D0 /* UserSession.swift */; };
+		992878312804A9C200928413 /* NosotrosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9928782F2804A9C200928413 /* NosotrosCollectionViewCell.xib */; };
+		992878322804A9C200928413 /* NosotrosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992878302804A9C200928413 /* NosotrosViewController.xib */; };
+		992878352804A9CB00928413 /* NosotrosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992878332804A9CB00928413 /* NosotrosCollectionViewCell.swift */; };
+		992878362804A9CB00928413 /* NosotrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992878342804A9CB00928413 /* NosotrosViewController.swift */; };
 		995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995E4C5E27F1F7D100632693 /* HomeViewController.swift */; };
 		995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 995E4C5F27F1F7D100632693 /* HomeViewController.xib */; };
 		9963492B27FDC7A300A463C9 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9963492A27FDC7A300A463C9 /* ImageViewExtension.swift */; };
@@ -35,8 +39,6 @@
 		A1F1237427FE4EE300657AF4 /* TestimonialsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1237327FE4EE300657AF4 /* TestimonialsList.swift */; };
 		A1F1237627FE4F5400657AF4 /* TestimonialsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1237527FE4F5400657AF4 /* TestimonialsListResponse.swift */; };
 		A1F1237827FE4FF500657AF4 /* TestimonialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1237727FE4FF400657AF4 /* TestimonialsService.swift */; };
-		A1F1270828047A5D00657AF4 /* NosotrosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F1270528047A5D00657AF4 /* NosotrosViewController.xib */; };
-		A1F1270928047A5D00657AF4 /* NosotrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1270728047A5D00657AF4 /* NosotrosViewController.swift */; };
 		A1FB4ECB27E2130600B6258A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECA27E2130600B6258A /* AppDelegate.swift */; };
 		A1FB4ECD27E2130600B6258A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */; };
 		A1FB4ED427E2130B00B6258A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FB4ED327E2130B00B6258A /* Assets.xcassets */; };
@@ -48,6 +50,7 @@
 		FB46181527EB528E00DBE262 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181427EB528E00DBE262 /* NewUser.swift */; };
 		FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */; };
 		FB46181A27EB53EF00DBE262 /* RegisterUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB46181927EB53EF00DBE262 /* RegisterUserService.swift */; };
+		FB7B6C3C2800B71000D1765C /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7B6C3B2800B71000D1765C /* Spinner.swift */; };
 		FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */; };
 		FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */; };
 		FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */; };
@@ -68,6 +71,10 @@
 		87CBCB1F27E974A900C13180 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		87CDAC8727F3BB87006738D0 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		9928782F2804A9C200928413 /* NosotrosCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NosotrosCollectionViewCell.xib; sourceTree = "<group>"; };
+		992878302804A9C200928413 /* NosotrosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NosotrosViewController.xib; sourceTree = "<group>"; };
+		992878332804A9CB00928413 /* NosotrosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NosotrosCollectionViewCell.swift; sourceTree = "<group>"; };
+		992878342804A9CB00928413 /* NosotrosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NosotrosViewController.swift; sourceTree = "<group>"; };
 		995E4C5E27F1F7D100632693 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		995E4C5F27F1F7D100632693 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		9963492A27FDC7A300A463C9 /* ImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
@@ -85,8 +92,6 @@
 		A1F1237327FE4EE300657AF4 /* TestimonialsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsList.swift; sourceTree = "<group>"; };
 		A1F1237527FE4F5400657AF4 /* TestimonialsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsListResponse.swift; sourceTree = "<group>"; };
 		A1F1237727FE4FF400657AF4 /* TestimonialsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestimonialsService.swift; sourceTree = "<group>"; };
-		A1F1270528047A5D00657AF4 /* NosotrosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NosotrosViewController.xib; sourceTree = "<group>"; };
-		A1F1270728047A5D00657AF4 /* NosotrosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NosotrosViewController.swift; sourceTree = "<group>"; };
 		A1FB4EC727E2130600B6258A /* SomosMasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomosMasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FB4ECA27E2130600B6258A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FB4ECC27E2130600B6258A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +106,7 @@
 		FB46181427EB528E00DBE262 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		FB46181627EB52AD00DBE262 /* UserRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterResponse.swift; sourceTree = "<group>"; };
 		FB46181927EB53EF00DBE262 /* RegisterUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserService.swift; sourceTree = "<group>"; };
+		FB7B6C3B2800B71000D1765C /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 				9963492A27FDC7A300A463C9 /* ImageViewExtension.swift */,
 				87CBCB0C27E9741F00C13180 /* Extensions.swift */,
 				87CBCB0D27E9741F00C13180 /* Observable.swift */,
+				FB7B6C3B2800B71000D1765C /* Spinner.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,7 +301,8 @@
 		A1F1270428047A5D00657AF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A1F1270528047A5D00657AF4 /* NosotrosViewController.xib */,
+				9928782F2804A9C200928413 /* NosotrosCollectionViewCell.xib */,
+				992878302804A9C200928413 /* NosotrosViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,7 +310,8 @@
 		A1F1270628047A5D00657AF4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A1F1270728047A5D00657AF4 /* NosotrosViewController.swift */,
+				992878332804A9CB00928413 /* NosotrosCollectionViewCell.swift */,
+				992878342804A9CB00928413 /* NosotrosViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -545,7 +554,8 @@
 				995E4C6127F1F7D100632693 /* HomeViewController.xib in Resources */,
 				FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */,
 				A1F1236E27F72CA100657AF4 /* TestimonialsCollectionViewCell.xib in Resources */,
-				A1F1270828047A5D00657AF4 /* NosotrosViewController.xib in Resources */,
+				992878322804A9C200928413 /* NosotrosViewController.xib in Resources */,
+				992878312804A9C200928413 /* NosotrosCollectionViewCell.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */,
@@ -622,11 +632,13 @@
 				FBCC597E2804AADD0041D9CA /* NewsViewController.swift in Sources */,
 				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
-				A1F1270928047A5D00657AF4 /* NosotrosViewController.swift in Sources */,
+				992878362804A9CB00928413 /* NosotrosViewController.swift in Sources */,
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
+				992878352804A9CB00928413 /* NosotrosCollectionViewCell.swift in Sources */,
 				A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */,
 				A1F1236D27F72CA100657AF4 /* TestimonialsCollectionViewCell.swift in Sources */,
 				9963493227FDC7DA00A463C9 /* SliderList.swift in Sources */,
+				FB7B6C3C2800B71000D1765C /* Spinner.swift in Sources */,
 				9963492B27FDC7A300A463C9 /* ImageViewExtension.swift in Sources */,
 				87CBCB0F27E9741F00C13180 /* Observable.swift in Sources */,
 				FB46181527EB528E00DBE262 /* NewUser.swift in Sources */,

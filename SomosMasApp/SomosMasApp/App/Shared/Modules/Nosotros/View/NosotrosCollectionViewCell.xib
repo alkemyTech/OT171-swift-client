@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="nosotrosCell" id="gTV-IL-0wX" customClass="NosotrosCollectionViewCell" customModule="SomosMasApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-9s-V0Q">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1F-NR-80O">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="ZcN-Kz-Qdl"/>
+                                    <constraint firstAttribute="width" constant="100" id="q3R-pi-1Ih"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Job TItle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiH-XN-xAN">
+                                <rect key="frame" x="0.0" y="79" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mye-5X-OrR">
+                                <rect key="frame" x="0.0" y="58" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z1F-NR-80O" firstAttribute="top" secondItem="fxw-9s-V0Q" secondAttribute="top" id="0P0-xI-qqe"/>
+                            <constraint firstItem="RiH-XN-xAN" firstAttribute="top" secondItem="Mye-5X-OrR" secondAttribute="bottom" id="2NK-c7-ye6"/>
+                            <constraint firstItem="Z1F-NR-80O" firstAttribute="centerX" secondItem="fxw-9s-V0Q" secondAttribute="centerX" id="446-sJ-OBp"/>
+                            <constraint firstAttribute="bottom" secondItem="RiH-XN-xAN" secondAttribute="bottom" id="5kt-hT-BkE"/>
+                            <constraint firstItem="Z1F-NR-80O" firstAttribute="top" secondItem="fxw-9s-V0Q" secondAttribute="top" id="6eF-8S-br5"/>
+                            <constraint firstAttribute="trailing" secondItem="Mye-5X-OrR" secondAttribute="trailing" id="7Gr-wg-mJU"/>
+                            <constraint firstItem="Mye-5X-OrR" firstAttribute="centerX" secondItem="fxw-9s-V0Q" secondAttribute="centerX" id="AAI-QZ-Yq0"/>
+                            <constraint firstAttribute="trailing" secondItem="Z1F-NR-80O" secondAttribute="trailing" id="D6f-Ih-8yh"/>
+                            <constraint firstAttribute="trailing" secondItem="RiH-XN-xAN" secondAttribute="trailing" id="DNg-fq-vbb"/>
+                            <constraint firstAttribute="bottom" secondItem="RiH-XN-xAN" secondAttribute="bottom" id="Gzd-Al-WqL"/>
+                            <constraint firstItem="Z1F-NR-80O" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="LgY-nb-fN9"/>
+                            <constraint firstAttribute="trailing" secondItem="Z1F-NR-80O" secondAttribute="trailing" id="Pvv-J9-Ner"/>
+                            <constraint firstItem="Mye-5X-OrR" firstAttribute="top" secondItem="Z1F-NR-80O" secondAttribute="bottom" id="aOU-sc-OO5"/>
+                            <constraint firstItem="Mye-5X-OrR" firstAttribute="top" secondItem="Z1F-NR-80O" secondAttribute="bottom" id="bOt-Ap-ABV"/>
+                            <constraint firstAttribute="trailing" secondItem="RiH-XN-xAN" secondAttribute="trailing" id="btF-Hh-YPs"/>
+                            <constraint firstItem="RiH-XN-xAN" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="exE-5H-hQT"/>
+                            <constraint firstItem="Z1F-NR-80O" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="fob-N7-8dK"/>
+                            <constraint firstItem="RiH-XN-xAN" firstAttribute="top" secondItem="Mye-5X-OrR" secondAttribute="bottom" id="g5i-D3-4yz"/>
+                            <constraint firstItem="RiH-XN-xAN" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="mPw-Z3-T3p"/>
+                            <constraint firstItem="RiH-XN-xAN" firstAttribute="centerX" secondItem="fxw-9s-V0Q" secondAttribute="centerX" id="tJw-Qb-E3I"/>
+                            <constraint firstItem="Mye-5X-OrR" firstAttribute="top" secondItem="Z1F-NR-80O" secondAttribute="bottom" id="tQ8-Gx-JJT"/>
+                            <constraint firstItem="Mye-5X-OrR" firstAttribute="leading" secondItem="fxw-9s-V0Q" secondAttribute="leading" id="xko-Ws-Qm4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fxw-9s-V0Q" secondAttribute="trailing" id="aZU-aF-v6v"/>
+                <constraint firstItem="fxw-9s-V0Q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bJ0-VX-6Xr"/>
+                <constraint firstItem="fxw-9s-V0Q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sB5-MH-PZF"/>
+                <constraint firstAttribute="bottom" secondItem="fxw-9s-V0Q" secondAttribute="bottom" id="tIX-om-6gq"/>
+            </constraints>
+            <connections>
+                <outlet property="jobTitle" destination="RiH-XN-xAN" id="WuY-hw-3MC"/>
+                <outlet property="name" destination="Mye-5X-OrR" id="ybf-MQ-ums"/>
+                <outlet property="photo" destination="Z1F-NR-80O" id="0QP-qz-kAl"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

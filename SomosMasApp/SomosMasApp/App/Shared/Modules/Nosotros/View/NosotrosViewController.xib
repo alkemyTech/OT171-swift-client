@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NosotrosViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
+                <outlet property="label" destination="TdF-w7-yXm" id="keq-TF-N2X"/>
+                <outlet property="nosotrosCollectionView" destination="50v-Ra-7if" id="tGy-Vi-gm3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,20 +20,70 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the &quot;Nosotros&quot; View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdv-dw-jsJ">
-                    <rect key="frame" x="63" y="437.5" width="288" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2N-j7-0Ii">
+                    <rect key="frame" x="0.0" y="44" width="414" height="458"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdF-w7-yXm">
+                            <rect key="frame" x="8" y="8" width="398" height="442"/>
+                            <string key="text">Desde 1997 en Somos Más trabajamos con los chicos y chicas, mamás y papás, abuelos y vecinos del barrio La Cava generando procesos de crecimiento y de inserción social. Uniendo las manos de todas las familias, las que viven en el barrio y las que viven fuera de él, es que podemos pensar, crear y garantizar estos procesos. Somos una asociación civil sin fines de lucro que se creó en 1997 con la intención de dar alimento a las familias del barrio. Con el tiempo fuimos involucrándonos con la comunidad y agrandando y mejorando nuestra capacidad de trabajo. Hoy somos un centro comunitario que acompaña a más de 700 personas a través de las áreas de: Educación, deportes, primera infancia, salud, alimentación y trabajo social.</string>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="TdF-w7-yXm" secondAttribute="bottom" constant="8" id="46e-sa-ge8"/>
+                        <constraint firstItem="TdF-w7-yXm" firstAttribute="top" secondItem="y2N-j7-0Ii" secondAttribute="top" constant="8" id="6tR-lk-j8H"/>
+                        <constraint firstAttribute="width" constant="414" id="9Wx-65-jHx"/>
+                        <constraint firstItem="TdF-w7-yXm" firstAttribute="leading" secondItem="y2N-j7-0Ii" secondAttribute="leading" constant="8" id="Ux8-ok-vhq"/>
+                        <constraint firstItem="TdF-w7-yXm" firstAttribute="centerY" secondItem="y2N-j7-0Ii" secondAttribute="centerY" id="Y4J-uc-9CU"/>
+                        <constraint firstItem="TdF-w7-yXm" firstAttribute="centerX" secondItem="y2N-j7-0Ii" secondAttribute="centerX" id="Z7L-Sb-AYF"/>
+                        <constraint firstAttribute="trailing" secondItem="TdF-w7-yXm" secondAttribute="trailing" constant="8" id="whT-d5-0GB"/>
+                        <constraint firstAttribute="height" constant="458" id="y7C-At-1tG"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3D-W3-lIp">
+                    <rect key="frame" x="0.0" y="500" width="414" height="362"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="50v-Ra-7if">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="354"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FIn-N7-zQB">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="50v-Ra-7if" firstAttribute="top" secondItem="s3D-W3-lIp" secondAttribute="top" id="Jla-4u-5wy"/>
+                        <constraint firstAttribute="trailing" secondItem="50v-Ra-7if" secondAttribute="trailing" id="NXh-sq-uuY"/>
+                        <constraint firstItem="50v-Ra-7if" firstAttribute="leading" secondItem="s3D-W3-lIp" secondAttribute="leading" id="iVK-Re-qR5"/>
+                        <constraint firstAttribute="bottom" secondItem="50v-Ra-7if" secondAttribute="bottom" constant="8" id="li4-Is-PkE"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="cdv-dw-jsJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KxU-dX-nPG"/>
-                <constraint firstItem="cdv-dw-jsJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Nhi-SO-84v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s3D-W3-lIp" secondAttribute="trailing" id="08q-hM-T5j"/>
+                <constraint firstItem="y2N-j7-0Ii" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6Vl-mb-fGf"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="73X-id-S4U"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8a5-QK-NWU"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="top" secondItem="y2N-j7-0Ii" secondAttribute="bottom" constant="-2" id="A3F-01-b6G"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BOR-cC-yGD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s3D-W3-lIp" secondAttribute="bottom" id="EnY-Xp-ZMD"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nnm-sp-ldu"/>
+                <constraint firstItem="y2N-j7-0Ii" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bC7-6i-Rkc"/>
+                <constraint firstItem="y2N-j7-0Ii" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-360" id="btB-Av-ede"/>
+                <constraint firstAttribute="trailing" secondItem="y2N-j7-0Ii" secondAttribute="trailing" id="ev0-wN-xH2"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="top" secondItem="y2N-j7-0Ii" secondAttribute="bottom" constant="-2" id="mDN-df-pPR"/>
+                <constraint firstItem="s3D-W3-lIp" firstAttribute="top" secondItem="y2N-j7-0Ii" secondAttribute="bottom" constant="-2" id="mHv-mh-Kbp"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="140"/>
+            <point key="canvasLocation" x="137.68115942028987" y="139.95535714285714"/>
         </view>
     </objects>
     <resources>
