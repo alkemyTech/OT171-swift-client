@@ -73,7 +73,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signUpUser(_ sender: Any) {
-        
+        self.showSpinner(onView: self.view)
         if let name = signUpUsernameLabel.text, let email = signUpMailLabel.text, let password = signUpPassLabel.text {
             viewModel?.registerUser(name: name, email: email, password: password)
         }
@@ -104,6 +104,7 @@ extension  SignUpViewController {
 extension SignUpViewController: RegisterUserDelegate {
     
     func userRegistered() {
+        self.removeSpinner()
         let alert = UIAlertController(title: "User was succesfully register", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {(action: UIAlertAction!) in
             let logInViewController = logInViewController()
@@ -113,6 +114,7 @@ extension SignUpViewController: RegisterUserDelegate {
     }
     
     func showError() {
+        self.removeSpinner()
         let alert = UIAlertController(title: "Ha ocurrido un error", message: "No se pudo registrar al usuario, revise que los datos sean correctos y vuelva a intentarlo", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
