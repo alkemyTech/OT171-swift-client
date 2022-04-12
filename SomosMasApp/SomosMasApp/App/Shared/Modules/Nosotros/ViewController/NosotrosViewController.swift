@@ -12,7 +12,6 @@ struct NosotrosData {
     let image: UIImage?
     let name: String?
     let jobTitle: String?
-    
 }
 
 let margin: CGFloat = 10
@@ -26,27 +25,27 @@ class NosotrosViewController: UIViewController, UICollectionViewDelegate, UIColl
                          NosotrosData(image: UIImage(named:"Image_5"), name: "Maria Irola", jobTitle: "Puesto 4"),
                          NosotrosData(image: UIImage(named:"Image_4"), name: "Marita Gomez", jobTitle: "Puesto 5"),
                          NosotrosData(image: UIImage(named:"Image_2"), name: "Miriam Diaz", jobTitle: "Puesto 6"),
+                         NosotrosData(image: UIImage(named:"Image_3"), name: "Rodrigo Fuente", jobTitle: "Puesto 7"),
+                         NosotrosData(image: UIImage(named:"Image_1"), name: "Juan Perez", jobTitle: "Puesto 2"),
+                         NosotrosData(image: UIImage(named:"Image_4"), name: "Maria Garcia", jobTitle: "Puesto 3"),
+                         NosotrosData(image: UIImage(named:"Image_5"), name: "Maria Irola", jobTitle: "Puesto 4"),
+                         NosotrosData(image: UIImage(named:"Image_4"), name: "Marita Gomez", jobTitle: "Puesto 5"),
+                         NosotrosData(image: UIImage(named:"Image_2"), name: "Miriam Diaz", jobTitle: "Puesto 6"),
                          NosotrosData(image: UIImage(named:"Image_3"), name: "Rodrigo Fuente", jobTitle: "Puesto 7")
                           ]
     
     @IBOutlet var nosotrosCollectionView: UICollectionView!
     
-    @IBOutlet var TextView: UITextView!
     
-    @IBOutlet var textViewHeight: NSLayoutConstraint!
-    
-    @IBOutlet var collectionViewHeight: NSLayoutConstraint!
-    
+    @IBOutlet var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.nosotrosCollectionView.delegate = self
         self.nosotrosCollectionView.dataSource = self
         
+        label.adjustsFontSizeToFitWidth = true
        
-     //   textViewHeight.constant = self.TextView.contentSize.height
-     //   collectionViewHeight.constant = self.nosotrosCollectionView.contentSize.height
-        
         nosotrosCollectionView.register(UINib(nibName: "NosotrosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "nosotrosCell")
     
     }
@@ -73,6 +72,8 @@ class NosotrosViewController: UIViewController, UICollectionViewDelegate, UIColl
         let width  = (Int(view.frame.width) - 20) / columnCount
         return CGSize(width: width, height: width)
     }
+    
+    
     /*
     // MARK: - Navigation
 
