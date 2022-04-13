@@ -160,7 +160,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             }
         case lastestNewsCollectionView:
             if indexPath.row == min(sliderViewModel?.getNewsCount() ?? 0, 4) {
-                // Add an action when "ver Más" item from "Ultimas novedades" is selected
+                self.navigationController?.pushViewController(NewsViewController(), animated: true)
             }
         default:
             break
