@@ -52,9 +52,11 @@ class SliderViewModel {
         newsService.getLastestNewsData {response in
             self.newsResponse = response
             self.getNewsCount() == 0 ? self.delegate.hideSectionsWithoutData() : self.delegate.reloadNews()
+            self.delegate.loading(state: true)
         } onError: {
             self.delegate.reloadNews()
             self.delegate.hideSectionsWithoutData()
+            self.delegate.loading(state: true)
         }
     }
     

@@ -119,10 +119,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             } else {
             let cell = lastestNewsCollectionView.dequeueReusableCell(withReuseIdentifier: "newscell", for: indexPath) as? NewsCollectionViewCell
             
-<<<<<<< HEAD
-            cell?.newsImage.image = lastestNewsData[indexPath.row].image
-            cell?.newsDescription.text = lastestNewsData[indexPath.row].epigraph
-=======
                 let imagePath = self.sliderViewModel?.getNews(at: indexPath.row).image
                 if imagePath != nil {
                     let imageUrl = URL(string: imagePath!)
@@ -133,7 +129,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 
                 cell?.newsImage.contentMode = .scaleAspectFit
                 cell?.newsDescription.text = sliderViewModel?.getNews(at: indexPath.row).name
->>>>>>> main
                 
             return cell ?? NewsCollectionViewCell()
             }
