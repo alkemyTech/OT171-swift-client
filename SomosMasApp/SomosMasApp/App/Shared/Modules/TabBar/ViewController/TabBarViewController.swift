@@ -43,8 +43,6 @@ class TabBarViewController: UITabBarController {
         
         secondTabNavigationController.tabBarItem = UITabBarItem(title: "Nosotros", image: UIImage(systemName: "person.3"), selectedImage: nil)
         
-        
-        
         // every tab of the app has to be inside this array, so if you are adding a tab bar, you have to add the tab bar here, for example [firstTabNavigationController, secondTabNavigationController, thirdTabBarNavigationController]
         viewControllers = [firstTabNavigationController, secondTabNavigationController]
     }
