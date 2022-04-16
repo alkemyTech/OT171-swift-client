@@ -24,12 +24,14 @@ class SliderService {
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
                         let sliderResponse = try decoder.decode(SliderListResponse.self, from: data)
                         onComplete(sliderResponse.data)
+                        Tracker.trackSliderRetrieveSuccess()
                     }else{
                         onError()
                     }
                 } catch{
                     onError()
                     print(error)
+                    Tracker.trackSliderRetrieveError(error: error.localizedDescription)
                 }
                 
             case .failure(_):

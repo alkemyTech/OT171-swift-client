@@ -20,11 +20,14 @@ class NewsService {
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
                         let newsResponse = try decoder.decode(NewsListResponse.self, from: data)
                         onComplete(newsResponse.data)
+                        Tracker.trackNewsRetrieveSuccess()
                     } else {
                         onError()
                     }
                 } catch {
                     onError()
+                    print(error)
+                    Tracker.trackNewsRetrieveError(error: error.localizedDescription)
                 }
             case.failure(_):
                 onError()
