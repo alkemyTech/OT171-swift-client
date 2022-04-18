@@ -30,6 +30,7 @@ class SliderViewModel {
             self.slidersResponded = response
             self.delegate.reloadSlider()
             self.delegate.loading(state: true)
+            
         } onError: {
             self.delegate.reloadSlider()
             self.delegate.loading(state: true)
@@ -84,5 +85,55 @@ class SliderViewModel {
         return newsResponse.count
     }
 
+    func allService() {
+        let dispatchGroup = DispatchGroup()
+
+        func loadSliders() {
+             dispatchGroup.enter()
+             getSliders()
+             dispatchGroup.leave()
+        }
+        
+        func loadTestimonials() {
+             dispatchGroup.enter()
+             getTestimonials()
+             dispatchGroup.leave()
+        }
+        
+        func loadNews() {
+             dispatchGroup.enter()
+             getNews()
+             dispatchGroup.leave()
+        }
+        
+        func loadSpinner() {
+            dispatchGroup.enter()
+            self.delegate.loading(state: false)
+        }
+
+        DispatchQueue.main.async {
+             loadSpinner()
+            print("terminado 4")
+        }
+        
+        DispatchQueue.global(qos: .default).async {
+             loadSliders()
+            print("terminado 1")
+        }
+
+        DispatchQueue.global(qos: .default).async {
+             loadTestimonials()
+            print("terminado 2")
+        }
+        
+        DispatchQueue.global(qos: .default).async {
+             loadNews()
+            print("terminado 3")
+        }
+        
+        dispatchGroup.wait()
+    }
+
+        
     let imageError : String = "Unexpected error loading image"
 }
