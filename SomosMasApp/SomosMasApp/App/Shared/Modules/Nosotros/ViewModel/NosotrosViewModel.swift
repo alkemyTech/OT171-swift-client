@@ -21,8 +21,10 @@ class NosotrosViewModel {
         service.getAllSliders {response in
             self.nosotrosList = response
             self.delegate.reloadSlider()
+            self.delegate.spinnerLoadingState(state: false)
         } onError: {
             self.delegate.reloadSlider()
+            self.delegate.spinnerLoadingState(state: false)
         }
     }
     

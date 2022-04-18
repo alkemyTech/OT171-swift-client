@@ -9,6 +9,7 @@ import UIKit
 
 protocol NosotrosDelegate {
     func reloadSlider()
+    func spinnerLoadingState(state: Bool)
 }
 
 class NosotrosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -30,7 +31,8 @@ class NosotrosViewController: UIViewController, UICollectionViewDelegate, UIColl
         label.adjustsFontSizeToFitWidth = true
        
         nosotrosCollectionView.register(UINib(nibName: "NosotrosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "nosotrosCell")
-    
+
+    spinnerLoadingState(state: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,6 +66,12 @@ extension NosotrosViewController: NosotrosDelegate {
     func reloadSlider() {
         self.nosotrosCollectionView.reloadData()
     }
-    
-    
+    func spinnerLoadingState(state: Bool) {
+        if state == true {
+            return self.showSpinner(onView: self.view)
+                
+        } else {
+            return self.removeSpinner()
+        }
+    }
 }
