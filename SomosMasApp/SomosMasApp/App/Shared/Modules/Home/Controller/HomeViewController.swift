@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
         
         let backButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeApp))
         self.navigationItem.leftBarButtonItem  = backButton
-        sliderViewModel?.allServicesLoading()
+        
     }
     @objc func closeApp() {
         exit(0)
@@ -209,9 +209,7 @@ extension HomeViewController: SliderListDelegate{
     
     func spinnerLoadingState(state: Bool) {
         if state == true {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
                 return self.removeSpinner()
-            }
         } else {
             return self.showSpinner(onView: self.view)
         }

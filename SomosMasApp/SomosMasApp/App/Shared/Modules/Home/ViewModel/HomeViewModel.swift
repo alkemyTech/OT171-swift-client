@@ -85,46 +85,49 @@ class SliderViewModel {
         func loadSliders() {
              dispatchGroup.enter()
              getSliders()
-             dispatchGroup.leave()
         }
         
         func loadTestimonials() {
              dispatchGroup.enter()
              getTestimonials()
-             dispatchGroup.leave()
         }
         
         func loadNews() {
              dispatchGroup.enter()
              getNews()
-             dispatchGroup.leave()
         }
         
         func loadSpinner() {
             dispatchGroup.enter()
-            self.delegate.spinnerLoadingState(state: false)
+            self.delegate.spinnerLoadingState(state: true)
         }
 
         DispatchQueue.main.async {
              loadSpinner()
+            dispatchGroup.leave()
+            print("1")
         }
         
         DispatchQueue.global(qos: .default).async {
              loadSliders()
+            dispatchGroup.leave()
+            print("2")
         }
 
         DispatchQueue.global(qos: .default).async {
              loadTestimonials()
+             dispatchGroup.leave()
+            print("3")
         }
         
         DispatchQueue.global(qos: .default).async {
              loadNews()
+             dispatchGroup.leave()
+            print("4")
         }
         
         dispatchGroup.wait()
-        self.delegate.spinnerLoadingState(state: true)
     }
-
-        
+               
     let imageError : String = "Unexpected error loading image"
 }
