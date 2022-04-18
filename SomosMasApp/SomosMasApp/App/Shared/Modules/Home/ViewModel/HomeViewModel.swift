@@ -29,11 +29,11 @@ class SliderViewModel {
         sliderService.getAllSliders {response in
             self.slidersResponded = response
             self.delegate.reloadSlider()
-            self.delegate.loading(state: true)
+           // self.delegate.loading(state: true)
             
         } onError: {
             self.delegate.reloadSlider()
-            self.delegate.loading(state: true)
+            //self.delegate.loading(state: true)
         }
     }
     
@@ -42,10 +42,10 @@ class SliderViewModel {
         self.testimonialsResponse = response
             self.getTestimonialsCount() == 0 ? self.delegate.hideTestimonials()
             : self.delegate.reloadTestimonials()
-            self.delegate.loading(state: true)
+            //self.delegate.loading(state: true)
         } onError: {
             self.delegate.hideTestimonials()
-            self.delegate.loading(state: true)
+           // self.delegate.loading(state: true)
         }
     }
     
@@ -53,11 +53,11 @@ class SliderViewModel {
         newsService.getLastestNewsData {response in
             self.newsResponse = response
             self.getNewsCount() == 0 ? self.delegate.hideSectionsWithoutData() : self.delegate.reloadNews()
-            self.delegate.loading(state: true)
+            //self.delegate.loading(state: true)
         } onError: {
             self.delegate.reloadNews()
             self.delegate.hideSectionsWithoutData()
-            self.delegate.loading(state: true)
+           // self.delegate.loading(state: true)
         }
     }
     
@@ -85,7 +85,7 @@ class SliderViewModel {
         return newsResponse.count
     }
 
-    func allService() {
+    func allServicesLoading() {
         let dispatchGroup = DispatchGroup()
 
         func loadSliders() {
@@ -108,7 +108,7 @@ class SliderViewModel {
         
         func loadSpinner() {
             dispatchGroup.enter()
-            self.delegate.loading(state: false)
+            self.delegate.spinnerLoadingState(state: false)
         }
 
         DispatchQueue.main.async {
@@ -132,6 +132,7 @@ class SliderViewModel {
         }
         
         dispatchGroup.wait()
+        self.delegate.spinnerLoadingState(state: true)
     }
 
         

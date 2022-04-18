@@ -11,7 +11,7 @@ protocol SliderListDelegate {
     func hideTestimonials()
     func reloadTestimonials()
     func reloadSlider()
-    func loading(state: Bool)
+    func spinnerLoadingState(state: Bool)
     func reloadNews()
     func hideSectionsWithoutData()
 }
@@ -61,8 +61,7 @@ class HomeViewController: UIViewController {
         
         let backButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeApp))
         self.navigationItem.leftBarButtonItem  = backButton
-        sliderViewModel?.allService()
-        self.removeSpinner()
+        sliderViewModel?.allServicesLoading()
     }
     @objc func closeApp() {
         exit(0)
@@ -208,9 +207,9 @@ extension HomeViewController: SliderListDelegate{
         self.collectionView.reloadData()
     }
     
-    func loading(state: Bool) {
+    func spinnerLoadingState(state: Bool) {
         if state == true {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
                 return self.removeSpinner()
             }
         } else {
