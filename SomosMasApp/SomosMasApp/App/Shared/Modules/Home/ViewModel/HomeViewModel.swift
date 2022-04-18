@@ -29,11 +29,9 @@ class SliderViewModel {
         sliderService.getAllSliders {response in
             self.slidersResponded = response
             self.delegate.reloadSlider()
-           // self.delegate.loading(state: true)
             
         } onError: {
             self.delegate.reloadSlider()
-            //self.delegate.loading(state: true)
         }
     }
     
@@ -42,10 +40,8 @@ class SliderViewModel {
         self.testimonialsResponse = response
             self.getTestimonialsCount() == 0 ? self.delegate.hideTestimonials()
             : self.delegate.reloadTestimonials()
-            //self.delegate.loading(state: true)
         } onError: {
             self.delegate.hideTestimonials()
-           // self.delegate.loading(state: true)
         }
     }
     
@@ -53,11 +49,9 @@ class SliderViewModel {
         newsService.getLastestNewsData {response in
             self.newsResponse = response
             self.getNewsCount() == 0 ? self.delegate.hideSectionsWithoutData() : self.delegate.reloadNews()
-            //self.delegate.loading(state: true)
         } onError: {
             self.delegate.reloadNews()
             self.delegate.hideSectionsWithoutData()
-           // self.delegate.loading(state: true)
         }
     }
     
@@ -113,22 +107,18 @@ class SliderViewModel {
 
         DispatchQueue.main.async {
              loadSpinner()
-            print("terminado 4")
         }
         
         DispatchQueue.global(qos: .default).async {
              loadSliders()
-            print("terminado 1")
         }
 
         DispatchQueue.global(qos: .default).async {
              loadTestimonials()
-            print("terminado 2")
         }
         
         DispatchQueue.global(qos: .default).async {
              loadNews()
-            print("terminado 3")
         }
         
         dispatchGroup.wait()
