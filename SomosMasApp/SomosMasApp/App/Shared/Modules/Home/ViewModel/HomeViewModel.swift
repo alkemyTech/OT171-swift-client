@@ -95,26 +95,20 @@ class SliderViewModel {
     }
     
     func loadAllServices() {
-        print("cargando")
         DispatchQueue.main.async {
             self.spinner()
-            print("listo0")
         }
         DispatchQueue.global(qos: .default).async {
             self.getSliders()
-            print("listo1")
         }
 
         DispatchQueue.global(qos: .default).async {
             self.getTestimonials()
-            print("listo2")
         }
         DispatchQueue.global(qos: .default).async {
             self.getNews()
-            print("listo3")
         }
         dispatchgroup.wait()
-        print("carga completa")
     }
               
     let imageError : String = "Unexpected error loading image"
