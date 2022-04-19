@@ -11,7 +11,7 @@ protocol SliderListDelegate {
     func hideTestimonials()
     func reloadTestimonials()
     func reloadSlider()
-    func spinnerLoadingState(state: Bool)
+    func showLoadingSpinner(state: Bool)
     func reloadNews()
     func hideSectionsWithoutData()
 }
@@ -58,14 +58,11 @@ class HomeViewController: UIViewController {
         
         let backButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeApp))
         self.navigationItem.leftBarButtonItem  = backButton
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        spinnerLoadingState(state: true)
+        showLoadingSpinner(state: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.sliderViewModel?.loadAllServices()
     }
     
@@ -213,7 +210,7 @@ extension HomeViewController: SliderListDelegate{
         self.collectionView.reloadData()
     }
     
-    func spinnerLoadingState(state: Bool) {
+    func showLoadingSpinner(state: Bool) {
         if state == true {
             return self.showSpinner(onView: self.view)
         } else {

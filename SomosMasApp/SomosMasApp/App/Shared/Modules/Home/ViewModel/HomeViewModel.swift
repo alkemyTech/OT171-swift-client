@@ -88,15 +88,9 @@ class SliderViewModel {
         return newsResponse.count
     }
     
-    func spinner() {
-        dispatchgroup.enter()
-        self.delegate.spinnerLoadingState(state: false)
-        dispatchgroup.leave()
-    }
-    
     func loadAllServices() {
         DispatchQueue.main.async {
-            self.spinner()
+            self.delegate.showLoadingSpinner(state: false)
         }
         DispatchQueue.global(qos: .default).async {
             self.getSliders()
