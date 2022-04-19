@@ -33,9 +33,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         self.sliderViewModel = SliderViewModel(service1: serviceSlider, service2: serviceTestimonials, service3: serviceNews, delegate: self)
-        self.sliderViewModel?.getSliders()
-        self.sliderViewModel?.getTestimonials()
-        self.sliderViewModel?.getNews()
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -63,6 +60,15 @@ class HomeViewController: UIViewController {
         self.navigationItem.leftBarButtonItem  = backButton
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        spinnerLoadingState(state: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.sliderViewModel?.loadAllServices()
+    }
+    
     @objc func closeApp() {
         exit(0)
 
@@ -209,9 +215,9 @@ extension HomeViewController: SliderListDelegate{
     
     func spinnerLoadingState(state: Bool) {
         if state == true {
-                return self.removeSpinner()
-        } else {
             return self.showSpinner(onView: self.view)
+        } else {
+            return self.removeSpinner()
         }
     }
 }

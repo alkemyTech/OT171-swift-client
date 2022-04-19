@@ -17,6 +17,7 @@ class SliderViewModel {
     private var newsService: NewsService
     private var newsResponse = [NewsList]()
     private var delegate: SliderListDelegate
+    private var dispatchgroup = DispatchGroup()
     
     init(service1: SliderService, service2: TestimonialsService, service3: NewsService, delegate: SliderListDelegate) {
         self.sliderService = service1
@@ -26,32 +27,40 @@ class SliderViewModel {
     }
     
     func getSliders(){
+        dispatchgroup.enter()
         sliderService.getAllSliders {response in
             self.slidersResponded = response
             self.delegate.reloadSlider()
-            
+            self.dispatchgroup.leave()
         } onError: {
             self.delegate.reloadSlider()
+            self.dispatchgroup.leave()
         }
     }
     
     func getTestimonials() {
+        dispatchgroup.enter()
         testimonialsService.getAllSliders {response in
         self.testimonialsResponse = response
             self.getTestimonialsCount() == 0 ? self.delegate.hideTestimonials()
             : self.delegate.reloadTestimonials()
+            self.dispatchgroup.leave()
         } onError: {
             self.delegate.hideTestimonials()
+            self.dispatchgroup.leave()
         }
     }
     
     func getNews() {
+        dispatchgroup.enter()
         newsService.getLastestNewsData {response in
             self.newsResponse = response
             self.getNewsCount() == 0 ? self.delegate.hideSectionsWithoutData() : self.delegate.reloadNews()
+            self.dispatchgroup.leave()
         } onError: {
             self.delegate.reloadNews()
             self.delegate.hideSectionsWithoutData()
+            self.dispatchgroup.leave()
         }
     }
     
@@ -78,56 +87,35 @@ class SliderViewModel {
     func getNewsCount() -> Int {
         return newsResponse.count
     }
-
-    func allServicesLoading() {
-        let dispatchGroup = DispatchGroup()
-
-        func loadSliders() {
-             dispatchGroup.enter()
-             getSliders()
-        }
-        
-        func loadTestimonials() {
-             dispatchGroup.enter()
-             getTestimonials()
-        }
-        
-        func loadNews() {
-             dispatchGroup.enter()
-             getNews()
-        }
-        
-        func loadSpinner() {
-            dispatchGroup.enter()
-            self.delegate.spinnerLoadingState(state: true)
-        }
-
-        DispatchQueue.main.async {
-             loadSpinner()
-            dispatchGroup.leave()
-            print("1")
-        }
-        
-        DispatchQueue.global(qos: .default).async {
-             loadSliders()
-            dispatchGroup.leave()
-            print("2")
-        }
-
-        DispatchQueue.global(qos: .default).async {
-             loadTestimonials()
-             dispatchGroup.leave()
-            print("3")
-        }
-        
-        DispatchQueue.global(qos: .default).async {
-             loadNews()
-             dispatchGroup.leave()
-            print("4")
-        }
-        
-        dispatchGroup.wait()
+    
+    func spinner() {
+        dispatchgroup.enter()
+        self.delegate.spinnerLoadingState(state: false)
+        dispatchgroup.leave()
     }
-               
+    
+    func loadAllServices() {
+        print("cargando")
+        DispatchQueue.main.async {
+            self.spinner()
+            print("listo0")
+        }
+        DispatchQueue.global(qos: .default).async {
+            self.getSliders()
+            print("listo1")
+        }
+
+        DispatchQueue.global(qos: .default).async {
+            self.getTestimonials()
+            print("listo2")
+        }
+        DispatchQueue.global(qos: .default).async {
+            self.getNews()
+            print("listo3")
+        }
+        dispatchgroup.wait()
+        print("carga completa")
+    }
+              
     let imageError : String = "Unexpected error loading image"
 }
