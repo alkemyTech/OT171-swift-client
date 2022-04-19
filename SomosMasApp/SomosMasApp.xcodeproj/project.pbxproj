@@ -57,6 +57,8 @@
 		FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */; };
 		FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */; };
 		FBC030CB27F4837B006BDE08 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */; };
+		FBCAA2B7280DF793003A72ED /* MemberDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA2B5280DF793003A72ED /* MemberDetailsViewController.swift */; };
+		FBCAA2B8280DF793003A72ED /* MemberDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCAA2B6280DF793003A72ED /* MemberDetailsViewController.xib */; };
 		FBCC597E2804AADD0041D9CA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCC597A2804AADD0041D9CA /* NewsViewController.swift */; };
 		FBCC597F2804AADD0041D9CA /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCC597C2804AADD0041D9CA /* NewsViewController.xib */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,8 @@
 		FB87DBCD27E3C86F001F1F97 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FBC030C827F48362006BDE08 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBC030CA27F4837B006BDE08 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		FBCAA2B5280DF793003A72ED /* MemberDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailsViewController.swift; sourceTree = "<group>"; };
+		FBCAA2B6280DF793003A72ED /* MemberDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberDetailsViewController.xib; sourceTree = "<group>"; };
 		FBCC597A2804AADD0041D9CA /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		FBCC597C2804AADD0041D9CA /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +158,7 @@
 		87CBCB1A27E974A900C13180 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FBCAA2B2280DF64B003A72ED /* MemberDetails */,
 				FBCC59772804AADD0041D9CA /* News */,
 				A88F1AF927F396560062608D /* Splash */,
 				A1F1270328047A5D00657AF4 /* Nosotros */,
@@ -457,6 +462,31 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		FBCAA2B2280DF64B003A72ED /* MemberDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FBCAA2B4280DF66E003A72ED /* Controller */,
+				FBCAA2B3280DF668003A72ED /* View */,
+			);
+			path = MemberDetails;
+			sourceTree = "<group>";
+		};
+		FBCAA2B3280DF668003A72ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBCAA2B6280DF793003A72ED /* MemberDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FBCAA2B4280DF66E003A72ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBCAA2B5280DF793003A72ED /* MemberDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FBCC59772804AADD0041D9CA /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +597,7 @@
 				992878312804A9C200928413 /* NosotrosCollectionViewCell.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
+				FBCAA2B8280DF793003A72ED /* MemberDetailsViewController.xib in Resources */,
 				A1F1237227FCDA8100657AF4 /* SeeMoreCollectionViewCell.xib in Resources */,
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 				879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */,
@@ -643,6 +674,7 @@
 				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
 				992878362804A9CB00928413 /* NosotrosViewController.swift in Sources */,
+				FBCAA2B7280DF793003A72ED /* MemberDetailsViewController.swift in Sources */,
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
 				992878352804A9CB00928413 /* NosotrosCollectionViewCell.swift in Sources */,
 				A8C466F427EAD3AF00A2DDBE /* LogInViewModel.swift in Sources */,
