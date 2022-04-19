@@ -158,11 +158,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 // Add an action when the item is selected
                 Tracker.trackTestimoniesSeeMoreEvent()
+                print("Testimonies - See More Pressed")
             }
         case lastestNewsCollectionView:
             if indexPath.row == min(sliderViewModel?.getNewsCount() ?? 0, 4) {
                 self.navigationController?.pushViewController(NewsViewController(), animated: true)
                 Tracker.trackNewsSeeMoreEvent()
+                print("Lastest News - See More Pressed")
             }
         default:
             break
