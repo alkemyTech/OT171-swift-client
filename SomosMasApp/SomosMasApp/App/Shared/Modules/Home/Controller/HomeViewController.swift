@@ -11,6 +11,7 @@ protocol SliderListDelegate {
     func hideTestimonials()
     func reloadTestimonials()
     func reloadSlider()
+    func showLoadingSpinner(state: Bool)
     func reloadNews()
     func hideSectionsWithoutData()
 }
@@ -32,9 +33,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         self.sliderViewModel = SliderViewModel(service1: serviceSlider, service2: serviceTestimonials, service3: serviceNews, delegate: self)
-        self.sliderViewModel?.getSliders()
-        self.sliderViewModel?.getTestimonials()
-        self.sliderViewModel?.getNews()
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -60,8 +58,14 @@ class HomeViewController: UIViewController {
         
         let backButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeApp))
         self.navigationItem.leftBarButtonItem  = backButton
-        
+        showLoadingSpinner(state: true)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.sliderViewModel?.loadAllServices()
+    }
+    
     @objc func closeApp() {
         exit(0)
 
@@ -93,7 +97,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             // Add seeMore page
             if indexPath.row == min(sliderViewModel!.getTestimonialsCount(), 4) {
                 let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "seeMoreCell", for: indexPath) as? SeeMoreCollectionViewCell
-                
                 return cell ?? SeeMoreCollectionViewCell()
             } else {
             let cell = testimonialsCollectionView.dequeueReusableCell(withReuseIdentifier: "Tcell", for: indexPath) as? TestimonialsCollectionViewCell
@@ -108,7 +111,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 
                 cell?.testimonialEpigraph.text = sliderViewModel?.getTestimonial(at: indexPath.row).name
                 cell?.testimonialDescription.text = sliderViewModel?.getTestimonial(at: indexPath.row).description
-                
             return cell ?? TestimonialsCollectionViewCell()
             }
         case lastestNewsCollectionView:
@@ -133,6 +135,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell ?? NewsCollectionViewCell()
             }
         default:
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mycell", for: indexPath) as? HomeCollectionViewCell
             
             cell?.myTitle.text = self.sliderViewModel?.getSliders(at: indexPath.row).name
@@ -207,4 +210,11 @@ extension HomeViewController: SliderListDelegate{
         self.collectionView.reloadData()
     }
     
+    func showLoadingSpinner(state: Bool) {
+        if state == true {
+            return self.showSpinner(onView: self.view)
+        } else {
+            return self.removeSpinner()
+        }
+    }
 }
