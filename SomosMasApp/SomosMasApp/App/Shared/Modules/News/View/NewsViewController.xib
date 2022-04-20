@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController" customModule="SomosMasApp" customModuleProvider="target">
             <connections>
+                <outlet property="newsCollectionView" destination="Xl8-Py-fLe" id="YNH-To-uEa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,18 +19,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI1-ZQ-QuX">
-                    <rect key="frame" x="160" y="438" width="94" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Xl8-Py-fLe">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MpP-Ht-Eks">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="qI1-ZQ-QuX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Zcd-Zq-ZRd"/>
-                <constraint firstItem="qI1-ZQ-QuX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kFg-Od-wkL"/>
+                <constraint firstItem="Xl8-Py-fLe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1O4-J3-Mzz"/>
+                <constraint firstItem="Xl8-Py-fLe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DZe-r3-OC8"/>
+                <constraint firstAttribute="bottom" secondItem="Xl8-Py-fLe" secondAttribute="bottom" id="Hyk-Mq-R5g"/>
+                <constraint firstItem="Xl8-Py-fLe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kMO-eQ-IQP"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
         </view>
