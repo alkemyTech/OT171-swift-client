@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF327EE999B004FAE80 /* LogInResponse.swift */; };
 		8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727FAF627EE9A9E004FAE80 /* LoginModel.swift */; };
+		874B6C81280A62F500B7CCC1 /* EventLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874B6C80280A62F500B7CCC1 /* EventLog.swift */; };
 		874C5F242804DD1900ADA695 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C5F232804DD1900ADA695 /* NewsService.swift */; };
 		874C5F262804DD3F00ADA695 /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C5F252804DD3F00ADA695 /* NewsList.swift */; };
 		874C5F282804DD4600ADA695 /* NewsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C5F272804DD4600ADA695 /* NewsListResponse.swift */; };
+		876E251E2809B9EB00180EDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 876E251D2809B9EB00180EDD /* GoogleService-Info.plist */; };
 		8794839E27FD3E980066B8F2 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */; };
 		879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */; };
 		87ABD46827EF85A100BC4441 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ABD46727EF85A100BC4441 /* LoginService.swift */; };
@@ -67,9 +69,11 @@
 		068B0C749B83A70577D74FBF /* Pods_SomosMasApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SomosMasApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8727FAF327EE999B004FAE80 /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
 		8727FAF627EE9A9E004FAE80 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		874B6C80280A62F500B7CCC1 /* EventLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLog.swift; sourceTree = "<group>"; };
 		874C5F232804DD1900ADA695 /* NewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		874C5F252804DD3F00ADA695 /* NewsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
 		874C5F272804DD4600ADA695 /* NewsListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListResponse.swift; sourceTree = "<group>"; };
+		876E251D2809B9EB00180EDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8794839D27FD3E980066B8F2 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8794839F27FD3EA10066B8F2 /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
 		87ABD46727EF85A100BC4441 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -203,6 +207,14 @@
 				87CBCB2327E9752A00C13180 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		87CDDB75280B0B9500D31F57 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				874B6C80280A62F500B7CCC1 /* EventLog.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		9963492827FDC68700A463C9 /* Services */ = {
@@ -369,6 +381,7 @@
 				A1FB4ED327E2130B00B6258A /* Assets.xcassets */,
 				A1FB4ED527E2130B00B6258A /* LaunchScreen.storyboard */,
 				A1FB4ED827E2130B00B6258A /* Info.plist */,
+				876E251D2809B9EB00180EDD /* GoogleService-Info.plist */,
 			);
 			path = SomosMasApp;
 			sourceTree = "<group>";
@@ -426,6 +439,7 @@
 		FB0F37B627E28DBB004D3DB5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				87CDDB75280B0B9500D31F57 /* Analytics */,
 				87CBCB0B27E9741F00C13180 /* Extensions */,
 				FB0F37B727E28DCF004D3DB5 /* Shared */,
 			);
@@ -560,6 +574,8 @@
 			dependencies = (
 			);
 			name = SomosMasApp;
+			packageProductDependencies = (
+			);
 			productName = SomosMasApp;
 			productReference = A1FB4EC727E2130600B6258A /* SomosMasApp.app */;
 			productType = "com.apple.product-type.application";
@@ -588,6 +604,8 @@
 				Base,
 			);
 			mainGroup = A1FB4EBE27E2130500B6258A;
+			packageReferences = (
+			);
 			productRefGroup = A1FB4EC827E2130600B6258A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -616,6 +634,7 @@
 				87CBCB2127E974A900C13180 /* SignUpViewController.xib in Resources */,
 				879483A027FD3EA10066B8F2 /* NewsCollectionViewCell.xib in Resources */,
 				FBCC597F2804AADD0041D9CA /* NewsViewController.xib in Resources */,
+				876E251E2809B9EB00180EDD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +688,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8727FAF727EE9A9E004FAE80 /* LoginModel.swift in Sources */,
+				874B6C81280A62F500B7CCC1 /* EventLog.swift in Sources */,
 				A1F1237827FE4FF500657AF4 /* TestimonialsService.swift in Sources */,
 				8727FAF427EE999B004FAE80 /* LogInResponse.swift in Sources */,
 				9963492F27FDC7CC00A463C9 /* SliderService.swift in Sources */,

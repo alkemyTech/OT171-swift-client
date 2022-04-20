@@ -20,12 +20,14 @@ class TestimonialsService {
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
                         let testimonialsResponse = try decoder.decode(TestimonialsListResponse.self, from: data)
                         onComplete(testimonialsResponse.data)
+                        Tracker.trackTestimonialsRetrieveSuccess()
                     }else{
                         onError()
                     }
                 } catch{
                     onError()
                     print(error)
+                    Tracker.trackTestimonialsRetrieveError(error: error.localizedDescription)
                 }
                 
             case .failure(_):
