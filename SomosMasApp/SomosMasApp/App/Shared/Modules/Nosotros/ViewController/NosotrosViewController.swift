@@ -72,6 +72,9 @@ class NosotrosViewController: UIViewController, UICollectionViewDelegate, UIColl
         return CGSize(width: width, height: width)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(MemberDetailsViewController(), animated: true)
+    }
     
     /*
     // MARK: - Navigation
