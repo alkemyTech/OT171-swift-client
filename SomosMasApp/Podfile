@@ -8,5 +8,6 @@ target 'SomosMasApp' do
   # Pods for SomosMasApp
   
   pod 'Alamofire', '5.4'
+  pod 'Firebase/Analytics'
 
 end
