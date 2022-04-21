@@ -12,7 +12,6 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-
         // These lines change the colors of the items of the Tab Bar
         let TabBarAppearace = UITabBar.appearance()
         TabBarAppearace.tintColor = .systemBlue
