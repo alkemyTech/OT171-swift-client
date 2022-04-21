@@ -42,9 +42,10 @@ class NewsViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "newsCell", for: indexPath) as? ListNewsCollectionViewCell
         
         cell?.title.text = viewModel?.getNews(at: indexPath.row).name
-        let imagePath = viewModel?.getNews(at: indexPath.row).image
-        let imageUrl = URL(string: imagePath!)
-        cell?.image.load(url: imageUrl!)
+
+        if let url = viewModel?.getNews(at: indexPath.row).image, let fullUrl = URL(string: url){
+            cell?.image.load(url: fullUrl)
+        }
         
         return cell ?? ListNewsCollectionViewCell()
     }
