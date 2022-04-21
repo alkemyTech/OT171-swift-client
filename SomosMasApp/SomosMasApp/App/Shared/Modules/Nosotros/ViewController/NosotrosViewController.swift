@@ -45,9 +45,9 @@ class NosotrosViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell?.name.text = viewModel?.getMember(at: indexPath.row).name
         cell?.jobTitle.text = viewModel?.getMember(at: indexPath.row).description
         
-        let imagePath = viewModel?.getMember(at: indexPath.row).image
-        let imageUrl = URL(string: imagePath!)
-        cell?.photo.load(url: imageUrl!)
+        if let url = viewModel?.getMember(at: indexPath.row).image, let fullUrl = URL(string: url) {
+            cell?.photo.load(url: fullUrl)
+        }
         
         return cell ?? NosotrosCollectionViewCell()
     }
