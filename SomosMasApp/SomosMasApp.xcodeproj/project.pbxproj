@@ -67,6 +67,9 @@
 		FBCAA2B8280DF793003A72ED /* MemberDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCAA2B6280DF793003A72ED /* MemberDetailsViewController.xib */; };
 		FBCC597E2804AADD0041D9CA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCC597A2804AADD0041D9CA /* NewsViewController.swift */; };
 		FBCC597F2804AADD0041D9CA /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCC597C2804AADD0041D9CA /* NewsViewController.xib */; };
+		FBE59C6D2810B26C0063B9FB /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE59C6C2810B26C0063B9FB /* NewsViewModel.swift */; };
+		FBE59C782810B3980063B9FB /* ListNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE59C762810B3980063B9FB /* ListNewsCollectionViewCell.swift */; };
+		FBE59C792810B3980063B9FB /* ListNewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE59C772810B3980063B9FB /* ListNewsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +137,9 @@
 		FBCAA2B6280DF793003A72ED /* MemberDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberDetailsViewController.xib; sourceTree = "<group>"; };
 		FBCC597A2804AADD0041D9CA /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		FBCC597C2804AADD0041D9CA /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		FBE59C6C2810B26C0063B9FB /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		FBE59C762810B3980063B9FB /* ListNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBE59C772810B3980063B9FB /* ListNewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListNewsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,6 +549,7 @@
 		FBCC59782804AADD0041D9CA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FBE59C6C2810B26C0063B9FB /* NewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -551,6 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				FBCC597A2804AADD0041D9CA /* NewsViewController.swift */,
+				FBE59C762810B3980063B9FB /* ListNewsCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -558,6 +566,7 @@
 		FBCC597B2804AADD0041D9CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FBE59C772810B3980063B9FB /* ListNewsCollectionViewCell.xib */,
 				FBCC597C2804AADD0041D9CA /* NewsViewController.xib */,
 			);
 			path = View;
@@ -641,6 +650,7 @@
 				A1F1236E27F72CA100657AF4 /* TestimonialsCollectionViewCell.xib in Resources */,
 				992878322804A9C200928413 /* NosotrosViewController.xib in Resources */,
 				992878312804A9C200928413 /* NosotrosCollectionViewCell.xib in Resources */,
+				FBE59C792810B3980063B9FB /* ListNewsCollectionViewCell.xib in Resources */,
 				A88F1AFF27F396860062608D /* SplashViewController.xib in Resources */,
 				A1DC72B427EA260B00D9D16C /* logInView.xib in Resources */,
 				FBCAA2B8280DF793003A72ED /* MemberDetailsViewController.xib in Resources */,
@@ -709,6 +719,7 @@
 				FBC030C927F48362006BDE08 /* HomeCollectionViewCell.swift in Sources */,
 				FB87DBCE27E3C86F001F1F97 /* ApiManager.swift in Sources */,
 				A1DC72B327EA260B00D9D16C /* logInViewController.swift in Sources */,
+				FBE59C6D2810B26C0063B9FB /* NewsViewModel.swift in Sources */,
 				87CBCB0E27E9741F00C13180 /* Extensions.swift in Sources */,
 				A136145E2811B91800B45CB1 /* NosotrosListResponse.swift in Sources */,
 				A88F1AFE27F396860062608D /* SplashViewController.swift in Sources */,
@@ -724,6 +735,7 @@
 				FBCC597E2804AADD0041D9CA /* NewsViewController.swift in Sources */,
 				995E4C6027F1F7D100632693 /* HomeViewController.swift in Sources */,
 				FB46181727EB52AD00DBE262 /* UserRegisterResponse.swift in Sources */,
+				FBE59C782810B3980063B9FB /* ListNewsCollectionViewCell.swift in Sources */,
 				992878362804A9CB00928413 /* NosotrosViewController.swift in Sources */,
 				FBCAA2B7280DF793003A72ED /* MemberDetailsViewController.swift in Sources */,
 				87CBCB2027E974A900C13180 /* SignUpViewController.swift in Sources */,
