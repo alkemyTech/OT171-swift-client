@@ -64,6 +64,20 @@ class LogInViewModel {
             result = false
             resultMessage = "Password must be alphanumeric, have at least 8 characters and not contain spaces."
         }
+        // if the user credentials are right, they are saved in user defaults.
+        
+        let storage = UserDefaults.standard
+        
+        
+        let emailKey = "email-key"
+        let passwordKey = "password-key"
+        
+        
+        let loginData = [passwordKey: password, emailKey: email]
+        
+        if password.isValidPassword && email.isValidEmail {
+            storage.set(loginData, forKey: "Login-key")
+        }
         
         /*
         Aca se debe comprobar que las credenciales del usuario son correctas y en tal caso iniciar sesion, de lo contrario
