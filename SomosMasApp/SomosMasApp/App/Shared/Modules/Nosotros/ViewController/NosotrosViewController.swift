@@ -7,59 +7,47 @@
 
 import UIKit
 
-
-struct NosotrosData {
-    let image: UIImage?
-    let name: String?
-    let jobTitle: String?
+protocol NosotrosDelegate {
+    func reloadSlider()
+    func spinnerLoadingState(state: Bool)
 }
-
 
 class NosotrosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-
-    let nosotrosData = [ NosotrosData(image: UIImage(named:"Image_5"), name: "Cecilia Mendez", jobTitle:    "Puesto 1"),
-                         NosotrosData(image: UIImage(named:"Image_1"), name: "Juan Perez", jobTitle: "Puesto 2"),
-                         NosotrosData(image: UIImage(named:"Image_4"), name: "Maria Garcia", jobTitle: "Puesto 3"),
-                         NosotrosData(image: UIImage(named:"Image_5"), name: "Maria Irola", jobTitle: "Puesto 4"),
-                         NosotrosData(image: UIImage(named:"Image_4"), name: "Marita Gomez", jobTitle: "Puesto 5"),
-                         NosotrosData(image: UIImage(named:"Image_2"), name: "Miriam Diaz", jobTitle: "Puesto 6"),
-                         NosotrosData(image: UIImage(named:"Image_3"), name: "Rodrigo Fuente", jobTitle: "Puesto 7"),
-                         NosotrosData(image: UIImage(named:"Image_1"), name: "Juan Perez", jobTitle: "Puesto 2"),
-                         NosotrosData(image: UIImage(named:"Image_4"), name: "Maria Garcia", jobTitle: "Puesto 3"),
-                         NosotrosData(image: UIImage(named:"Image_5"), name: "Maria Irola", jobTitle: "Puesto 4"),
-                         NosotrosData(image: UIImage(named:"Image_4"), name: "Marita Gomez", jobTitle: "Puesto 5"),
-                         NosotrosData(image: UIImage(named:"Image_2"), name: "Miriam Diaz", jobTitle: "Puesto 6"),
-                         NosotrosData(image: UIImage(named:"Image_3"), name: "Rodrigo Fuente", jobTitle: "Puesto 7")
-                          ]
-    
     @IBOutlet var nosotrosCollectionView: UICollectionView!
-    
-    
     @IBOutlet var label: UILabel!
+    
+    private let service = NosotrosService()
+    private var viewModel: NosotrosViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.viewModel = NosotrosViewModel(service: service, delegate: self)
+        self.viewModel?.getMembers()
         self.nosotrosCollectionView.delegate = self
         self.nosotrosCollectionView.dataSource = self
         
         label.adjustsFontSizeToFitWidth = true
        
         nosotrosCollectionView.register(UINib(nibName: "NosotrosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "nosotrosCell")
-    
+
+    spinnerLoadingState(state: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return nosotrosData.count
+        return viewModel?.getMembersCount() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nosotrosCell", for: indexPath) as? NosotrosCollectionViewCell
         
-        cell?.name.text = nosotrosData[indexPath.row].name
-        cell?.jobTitle.text = nosotrosData[indexPath.row].jobTitle
-        cell?.photo.image = nosotrosData[indexPath.row].image
+        cell?.name.text = viewModel?.getMember(at: indexPath.row).name
+        cell?.jobTitle.text = viewModel?.getMember(at: indexPath.row).description
         
+        if let url = viewModel?.getMember(at: indexPath.row).image, let fullUrl = URL(string: url) {
+            cell?.photo.load(url: fullUrl)
+        }
         
         return cell ?? NosotrosCollectionViewCell()
     }
@@ -71,19 +59,23 @@ class NosotrosViewController: UIViewController, UICollectionViewDelegate, UIColl
         let width  = (Int(view.frame.width) - 20) / columnCount
         return CGSize(width: width, height: width)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.navigationController?.pushViewController(MemberDetailsViewController(), animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension NosotrosViewController: NosotrosDelegate {
+    func reloadSlider() {
+        self.nosotrosCollectionView.reloadData()
     }
-    */
-
+    func spinnerLoadingState(state: Bool) {
+        if state == true {
+            return self.showSpinner(onView: self.view)
+                
+        } else {
+            return self.removeSpinner()
+        }
+    }
 }
